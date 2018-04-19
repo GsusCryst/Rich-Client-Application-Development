@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Title</title>
+		<meta charset="utf-8">
+		<style>
+     			@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+           		@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+	        	@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+	        	body { font-family: 'Droid Serif'; }
+			h1, h2, h3 { font-family: 'Yanone Kaffeesatz';
+				     font-weight: normal; }
+			.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+		</style>
+	</head>
+	<body>
+		<textarea id="source">
+
+			class: center, middle
+			### `Highlight in Fenced Code Block`
+
+			```python
+			# This is what it looks like without the post hook.
+			def say_hello():
+    				print('Hello, World!')
+			```
+
+			```python
+			!# This is what it looks like with the post hook.
+			# A `highlight` in comment
+			def say_hello():
+    				print('normal line')
+    				print(`'A highlighted string with quotes highlighted too'`)
+    				print('`A highlighted string with quotes left out`')
+    				print('(P?`<poll_id>`)/$`<pk>`', 'mulpitle ocurrences of highlight')
+				print('``hello``', 'double accent quotes are not highlighted')
+				print('\`hello`', 'single accent quotes can be escaped')
+				`print`('highlight print function')
+				if `True`:
+			!       print('A highlighted line')
+			```
+			# ECMAScript2015
+
+			---
+
+			# Agenda
+
+			1. Introduction
+			2. Deep-dive
+			3. ...
+
+			---
+
+			# Introduction
+			
+			---
+			
+
+		</textarea>
+		<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    		</script>
+        	<script>
+			$(document).ready(function() {
+    // ...
+    /* highlight a line */
+    $('pre code div.remark-code-line').each(function(i, e) {
+        var line = $(this).html();
+        if (line[0] == '!') {
+            var s = (line[1] != ' ' ? '' : ' '); // compensate the space used by '!'
+            var highlight_line = line.replace('!', s);
+            $(this).html(highlight_line);
+            $(this).addClass('remark-code-line-highlighted');
+        }
+    });
+
+    /* highlight parts of a line
+     * the highlighted part is marked by `highlight this, please`
+     */
+    $('pre code.remark-code .remark-code-line').each(function() {
+        var line = $(this).html();
+        // allows \`no highlight` to escape from being highlighted
+        var hl_regex = /([^\\`])`([^`]+?)`/g;
+        if (line.search(hl_regex) != -1) {
+            var hl_html = '$1<span class="_hl remark-code-string-highlighted">'
+                          + '$2' // strings
+                          + '</span>';
+            var result_html = line.replace(hl_regex, hl_html);
+
+            $(this).html(result_html);
+        }
+
+        /* trim escaped backquotes string */
+        var escape_regex = /\\(`[^`]+?`)/g;
+        if (line.search(escape_regex) != -1) {
+            line = line.replace(escape_regex, '$1');
+            $(this).html(line);
+        }
+    });
+    // ...
+});
+     			 var slideshow = remark.create();
+          	</script>
+	</body>
+</html>
+
