@@ -1,43 +1,73 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Title</title>
-		<meta charset="utf-8">
-		<style>
-     			@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-           		@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-	        	@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-	        	body { font-family: 'Droid Serif'; }
-			h1, h2, h3 { font-family: 'Yanone Kaffeesatz';
-				     font-weight: normal; }
-			.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-		</style>
-	</head>
-	<body>
-		<textarea id="source">
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>es6markdown.html</title><script type="text/javascript">
+//<![CDATA[
+window.__cfRocketOptions = {byc:0,p:0,petok:"8d9f121ab130b538a265b23f735fa13ef94285fc-1524135478-1800"};
+//]]>
+</script>
+<script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/935cb224/cloudflare-static/rocket.min.js"></script>
+<style></style></head><body id="preview">
+<h1><a id="ECMAScript2015_0"></a>ECMAScript2015</h1>
+<hr>
+<h1><a id="Themen_4"></a>Themen</h1>
+<ol>
+<li>Was ist ECMAScript?</li>
+<li>Block-scoped Constructs</li>
+<li>Default Parameter</li>
+<li>Destructuring</li>
+<li><em>Rest Parameter</em> und <em>Spread Operator</em></li>
+<li>Promises</li>
+<li>Super Strings</li>
+<li>Arrays</li>
+<li>Klassen</li>
+<li>Arrow Funktionen</li>
+<li>Module</li>
+<li>Enhanced object literals</li>
+<li>Iterator</li>
+<li><em>map</em> und <em>set</em></li>
+<li>Proxying</li>
+<li>Internationalisierung und Lokalisierung</li>
+<li>Things to avoid!</li>
+<li>Kann ich es benutzen und wo?</li>
+</ol>
+<hr>
+<h1><a id="Was_ist_ECMAScript_27"></a>Was ist ECMAScript?</h1>
+<p><strong>Geschichte</strong></p>
+<ul>
+<li>1995: JavaScript erscheint als LiveScript</li>
+<li>1997: ECMAScript Standard wird eingeführt</li>
+<li>1999: ES3 wird veröffentlicht und IE5 ist in Mode</li>
+<li>2000–2005: XMLHttpRequest, a.k.a. AJAX, gewinnt an Popularität in Anwendungen wie <strong>Outlook Web Access</strong> (2000) und <strong>Oddpost</strong> (2002), <strong>Gmail</strong> (2004) und <strong>Google Maps</strong> (2005)</li>
+<li>2009: ES5 wird veröffentlicht mit <em>forEach</em>, <em>Object.keys</em>, <em>Object.create</em> und standard JSON</li>
+<li>2015: ES6/ECMAScript2015 erscheint</li>
+</ul>
+<hr>
+<h1><a id="Was_ist_ECMAScript_38"></a>Was ist ECMAScript?</h1>
+<p><strong>Allgemeines</strong></p>
+<ul>
+<li>ECMA = European Computer Manufacturers Association</li>
+<li>geschützte scripting-language Spezifikation</li>
+<li>standardisiert von Ecma International</li>
+<li>ECMA-262 und ISO/IEC 16262</li>
+<li>wurde zur Standardisierung von JavaScript erstellt</li>
+</ul>
+<hr>
+<h1><a id="Blockscoped_Constructs_48"></a>Block-scoped Constructs</h1>
+<ul>
+<li><em>let</em><pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculateTotalAmount</span> (<span class="hljs-params">vip</span>) </span>{
+    <span class="hljs-keyword">var</span> amount = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">if</span> (vip) {
+        <span class="hljs-keyword">let</span> amount = <span class="hljs-number">1</span>
+    } 
+    {
+        <span class="hljs-keyword">let</span> amount = <span class="hljs-number">100</span>
+        {
+            <span class="hljs-keyword">let</span> amount = <span class="hljs-number">1000</span>
+        }
+    }
+    <span class="hljs-keyword">return</span> amount
+}
+<span class="hljs-built_in">console</span>.log(calculateTotalAmount(<span class="hljs-literal">true</span>))
+<span class="hljs-comment">//Es wird 0 zurückgegeben</span></code></pre>
+</li>
+</ul>
 
-			class: center, middle
-
-			# ECMAScript2015
-
-			---
-
-			# Agenda
-
-			1. Introduction
-			2. Deep-dive
-			3. ...
-
-			---
-
-			# Introduction
-
-		</textarea>
-		<script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    		</script>
-        	<script>
-     			 var slideshow = remark.create();
-          	</script>
-	</body>
-</html>
-
+</body></html>
