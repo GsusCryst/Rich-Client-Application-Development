@@ -16,13 +16,7 @@
 	<body>
 		<textarea id="source">
 
-			
-
-# ECMAScript2015
-
----
-
-# Agenda
+# ECMAScript2015 - Agenda
 
 - Was ist ECMAScript2015
 - Let and const
@@ -40,15 +34,20 @@
 - map/set
 - proxying
 - internationalization and localization
-- things to avoid
-- can I use it/where can I use it
+- Browser Kompatibilit&auml;t
 
 ---
 
 # arrow function
-Arrows
+### 1. Beschreibung
+"=>" Arrows sind eine Kurzschreibweise zur Funktionsdeklaration. Mit "this." kann innerhalb der Arrow-Funktion auf die Variablen des Umliegenden Codes zugegriffen werden, bei der Deklaration mit "function" ist dies hingegen nicht m&ouml;glich.
 
-Arrows are a function shorthand using the => syntax. They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript. They support both statement block bodies as well as expression bodies which return the value of the expression. Unlike functions, arrows share the same lexical this as their surrounding code.
+### 2. Anwendung
++ Arrow-Funktion ersetzt die urspr&uuml;ngliche Deklaration aus ES6 vollst&auml;ndig.
+
+---
+
+### 3. ES6 Code Beispiel
 ```js
 // Expression bodies
 var odds = evens.map(v => v + 1);
@@ -75,8 +74,20 @@ var bob = {
 ---
 
 # modules
-Language-level support for modules for component definition. Codifies patterns from popular JavaScript module loaders (AMD, CommonJS). Runtime behaviour defined by a host-defined default loader. Implicitly async model – no code executes until requested modules are available and processed.
 
+### 1. Beschreibung
+Ein Modul ist im Prinzip ein wiederverwendbares St&uuml;ck JavaScript, das bestimmte Objekte exportiert und sie dadurch verf&uuml;gbar macht f&uuml;r andere Module, die sie in Programmen per import an den Dateianfang importieren.
+
+Der Zugriff auf die Module kann mit Asynchronous Module Definition (AMD) asynchron erfolgen, das Script wird dann erst ausgef&uuml;hrt wenn die angeforderten Module geladen sind.
+
+### 2. Anwendung
++ Module sind vergleichbar mit Klassen in Java.
++ Strukturierung von Code mit Interfaces und Abh&auml;ngigkeiten.
++ CommonJS f&uuml;r Serveranwendungen und Asynchronous Module Definition (AMD) f&uuml;r Browseranwendungen.
+
+---
+
+### 3. ES6 Code Beispiel
 ```js
 // lib/math.js
 export function sum(x, y) {
@@ -108,42 +119,33 @@ alert("2p = " + ln(e)*pi*2);
 
 ---
 
-# enhanced object literals
-Object literals are extended to support setting the prototype at construction, shorthand for foo: foo assignments, defining methods, making super calls, and computing property names with expressions. Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.
-```js
-var obj = {
-    // __proto__
-    __proto__: theProtoObj,
-    // Shorthand for ‘handler: handler’
-    handler,
-    // Methods
-    toString() {
-     // Super calls
-     return "d " + super.toString();
-    },
-    // Computed (dynamic) property names
-    [ 'prop_' + (() => 42)() ]: 42
-};
-```
----
 # iterator
-A more concise syntax has been introduced for iteration through arrays and other iterable objects.
+### 1. Beschreibung
+Die Syntax zur Iteration &uuml;ber Arrays und iterierbare Objekte wurd einheitlicher gestaltet.
+
+### 2. ES5 & ES6 Code Beispiel
 ```js
 var arr = ['a', 'b', 'c'];
 
-// ES5
+//ES5
 for (var i = 0; i < arr.length; i++) {
     console.log(arr[i]);
 }
 
-// ES6
+//ES6
 for (let i of arr) {
     console.log(i);
 }
 ```
 ---
 # Sets & Maps
-Efficient data structures for common algorithms. WeakMaps provides leak-free object-key’d side tables.
+### 1. Beschreibung
+Sets & Maps sind effiziente Datenstruktur f&uuml;r Algorithmen, WeakMaps sind zus&auml;tzlich so konzipiert um Memoryleaks zu vermeiden.
+Deswegen ben&ouml;tigen WeakMaps als Key ein Objekt.
+---
+
+### 2. ES6 Code Beispiel
+
 ```js
 // Sets
 var s = new Set();
@@ -156,7 +158,9 @@ var m = new Map();
 m.set("hello", 42);
 m.set(s, 34);
 m.get(s) == 34;
+```
 
+```js
 // Weak Maps
 var wm = new WeakMap();
 wm.set(s, { extra: 42 });
@@ -165,16 +169,27 @@ wm.size === undefined
 // Weak Sets
 var ws = new WeakSet();
 ws.add({ data: 42 });
-// Because the added object has no other references, it will not be held in the set
+// added object has no other references, it will not be held in the set
 ```
 ---
-# proxying
-There are 3 key terms we need to define before we proceed:
-1. handler: the placeholder object which contains the trap(s)
-2. traps: the method(s) that provide property access
-3. target: object which the proxy virtualizes
 
-Code Example:
+# proxying
+
+### 1. Beschreibung
+Mit dem Proxy-Objekt ist es m&ouml;glich eigenes Verhalten auf fundamentale Operationen zu definieren (z.B. beim holen oder zuweisen einer Eigenschaft, etc).
+
++ handler: Platzhalter Objekt mit den trap(s).
++ traps: Methoden zum Zugriff auf Properties.
++ target: Objekt mit der Proxy virtualisierung.
+
+### 2. Anwendung
++ Validierung
++ Korrektur von Werten
++ &Uuml;berwachung von Zugriffen auf Properties
++ DOM Implementierung in javascript
+
+---
+### 3. ES6 Code Beispiel
 ```js
 var target = {};
 var handler = {
@@ -185,28 +200,65 @@ var handler = {
 var p = new Proxy(target, handler);
 p.world === 'Hello, world!';
 ```
-
-There are many real-world applications for Proxies:
-1. validation
-2. value correction
-3. property lookup extensions
-4. tracing property accesses
-5. revocable references
-6. implementing the DOM in javascript
 ---
 
 # internationalization and localization
-ToDo
-
+### 1. Beschreibung
+Das Intl Objekt ist der Namensraum f&uuml;r die ECMAScript Internationalisierunges API, welche Stringvergleiche, Zahlenformate und Datums bzw. Zeitformate unterst&uuml;tzt.
+Der Konstruktoren f&uuml;r Collator, NumberFormat und DateTimeFormat Objekte sind Eigenschaften des Intl Objektes.
+### 2. Anwendung
++ Internationalisierung von Webpages f&uuml;r eine weltweite Userbase.
 ---
-# Verwendbarkeit
-Symbols, generators, iterators, weak maps and sets, and proxies are genuinely useful but they aren't supported by every browser yet.
+### 3. ES6 Code Beispiel
+Sorting a set of strings and searching within a set of strings. Collation is parameterized by locale and aware of Unicode.
+```js
+// in German,  "&auml;" sorts with "a"
+// in Swedish, "&auml;" sorts after "z"
+var list = [ "&auml;", "a", "z" ]
+var l10nDE = new Intl.Collator("de")
+var l10nSV = new Intl.Collator("sv")
+l10nDE.compare("&auml;", "z") === -1
+l10nSV.compare("&auml;", "z") === +1
+console.log(list.sort(l10nDE.compare)) // [ "a", "&auml;", "z" ]
+console.log(list.sort(l10nSV.compare)) // [ "a", "z", "&auml;" ]
+```
+---
+### 3. ES6 Code Beispiel
+Format numbers with digit grouping and localized separators.
+
+```js
+var l10nEN = new Intl.NumberFormat("en-US")
+var l10nDE = new Intl.NumberFormat("de-DE")
+l10nEN.format(1234567.89) === "1,234,567.89"
+l10nDE.format(1234567.89) === "1.234.567,89"
+```
+
+Format date/time with localized ordering and separators.
+```js
+var l10nEN = new Intl.DateTimeFormat("en-US")
+var l10nDE = new Intl.DateTimeFormat("de-DE")
+l10nEN.format(new Date("2015-01-02")) === "1/2/2015"
+l10nDE.format(new Date("2015-01-02")) === "2.1.2015"
+```
+
+Format numbers with digit grouping, localized separators and attached currency symbol.
+```js
+var l10nUSD = new Intl.NumberFormat("en-US",{style: "currency", currency: "USD"})
+var l10nGBP = new Intl.NumberFormat("en-GB",{style: "currency", currency: "GBP"})
+var l10nEUR = new Intl.NumberFormat("de-DE",{style: "currency", currency: "EUR"})
+l10nUSD.format(100200300.40) === "$100,200,300.40"
+l10nGBP.format(100200300.40) === "&pound;100,200,300.40"
+l10nEUR.format(100200300.40) === "100.200.300,40 &euro;"
+```
+---
+# Browser Kompatibilit&auml;t
+https://kangax.github.io/compat-table/es6/
 
 		</textarea>
 		<script src="https://remarkjs.com/downloads/remark-latest.min.js">
     		</script>
         	<script>
-		
+
      			 var slideshow = remark.create();
           	</script>
 
