@@ -357,17 +357,25 @@ makeRequest('GET', 'url').then(event => {
 # Template Literals
 
 ### 1. Beschreibung
-- Zeichen müssen zwischen Back-Ticks stehen
+
+- keine Konkatenierung, wenn Zeichen zwischen Back-Ticks stehen
 - String-Interpolation kann im String eingebettet werden
-- keine Konkatenierung bei Multi-Line Strings
+
 ### 2. ES5 Code Beispiel
+
 ```js
 var str = 'Release date: ' + date;
 var str = 'This text ' +
           'is on ' +
           'multiple lines';
 ```
+
+---
+
+# Template Literals
+
 ### 3. ES6 Code Beispiel
+
 ```js
 let str = `Release Date: ${date}`;
 let str = `This text
