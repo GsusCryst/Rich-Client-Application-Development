@@ -15,13 +15,8 @@
 </head>
 <body>
 <textarea id="source">
-class: center, middle
 
-# ECMAScript2015
-
----
-
-# Agenda
+# ECMAScript2015 - Agenda
 
 1. Was ist ECMAScript?
 2. Block-scoped Constructs
@@ -36,11 +31,10 @@ class: center, middle
 11. Module
 12. Enhanced object literals
 13. Iterator
-14. ```map``` und ```set```
+14. map und set
 15. Proxying
 16. Internationalisierung und Lokalisierung
-17. Things to avoid!
-18. Kann ich es benutzen und wo?
+17. Browser Kompatibilit&auml;t
 
 ---
 
@@ -52,7 +46,7 @@ class: center, middle
 * 1997: ECMAScript Standard wird eingefuehrt
 * 1999: ES3 wird veroeffentlicht und IE5 ist in Mode
 * 2000–2005: XMLHttpRequest, a.k.a. AJAX, gewinnt an Popularitaet in Anwendungen wie **Outlook Web Access** (2000) und **Oddpost** (2002), **Gmail** (2004) und **Google Maps** (2005)
-* 2009: ES5 wird veroeffentlicht mit ```forEach```, ```Object.keys```, ```Object.create``` und standard JSON
+* 2009: ES5 wird veroeffentlicht mit forEach, Object.keys, Object.create und standard JSON
 * 2015: ES6/ECMAScript2015 erscheint
 
 ---
@@ -71,17 +65,17 @@ class: center, middle
 
 ### 1. Beschreibung
 
-- ```let``` und ```const```
-- Variablen mit ```let``` existieren nur in ihrem Block(block-scoped)
-- Variablen mit ```const``` sind auch block-scoped, 
+- let und const
+- Variablen mit let existieren nur in ihrem Block(block-scoped)
+- Variablen mit const sind auch block-scoped,
   können nicht neu zugeordnet werden
 
 ### 2. Anwendung
 
--  ```let```:
+-  let:
     - Zähler eines Loops
     - mathematische Algorithmen
-- ```const```:
+- const:
     - Variable die nicht verändert werden soll
 
 ---
@@ -95,11 +89,11 @@ function calculateTotalAmount (vip) {
         var amount = 1
     }
     {
-        var amount = 100 
+        var amount = 100
         {
-            var amount = 1000 
-        } 
-    }  
+            var amount = 1000
+        }
+    }
     return amount
 }
 console.log(calculateTotalAmount(true)) // Rückgabe: 1000
@@ -109,20 +103,20 @@ console.log(calculateTotalAmount(true)) // Rückgabe: 1000
 
 # Block-scoped Constructs
 
-### 4. ES6 Code Beispiel - ```let```
+### 4. ES6 Code Beispiel - let
 
 ```js
 function calculateTotalAmount (vip) {
     let amount = 0
     if (vip) {
         let amount = 1 // erstes amount immer noch 0
-    } 
+    }
     {
         let amount = 100 // erstes amount immer noch 0
         {
             let amount = 1000 // erstes amount immer noch 0
         }
-    }  
+    }
     return amount
 }
 console.log(calculateTotalAmount(true)) // Rückgabe: 0
@@ -132,20 +126,20 @@ console.log(calculateTotalAmount(true)) // Rückgabe: 0
 
 # Block-scoped Constructs
 
-### 4. ES6 Code Beispiel - ```const```
+### 4. ES6 Code Beispiel - const
 
 ```js
 function calculateTotalAmount (vip) {
-    const amount = 0  
+    const amount = 0
     if (vip) {
-        const amount = 1 
-    } 
+        const amount = 1
+    }
     {
-        const amount = 100 
+        const amount = 100
         {
             const amount = 1000
         }
-    }  
+    }
     return amount
 }
 console.log(calculateTotalAmount(true)) // Rückgabe: 0
@@ -158,7 +152,7 @@ console.log(calculateTotalAmount(true)) // Rückgabe: 0
 ### 1. Beschreibung
 
 - Erlaubt das Erstellen von default Parametern in Funktionen
-- Es darf nun auch ```0``` als Wert verwendet werden (war ```false``` in JavaScript)
+- Es darf nun auch 0 als Wert verwendet werden (war false in JavaScript)
 
 ### 2. Anwendung
 
@@ -175,8 +169,8 @@ console.log(calculateTotalAmount(true)) // Rückgabe: 0
 function announcePlayer (firstName, lastName, teamName) {
     console.log(firstName + ' ' + lastName + ', ' + teamName)
 }
-announcePlayer('Thomas', 'Müller', 'FC Bayern München') // Thomas Müller, FC Bayern München
-announcePlayer('Sebastian', 'Kehl') // Sebastian Kehl, undefined
+announcePlayer('Thomas', 'Müller', 'FC Bayern') //Thomas Müller, FC Bayern
+announcePlayer('Sebastian', 'Kehl') //Sebastian Kehl, undefined
 ```
 - teamName darf nicht weggelassen werden oder if-Abfrage vor console.log(...)
 
@@ -186,9 +180,9 @@ announcePlayer('Sebastian', 'Kehl') // Sebastian Kehl, undefined
 function announcePlayer(firstName, lastName, teamName = 'vereinslos') {
     console.log(firstName + ' ' + lastName + ',' + teamName)
 }
-announcePlayer('Thomas', 'Müller', 'FC Bayern München') // Thomas Müller, FC Bayern München
+announcePlayer('Thomas', 'Müller', 'FC Bayern') //Thomas Müller, FC Bayern
 announcePlayer('Sebastian', 'Kehl') // Sebastian Kehl, vereinslos
-announcePlayer('Sebastian', 'Kehl', undefined) // Sebastian Kehl, vereinslos
+announcePlayer('Sebastian', 'Kehl', undefined) //Sebastian Kehl, vereinslos
 ```
 
 ---
@@ -244,11 +238,11 @@ console.log(three) // undefined
 
 ### 1. Beschreibung
 
-- werden mit ```...``` angedeutet
+- werden mit ... angedeutet
 - **Rest Parameter** wandelt eine mit Komma separierte Liste von Argumenten in ein Array um
 - **Spread Operator** vice versa
 
-### 2. Anwendung 
+### 2. Anwendung
 
 - **Rest Parameter**:
     -  Funktionsparameter
@@ -326,7 +320,7 @@ function makeRequest(method, url, callback) {
     request.send();
 }
 makeRequest('GET', 'url', function (err, data) {
-        if (err) { 
+        if (err) {
             throw new Error(err);
         } else {
             console.log(data);
@@ -363,30 +357,23 @@ makeRequest('GET', 'url').then(event => {
 # Template Literals
 
 ### 1. Beschreibung
-
 - Zeichen müssen zwischen Back-Ticks stehen
 - String-Interpolation kann im String eingebettet werden
 - keine Konkatenierung bei Multi-Line Strings
-
 ### 2. ES5 Code Beispiel
-
 ```js
 var str = 'Release date: ' + date;
 var str = 'This text ' +
           'is on ' +
           'multiple lines';
 ```
-
 ### 3. ES6 Code Beispiel
-
 ```js
 let str = `Release Date: ${date}`;
 let str = `This text
            is on
-           multiple lines`; 
+           multiple lines`;
 ```
-
-
 ---
 
 # Typed Arrays
@@ -405,8 +392,8 @@ let str = `This text
 ### 3. ES6 Code Beispiel
 
 ```js
-this._id  = new Uint32Array (this._buffer,  0,  1) 
-this._username  = new Uint8Array  (this._buffer,  4, 16) 
+this._id  = new Uint32Array (this._buffer,  0,  1)
+this._username  = new Uint8Array  (this._buffer,  4, 16)
 this._amountDue = new Float32Array(this._buffer, 20,  1)
 ```
 
@@ -416,7 +403,7 @@ this._amountDue = new Float32Array(this._buffer, 20,  1)
 
 ### 1. Beschreibung
 
-- ```class``` und ```constructor``` wurden hinzugefügt
+- class und constructor wurden hinzugefügt
 
 ### 2. ES5 Code Beispiel
 
