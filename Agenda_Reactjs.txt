@@ -1,0 +1,36 @@
+https://github.com/eggheadio-projects/the-beginner-s-guide-to-reactjs
+
+1. JSX + React
+2. Babel JS Compiler
+3. CSS-Desgin Libs:
+	3.1. styled components
+	3.2. emotion
+	3.3. glamorous
+4. Syntax / Eigenheiten
+	4.1 Function Call with Capital Letter?
+		const Message = 	 
+			<Message />
+	4.2 Class -> ClassName
+	4.3 jsx	<jsx>
+		{JavaScript}
+		</>
+	4.4 componentWillUnmount() 
+		componentDidUnmount() 
+5. EventHandling
+	5.1 Form Validation
+		value property on input or textarea verhindert eingabe bei onChange Event
+		-> handleCommaSeperatedChange = event => {do something with event.target.Type}
+6. HTTP Requests mit React (fetch?)
+	6.1 Axios Lib
+	6.2 fetch()
+7. React Refs
+8. Dynamic Forms with React + Form Values
+9. Rendering 
+	9.1 Rerender only needed Dom Elements mit ReactDom.render + Focus bleibt
+10. Array/Map Handling
+	1. Array.from().map( =>)
+	2. MemoryLeaks
+11. Anwendung
+	11.1. netlify.com
+	11.2. https://codesandbox.io/
+	12.3. PropTypes Global nur im Development Im Production nicht mehr vorhanden
