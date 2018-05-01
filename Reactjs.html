@@ -242,12 +242,44 @@ layout: true
 
 # .center[HTTP-Requests]
 
+Advantages over the native Fetch API:
++ supports older browsers
++ has a way to abort a request
++ has a way to set a response timeout
++ has built-in CSRF protection
++ supports upload progress
++ performs automatic JSON data transformation
++ works in Node.js
+
 ---
 
-## Code Example
+## Code Example - axios
 
 ```js
-...
+const axios = require('axios')
+
+const getBreeds = () => {
+  try {
+    return axios.get('https://dog.ceo/api/breeds/list/all')
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+const countBreeds = async () => {
+  const breeds = getBreeds()
+    .then(response => {
+      if (response.data.message) {
+        console.log(
+          `Got ${Object.entries(response.data.message).length} breeds`
+        )
+      }
+    })
+    .catch(error => {
+      console.log(error)
+    })
+}
+countBreeds()
 ```
 
 ---
@@ -255,6 +287,14 @@ layout: true
 layout: false
 
 # .center[Deployment]
+Application prototyping and deployment can be done in 4 simple steps:
+
+1. Prototype application with CodeSandbox.io (https://codesandbox.io)
+2. Download application as zip
+3. Login on netlify with github (https://www.netlify.com/)
+4. Drag & Drop downloaded zip to deploy with netlify
+
+Netlify can also auto deploy repositories from GitHub, GitLab and BitBucket.
 
 ---
 
@@ -262,11 +302,11 @@ layout: false
 
 - Installation, Quick Start, Advanced Guides:
 
-    https://reactjs.org/docs/ 
+    https://reactjs.org/docs/
 
 - Beginner's guide:
-    
-    https://github.com/eggheadio-projects/the-beginner-s-guide-to-reactjs 
+
+    https://github.com/eggheadio-projects/the-beginner-s-guide-to-reactjs
 
 - Tutorial:
 
@@ -276,7 +316,7 @@ layout: false
 
     https://reactjs.org/docs/thinking-in-react.html
 
-    
+
 
 </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
