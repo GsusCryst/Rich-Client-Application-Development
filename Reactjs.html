@@ -61,9 +61,23 @@ layout: true
 
 ## .center[Pros]
 
----
+- declarative programming, you **declare** what you **want** 
+    and don't have to tell **how**
+- JSX means clean, well organized view code
+- rendering React on the server
+- functional, pure, immutable patterns
+- permits reusing code components
+- one-direction data flow => stable code
+- open-source library
+
+--
 
 ## .center[Cons]
+
+- high pace of development(relearn every now and then)
+- poor documentation
+- small contributing community (diverse problems to be solved)
+- JSX complexity and consequent steep learning curve
 
 ---
 
@@ -75,13 +89,35 @@ layout: true
 
 ## .center[Styled Components]
 
+- utilises tagged template literals
+- removes mapping between components and styles
+- write actual CSS
+- adapting based on props
+- theming built-In
+
+.footnote[https://www.styled-components.com/]
+
 ---
 
 ## .center[Emotion]
 
+- performant and flexible CSS-in-JS library
+- style applications with string styles or object styles
+- predictable composition to avoid specificity issues in CSS
+- inspired by styled-components, glam, glamor and glamorous
+
+.footnote[https://www.emotion.sh/]
+
 ---
 
-## .center[Galmorous]
+## .center[Glamorous]
+
+- create glamorous components
+- render the styles to the components
+- built-in DOM component factories
+- uses glamor under the hood
+
+.footnote[https://glamorous.rocks/]
 
 ---
 
@@ -94,8 +130,14 @@ layout: true
 ## Code Example
 
 ```js
-...
+ReactDOM.render(
+    <h1>Hello, world!</h1>,
+    document.getElementById('root')
+);
 ```
+
+- top-level APIs available on ***ReactDOM***
+- ***render(element, container[, callback])*** controls content of container node
 
 ---
 
@@ -105,10 +147,40 @@ layout: true
 
 ---
 
+## Overview
+
+- JSX is a syntax extension to JavaScript
+- produces React "elements"
+- isn't required in React
+- but helpful as visual aid for UI inside JavaScript code
+- show more useful error and warning messages
+
+---
+
+highlightLines: true
+
 ## Code Example
 
 ```js
-...
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+  firstName: 'Harper',
+  lastName: 'Perez'
+};
+
+const element = (
+  <h1>
+*    Hello, {formatName(user)}!
+  </h1>
+);
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
 ```
 
 ---
@@ -119,10 +191,35 @@ layout: true
 
 ---
 
+## Overview
+
+- elements are smallest building blocks of React apps
+- plain object and cheap to create
+- React takes care of updating the DOM
+- React elements are immutable
+- React only updates what necessary(bring DOM to desired state)
+
+---
+
 ## Code Example
 
 ```js
-...
+const element = <h1>Hello, world</h1>;
+ReactDOM.render(element, document.getElementById('root'));
+```
+
+```js
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+*  ReactDOM.render(element, document.getElementById('root'));
+}
+
+setInterval(tick, 1000);
 ```
 
 ---
@@ -130,6 +227,10 @@ layout: true
 layout: true
 
 # .center[Components and Props]
+
+---
+
+## Overview
 
 ---
 
@@ -216,11 +317,15 @@ layout:true
 # .center[Lifting State Up]
 
 ---
+
+## Overview
+
 Often, several components need to reflect the same changing data.
 
 <img src="https://reactjs.org/react-devtools-state-ef94afc3447d75cdc245c77efb0d63be.gif" alt="Smiley face" height="80%" width="80%">
 
 The inputs stay in sync because their values are computed from the same Component state.
+
 ---
 
 ## Code Example
@@ -258,6 +363,8 @@ layout: true
 
 ---
 
+## Overview
+
 The simplest way to compose React components is to follow these rules:
 
 1. Divide components into stateful “containers” and stateless “presenters”.
@@ -288,6 +395,8 @@ layout: true
 # .center[HTTP-Requests]
 
 ---
+
+## Overview
 
 Advantages over the native Fetch API:
 + supports older browsers
@@ -331,6 +440,7 @@ countBreeds()
 layout: false
 
 # .center[Deployment]
+
 Application prototyping and deployment can be done in 4 simple steps:
 
 1. Prototype application with CodeSandbox.io (https://codesandbox.io)
@@ -367,7 +477,9 @@ Netlify can also auto deploy repositories from GitHub, GitLab and BitBucket.
 
 </script>
 <script>
-         var slideshow = remark.create();
+        var slideshow = remark.create({
+            highlightLines: true
+        });
 </script>
 
 </body>
