@@ -12,6 +12,7 @@
                      font-weight: normal; }
         .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
 </style>
+
 </head>
 <body>
 <textarea id="source">
@@ -35,7 +36,7 @@ class: middle, center
 9. Lists and Keys
 10. Forms
 11. Lifting State Up
-12. Composition vs Inheritance
+12. Containers & Presenters
 13. HTTP-Requests
 14. Deployment
 15. Links
@@ -215,25 +216,69 @@ layout:true
 # .center[Lifting State Up]
 
 ---
+Often, several components need to reflect the same changing data.
+
+<img src="https://reactjs.org/react-devtools-state-ef94afc3447d75cdc245c77efb0d63be.gif" alt="Smiley face" height="80%" width="80%">
+
+The inputs stay in sync because their values are computed from the same Component state.
+---
 
 ## Code Example
 
 ```js
-...
+class Calculator extends React.Component {
+  constructor(props) {
+    ...
+    this.state = {temperature: '', scale: 'c'};
+  }
+  handleCelsiusChange(temperature) {
+    this.setState({scale: 'c', temperature});
+  }
+  handleFahrenheitChange(temperature) {
+    this.setState({scale: 'f', temperature});
+  }
+  render() {
+    const scale = this.state.scale;
+    const temperature = this.state.temperature;
+    const celsius = scale === 'f' ? tryConvert(temperature, toCelsius)
+      : temperature;
+    const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit)
+      : temperature;
+    ...
+    );
+  }
+}
 ```
 
 ---
 
 layout: true
 
-# .center[Composition vs Inheritance]
+# .center[Containers & Presenters]
 
 ---
 
-## Code Example
+The simplest way to compose React components is to follow these rules:
+
+1. Divide components into stateful “containers” and stateless “presenters”.
+2. Pass functions (“callbacks”) that change the container state as props to children
+3. If two components need access to the same state, move the state into their common parent
+
+---
 
 ```js
-...
+class Container extends Component {
+  state = {
+    text: 'foo'
+  }
+  changeText = newText => this.setState({text: newText})
+  render() {
+    <div>
+      <Presenter1 text={this.state.text} changeText={this.changeText} />
+      <Presenter2 text={this.state.text} />
+    <div>
+  }
+}
 ```
 
 ---
@@ -241,6 +286,8 @@ layout: true
 layout: true
 
 # .center[HTTP-Requests]
+
+---
 
 Advantages over the native Fetch API:
 + supports older browsers
@@ -253,31 +300,28 @@ Advantages over the native Fetch API:
 
 ---
 
-## Code Example - axios
-
 ```js
+// HTTP Request with axios to count all dog breeds listed on dog.ceo
 const axios = require('axios')
-
 const getBreeds = () => {
-  try {
-    return axios.get('https://dog.ceo/api/breeds/list/all')
-  } catch (error) {
-    console.error(error)
-  }
+    try {
+        return axios.get('https://dog.ceo/api/breeds/list/all')
+    } catch (error) {
+        console.error(error)
+    }
 }
-
 const countBreeds = async () => {
-  const breeds = getBreeds()
-    .then(response => {
-      if (response.data.message) {
-        console.log(
-          `Got ${Object.entries(response.data.message).length} breeds`
-        )
-      }
-    })
-    .catch(error => {
-      console.log(error)
-    })
+    const breeds = getBreeds()
+        .then(response => {
+            if (response.data.message) {
+                console.log(
+                    `Got ${Object.entries(response.data.message).length} breeds`
+                )
+            }
+        })
+        .catch(error => {
+            console.log(error)
+        })
 }
 countBreeds()
 ```
@@ -320,6 +364,7 @@ Netlify can also auto deploy repositories from GitHub, GitLab and BitBucket.
 
 </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+
 </script>
 <script>
          var slideshow = remark.create();
