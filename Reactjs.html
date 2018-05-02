@@ -125,12 +125,10 @@ highlightLines: true
 function formatName(user) {
   return user.firstName + ' ' + user.lastName;
 }
-
 const user = {
   firstName: 'Harper',
   lastName: 'Perez'
 };
-
 const element = (
   <h1>
 *    Hello, {formatName(user)}!
@@ -163,6 +161,8 @@ layout: true
 
 ## Code Example
 
+- Clock
+
 ```js
 function tick() {
   const element = (
@@ -173,7 +173,6 @@ function tick() {
   );
 *  ReactDOM.render(element, document.getElementById('root'));
 }
-
 setInterval(tick, 1000);
 ```
 
@@ -189,12 +188,69 @@ layout: true
 
 ## Overview
 
+- components let you split the UI into independent, reusable pieces
+- each piece is isolated
+- components are like JavaScript functions
+- except arbitrary inputs("props") and return React elements
+- props are read-only
+
 ---
 
 ## Code Example
 
+- rendering a component
+
 ```js
-...
+* function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+* const element = <Welcome name="Sara" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
+
+---
+
+## Code Example
+
+- composing components
+
+```js
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+function App() {
+  return (
+    <div>
+*      <Welcome name="Sara" />
+*      <Welcome name="Cahal" />
+*      <Welcome name="Edite" />
+    </div>
+  );
+}
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
+```
+
+---
+
+## Code Example
+
+- extracting components
+
+```js
+function Avatar(props) {
+  return (
+*    <img className="Avatar"
+*      src={props.user.avatarUrl}
+*      alt={props.user.name}
+*    />
+  );
+}
 ```
 
 ---
@@ -205,10 +261,127 @@ layout: true
 
 ---
 
+## Overview
+
+- function -> class to use local state and lifecycle hooks
+- State is similar to props
+- but private and fully controlled by component
+- don't modify state directly
+- state updates may be asynchronous and are merged
+- state is only accessible to the component that owns and sets it
+- lifecycle to free up resources when components are destroyed
+- declare componentDidMount() and componentWillUnmount() (lifecycle hooks)
+- componentDidMount() runs after the component ouput has been rendered
+- componentWillUnmount() to tear down components
+
+---
+
 ## Code Example
 
+- Clock from Rendering Elements
+- encapsulate the clock's look
+
 ```js
-...
+function Clock(props) {
+  return (
+*    <div>
+*      <h1>Hello, world!</h1>
+*      <h2>It is {props.date.toLocaleTimeString()}.</h2>
+*    </div>
+  );
+}
+function tick() {
+  ReactDOM.render(
+*    <Clock date={new Date()} />,
+    document.getElementById('root')
+  );
+}
+setInterval(tick, 1000);
+```
+
+---
+
+## Code Example
+
+- ideally we want this
+
+```js
+ReactDOM.render(
+*  <Clock />,
+  document.getElementById('root')
+);
+```
+
+- add state to the clock
+- function -> class (ES6 class)
+
+```js
+class Clock extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.props.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+```
+
+---
+
+## Code Example
+
+- move date from props -> state
+- add constructor
+- remove date prop from Clock-tag
+
+```js
+class Clock extends React.Component {
+*  constructor(props) {
+*    super(props);
+*    this.state = {date: new Date()};
+*  }
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+*        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+ReactDOM.render(
+*  <Clock />,
+  document.getElementById('root')
+);
+```
+
+---
+
+## Code Example
+
+-add componentDidMount(), componentWillUnmount() and tick()
+
+```js
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+  
+  
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
 ```
 
 ---
@@ -219,10 +392,31 @@ layout:true
 
 ---
 
-## Code Example
+## Overview
+
+- similar to handling events on DOM elements
+- events are named using camelCase
+- JSX pass a function as event handler
+- Code Example
 
 ```js
-...
+<a href="#" onclick="console.log('The link was clicked.'); return false">
+  Click me
+</a> // HTML
+```
+
+```js
+function ActionLink() {
+*  function handleClick(e) {
+*    e.preventDefault();
+*    console.log('The link was clicked.');
+*  }
+  return (
+*    <a href="#" onClick={handleClick}>
+      Click me
+    </a>
+  );
+} // React
 ```
 
 ---
