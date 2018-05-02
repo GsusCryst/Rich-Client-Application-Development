@@ -32,14 +32,13 @@ class: middle, center
 6. State and Lifecycle
 7. Handling Events
 8. Conditional Rendering
-9. Lists and Keys
-10. Forms
-11. Lifting State Up
-12. Containers & Presenters
-13. HTTP-Requests
-14. Deployment
-15. CSS-Design Libraries
-16. Links
+9. Forms
+10. Lifting State Up
+11. Containers & Presenters
+12. HTTP-Requests
+13. Deployment
+14. CSS-Design Libraries
+15. Links
 
 ---
 
@@ -426,25 +425,21 @@ layout:true
 # .center[Conditional Rendering]
 
 ---
+Conditional rendering in React works the same way conditions work in JavaScript. 
+
+Use JavaScript operators like if or the conditional operator to create elements representing the current state, and let React update the UI to match them.
 
 ## Code Example
 
 ```js
-...
-```
-
----
-
-layout: true
-
-# .center[Lists and Keys]
-
----
-
-## Code Example
-
-```js
-...
+render() {
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    <div>
+*     The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+    </div>
+  );
+}
 ```
 
 ---
@@ -465,7 +460,42 @@ In React, mutable state is typically kept in the state property of components, a
 ## Code Example
 
 ```js
-...
+class Reservation extends React.Component {
+  constructor(props) {
+    super(props);
+*  this.state = {
+      isGoing: true,
+      numberOfGuests: 2
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+*   this.setState({
+*       [name]: value
+*   });
+  }
+```
+
+---
+## Code Example
+```js
+  render() {
+    return (
+      <form>
+        <label>
+          Is going:
+          <input
+            name="isGoing"
+            type="checkbox"
+*           checked={this.state.isGoing}
+            onChange={this.handleInputChange} />
+        </label>
+        ...
+      </form>
+    );}}
 ```
 
 ---
@@ -492,17 +522,17 @@ The inputs stay in sync because their values are computed from the same Componen
 class Calculator extends React.Component {
   constructor(props) {
     ...
-    this.state = {temperature: '', scale: 'c'};
+*   this.state = {temperature: '', scale: 'c'};
   }
   handleCelsiusChange(temperature) {
-    this.setState({scale: 'c', temperature});
+*   this.setState({scale: 'c', temperature});
   }
   handleFahrenheitChange(temperature) {
-    this.setState({scale: 'f', temperature});
+*   this.setState({scale: 'f', temperature});
   }
   render() {
-    const scale = this.state.scale;
-    const temperature = this.state.temperature;
+*   const scale = this.state.scale;
+*   const temperature = this.state.temperature;
     const celsius = scale === 'f' ? tryConvert(temperature, toCelsius)
       : temperature;
     const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit)
@@ -536,11 +566,11 @@ class Container extends Component {
   state = {
     text: 'foo'
   }
-  changeText = newText => this.setState({text: newText})
+* changeText = newText => this.setState({text: newText})
   render() {
     <div>
-      <Presenter1 text={this.state.text} changeText={this.changeText} />
-      <Presenter2 text={this.state.text} />
+*     <Presenter1 text={this.state.text} changeText={this.changeText} />
+*     <Presenter2 text={this.state.text} />
     <div>
   }
 }
@@ -569,17 +599,17 @@ Advantages over the native Fetch API:
 
 ```js
 // HTTP Request with axios to count all dog breeds listed on dog.ceo
-const axios = require('axios')
+*const axios = require('axios')
 const getBreeds = () => {
     try {
-        return axios.get('https://dog.ceo/api/breeds/list/all')
+*       return axios.get('https://dog.ceo/api/breeds/list/all')
     } catch (error) {
         console.error(error)
     }
 }
 const countBreeds = async () => {
     const breeds = getBreeds()
-        .then(response => {
+*       .then(response => {
             if (response.data.message) {
                 console.log(
                     `Got ${Object.entries(response.data.message).length} breeds`
