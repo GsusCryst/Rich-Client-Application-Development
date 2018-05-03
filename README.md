@@ -35,6 +35,10 @@ https://gsuscryst.github.io/Rich-Client-Application-Development/Reactjs.html
 
 AlgoTrade constantly retrieves the trade data of a crypto exchange, computes the candlesticks in real time, derives several indicators and makes hold/buy/sell decisions based on all this data.
 
+The trade decisions are displayed on a candlestick chart with a real market data graph. An overview of the profits/losses over a chooseable timeframe will be rendered below the chart.
+
+Development:Backend nodejs, frontend Reactjs. 
+
 ## References
 
 1. MFI: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:money_flow_index_mfi
@@ -45,7 +49,7 @@ AlgoTrade constantly retrieves the trade data of a crypto exchange, computes the
 
 4. EMA: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_averages
 
-5. Candlestick: https://en.wikipedia.org/wiki/Candlestick_chart
+5. Candlestick Chart: https://en.wikipedia.org/wiki/Candlestick_chart
 
 6. Exchange Position (hold/buy/sell)
 + https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
