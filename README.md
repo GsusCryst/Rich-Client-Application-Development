@@ -1,14 +1,20 @@
 Rich-Client-Application-Development
 
 Bis 10.05
+
 	NPM + webpack Präsentation
+
 	5-10 Sätze Anwendungsbeschreibung bzw. Prosa der Projektidee 
 
 Bis 17.05
+
 	SWQ Tooling Präsentation
+
 	Erste Version des Pflichtenheft
+
 31.05 
-Pflichtenheft abgeschlossen
+
+	Pflichtenheft abgeschlossen
 
 
 Github Pages:
