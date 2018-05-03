@@ -71,11 +71,11 @@ Using a separate event queue solves challenge 1 and passing the event only on ne
 
 Secondly, we take the new trading data + the old and if they are continuous and complete enough (this solves challenges 2 and 3), we calculate the candlesticks, then add them to the queue
 
-Thirdly, we calculate all indicators in parallel.
+Thirdly, we calculate all indicators in parallel for challenge 5.
 
 Fourthly, we make a hold/buy/sell decision based on the indicators.
 
-Finally the market data, indicators and executed order details are stored into the database.
+Finally the market data, indicators and executed order details are stored into the database, this solves challenge 6.
 
 ## Implementation notes
 ToDo
