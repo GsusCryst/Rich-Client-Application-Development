@@ -37,25 +37,20 @@ AlgoTrade constantly retrieves the trade data of a crypto exchange, computes the
 
 ## References
 
-1. MFI
-+ http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:money_flow_index_mfi
+1. MFI: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:money_flow_index_mfi
 
-2. RSI
-+ http://stockcharts.com/school/doku.php?st=rsi&id=chart_school:technical_indicators:relative_strength_index_rsi
+2. RSI: http://stockcharts.com/school/doku.php?st=rsi&id=chart_school:technical_indicators:relative_strength_index_rsi
 
-3. CCI
-+ http://www.stockcharts.com/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci
+3. CCI: http://www.stockcharts.com/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci
 
-4. EMA
-+ http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_averages
+4. EMA: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_averages
 
-5. Candlestick
-+ https://en.wikipedia.org/wiki/Candlestick_chart
+5. Candlestick: https://en.wikipedia.org/wiki/Candlestick_chart
 
 6. Exchange Position (hold/buy/sell)
-+ https://www.investopedia.com/terms/p/position.asp
-+ https://www.investopedia.com/terms/h/hold.asp
-+ https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
+6.1 https://www.investopedia.com/terms/p/position.asp
+6.2 https://www.investopedia.com/terms/h/hold.asp
+6.3 https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
 
 ## Configuration
 `timePeriod`: the time period over which a single candlestick is calculated.
