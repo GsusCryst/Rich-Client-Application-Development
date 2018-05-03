@@ -48,9 +48,9 @@ AlgoTrade constantly retrieves the trade data of a crypto exchange, computes the
 5. Candlestick: https://en.wikipedia.org/wiki/Candlestick_chart
 
 6. Exchange Position (hold/buy/sell)
-++ https://www.investopedia.com/terms/p/position.asp
-++ https://www.investopedia.com/terms/h/hold.asp
-++ https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
++ https://www.investopedia.com/terms/p/position.asp
++ https://www.investopedia.com/terms/h/hold.asp
++ https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
 
 ## Configuration
 ToDo
