@@ -31,7 +31,7 @@ https://gsuscryst.github.io/Rich-Client-Application-Development/Reactjs.html
 
 4. SWQ Tooling
 
-# Projektbeschreibung - AlgoTrade
+# Projectdescription - AlgoTrade
 
 AlgoTrade constantly retrieves the trade data of a crypto exchange, computes the candlesticks in real time, derives several indicators and makes hold/buy/sell decisions based on all this data.
 
@@ -48,9 +48,9 @@ AlgoTrade constantly retrieves the trade data of a crypto exchange, computes the
 5. Candlestick: https://en.wikipedia.org/wiki/Candlestick_chart
 
 6. Exchange Position (hold/buy/sell)
-+ https://www.investopedia.com/terms/p/position.asp
-+ https://www.investopedia.com/terms/h/hold.asp
 + https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
++ https://www.investopedia.com/terms/h/hold.asp
++ https://www.investopedia.com/terms/p/position.asp
 
 ## Configuration
 ToDo
@@ -68,9 +68,13 @@ ToDo
 We use a central event queue and a pub/sub-like implementation.
 First, we always poll the exchange api as often as is allowed, check if there are any new trades and if so, add an event to the queue with the new data. 
 Using a separate event queue solves challenge 1 and passing the event only on new data solves out-of-order responses and therefore challenge 4.
+
 Secondly, we take the new trading data + the old and if they are continuous and complete enough (this solves challenges 2 and 3), we calculate the candlesticks, then add them to the queue
+
 Thirdly, we calculate all indicators in parallel.
+
 Fourthly, we make a hold/buy/sell decision based on the indicators.
+
 Finally the market data, indicators and executed order details are stored into the database.
 
 ## Implementation notes
