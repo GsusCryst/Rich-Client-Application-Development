@@ -48,13 +48,12 @@ AlgoTrade constantly retrieves the trade data of a crypto exchange, computes the
 5. Candlestick: https://en.wikipedia.org/wiki/Candlestick_chart
 
 6. Exchange Position (hold/buy/sell)
-6.1 https://www.investopedia.com/terms/p/position.asp
-6.2 https://www.investopedia.com/terms/h/hold.asp
-6.3 https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
+++ https://www.investopedia.com/terms/p/position.asp
+++ https://www.investopedia.com/terms/h/hold.asp
+++ https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
 
 ## Configuration
-`timePeriod`: the time period over which a single candlestick is calculated.
-`indicatorUpdateInterval`: the interval of how often the exchange api is queried for its trade data, the candlesticks & indicators are calculated and a hold/buy/sell decision is made.
+ToDo
 
 ## Design
 ### Challenges
