@@ -37,7 +37,7 @@ AlgoTrade constantly retrieves the trade data of a crypto exchange, computes the
 
 The trade decisions are displayed on a candlestick chart with a real market data graph. An overview of the profits/losses over a chooseable timeframe will be rendered below the chart.
 
-Development:Backend nodejs, frontend Reactjs. 
+Development: Backend nodejs, frontend Reactjs. 
 
 ## References
 
