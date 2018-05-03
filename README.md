@@ -61,12 +61,14 @@ ToDo
 
 ## Design
 ### Challenges
+0. Switch to mongodb? Develop as progressive web application with boiler plate "create react app"
 1. Update indicators and make buy/sell decisions in real time (goal: every 10ms)
 2. Handle algotrade downtimes, failsafe for open position handling 
 3. Handle exchange API downtimes
 4. Handle high latency networks
 5. Implement indicators (MFI, RSI, CCI & EMA) with 1m/5m/15m/30m/1h/4h/1d/1w timeframes resolution
 6. Save market data, indicators, trade decisions and executed order details in postgreSQL database
+7. Push notification via WhatsApp + X
 
 ### Solution
 We use a central event queue and a pub/sub-like implementation.
