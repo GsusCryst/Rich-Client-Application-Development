@@ -28,11 +28,6 @@ layout: true
 
 ---
 
-1. npm
-2. webpack4
-
----
-
 ## 1. npm
 
 1. What is npm?
@@ -160,7 +155,7 @@ $ npm config get prefix
 
 ```shell
 $ cd ~ && mkdir .node_modules_global //Windows 'cd .'
-$ npm config set prefix=$HOME/.node_modules_global 
+$ npm config set prefix=$HOME/.node_modules_global
 //Windows 'prefix=C:\...\.node_modules_global'
 ```
 
@@ -171,7 +166,7 @@ $ npm config set prefix=$HOME/.node_modules_global
 $ npm config get prefix
 /home/sitepoint/.node_modules_global //Windows 'C:\...\.node_modules_global'
 $ cat .npmrc //Windows 'type .npmrc'
-prefix=/home/sitepoint/.node_modules_global 
+prefix=/home/sitepoint/.node_modules_global
 //Windows 'prefix=C:\...\.node_modules_global'
 ```
 
@@ -204,7 +199,7 @@ setx path "C:\...\.node_modules_global\bin;%PATH%"
 
 ```shell
 $ which npm //Windows 'where npm'
-/home/sitepoint/.node_modules_global/bin/npm 
+/home/sitepoint/.node_modules_global/bin/npm
 //Windows 'C:\...\.node_modules_global\bin\npm'
 $ npm --version
 6.0.0
