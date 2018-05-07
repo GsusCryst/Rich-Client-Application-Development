@@ -28,6 +28,11 @@ layout: true
 
 ---
 
+1. npm
+2. webpack4
+
+---
+
 ## 1. npm
 
 1. What is npm?
@@ -35,7 +40,7 @@ layout: true
 3. Changing the Location of Global Packages
 4. Installing Packages in Global Mode
 5. Listing Global Packages
-6. Installing Packagesin Local Mode
+6. Installing Packages in Local Mode
 7. Managing Dependencies with package.json
 8. Uninstalling Local Packages
 9. Installing a Specific Version of a Package
@@ -46,6 +51,164 @@ layout: true
 14. Aliases
 15. Version Managers
 16. Links
+
+---
+
+layout: true
+
+# What is npm?
+
+---
+
+## Node Package Manager
+
+- Node.js is used to create tools to aid local task automation
+- to make use of these Node-based tools(such as Grunt, Gulp, Webpack) the Node package manager(npm) was created
+- it installs the packages(Tools) and provides a useful interface
+- npm can install packages in local or global mode
+- in local mode it installs in node_modules folder in your parent working directory
+- this location is owned by the current user
+- in global mode it installs in {prefix}/lib/node_modules/ which is owned by root
+- on macOs/Linux you need sudo to install packages globally
+- this could cause permission errors: [How to change this](#changing)
+
+---
+
+layout: true
+
+# Installing Node.js
+
+---
+
+- <a href="https://nodejs.org/en/download/">download</a> Node.js for Windows/macOS/Linux
+- for Linux, Node can be installed via package manager
+- check for the path and version of Node.js:
+
+```shell
+$ which node //Windows 'where node'
+/usr/bin/node //Windows 'C:\...\node.exe'
+$ node --version
+v8.11.1
+```
+
+- to verify the installation use Node's REPL(Read-Eval-Print-Loop):
+
+```shell
+$ node
+> console.log('Node is running');
+Node is running
+> .help
+.break Sometimes you get stuck, this gets you out
+.clear Alias for .break
+.exit  Exit the repl
+.help  Show repl options
+.load  Load JS from a file into the REPL session
+.save  Save all evaluated commands in this REPL session to a file
+> .exit
+```
+
+---
+
+- check for the path and version of npm:
+
+```shell
+$ which npm // Windows 'where npm'
+/usr/bin/npm // Windows 'C:\npm' and 'C:\npm.cmd'
+$ npm --version
+5.6.0
+```
+
+---
+
+layout: true
+
+# Changing the Location of Global Packages
+
+---
+
+name: changing
+
+- let's see what output **npm config** gives us
+
+```shell
+$ npm config list
+; cli configs
+user-agent = "npm/3.10.10 node/v6.10.3 linux x64"
+
+; userconfig /home/sitepoint/.npmrc
+prefix = "/home/sitepoint/.node_modules_global"
+
+; node bin location = /usr/bin/nodejs
+; cwd = /home/sitepoint
+; HOME = /home/sitepoint
+; "npm config ls -l" to show all defaults.
+```
+
+- this gives us information about the install
+- get the current global location
+
+```shell
+$ npm config get prefix
+/usr //Windows 'C:\...\AppData\Roaming\npm'
+```
+
+- this is the prefix to change, to install global packages in home directory
+
+---
+
+- to do that create a new directory in your home folder
+
+```shell
+$ cd ~ && mkdir .node_modules_global //Windows 'cd .'
+$ npm config set prefix=$HOME/.node_modules_global 
+//Windows 'prefix=C:\...\.node_modules_global'
+```
+
+- the location to which global Node packages are installed has been altered
+- this also creates a **.npmrc** file in the home directory
+
+```shell
+$ npm config get prefix
+/home/sitepoint/.node_modules_global //Windows 'C:\...\.node_modules_global'
+$ cat .npmrc //Windows 'type .npmrc'
+prefix=/home/sitepoint/.node_modules_global 
+//Windows 'prefix=C:\...\.node_modules_global'
+```
+
+- install npm again, but in the new user-owned location
+
+```shell
+$ npm install npm --global
+└─┬ npm@6.0.0
+  ├── abbrev@1.1.0
+....
+└── write-file-atomic@2.1.0
+```
+
+---
+
+- finally add **.node_modules_global/bin** to the **$PATH** environment variable
+- for Linux/macOS add the following to **.profile**, **.bash** or **.bashrc** file and restart the terminal
+
+```shell
+export PATH="$HOME/.node_modules_global/bin:$PATH"
+```
+
+- for Windows write the following in the command line
+
+```shell
+setx path "C:\...\.node_modules_global\bin;%PATH%"
+```
+
+- now **.node_modules_global/bin** will be found first and the correct version of npm will be used
+
+```shell
+$ which npm //Windows 'where npm'
+/home/sitepoint/.node_modules_global/bin/npm 
+//Windows 'C:\...\.node_modules_global\bin\npm'
+$ npm --version
+6.0.0
+```
 
 ---
 
