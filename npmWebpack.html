@@ -23,7 +23,7 @@ class:center, middle
 ---
 
 layout: true
-	
+
 # Agenda
 
 ---
@@ -52,15 +52,13 @@ layout: true
 ## 2. webpack4
 
 1. What is webpack4?
-2. Setup
+2. setup using boilerplate
 3. Modules
 4. Loaders
-5. Dependencies
-6. Code Splitting
-7. Plugins
-8. Development
-9. HTTP/2
-10. Links
+5. Code Splitting
+6. Plugins
+7. Development
+8. Links
 
 ---
 
@@ -74,21 +72,197 @@ layout: true
 
 ---
 
-
 layout: false
 
 # What is webpack4?
 
-Webpack has become one of the most important tools for modern web development. 
+Webpack has become one of the most important tools for modern web development.
 
-It’s primarily a module bundler for your JavaScript, but it can be taught to transform all of your front-end assets like HTML, CSS, even images. 
+It’s primarily a module bundler for your JavaScript, but it can be taught to transform all of your front-end assets like HTML, CSS, even images.
 
-It can give you more control over the number of HTTP requests your app is making and allows you to use other flavors of those assets (Pug, Sass, and ES8, for example). 
+It can give you more control over the number of HTTP requests your app is making and allows you to use other flavors of those assets (Pug, Sass, and ES8, for example).
 
 Webpack also allows you to easily consume packages from npm.
 
 ---
 
+layout: false
+
+# setup using boilerplate
+
+The fastest way to start a react.js application is to use a boilerplate:
+
+1. Make sure you have the latest Stable or LTS version of Node.js installed.
+2. Clone this repo using: "git clone --depth=1 https://github.com/react-boilerplate/react-boilerplate.git".
+3. Move to the appropriate directory: "cd react-boilerplate".
+4. Run "npm run setup" in order to install dependencies and clean the git repo.
+5. Run "npm start" to see the example app at "http://localhost:3000".
+6. Run "npm run clean" to delete the example app.
+
+---
+
+layout: false
+
+# Modules
+
+Modules can split up your large programs into many small, self-contained programs using import and export statements.
+
+```js
+const people = [
+  {
+    manager: "Jen",
+    name: "Bob"
+  },
+...
+]
+export default people
+```
+
+```js
+import people from "./people"
+```
+---
+# Loaders
+Loaders let you run preprocessors on files as they’re imported. This allows you to bundle static resources beyond JavaScript.
+
+
+Babel Example:
+```npm
+npm install --save-dev "babel-loader@^8.0.0-beta" @babel/core @babel/preset-env
+```
+
+webpack.config.js
+```js
+...
+   module: {
+     rules: [
+       {
+         test: /\.js$/,
+         exclude: /(node_modules|bower_components)/,
+         use: {
+           loader: 'babel-loader',
+         }
+       }
+     ]
+...
+```
+---
+# Loaders
+This config prevents Babel from transpiling import and export statements into ES5. We’re now free to use modern language features, and they’ll be compiled down to ES5 that runs in all browsers.
+
+.babelrc
+
+```js
+{
+  "presets": [
+    ["@babel/env", {
+      "modules": false
+    }]
+  ],
+  "plugins": ["syntax-dynamic-import"]
+}
+```
+---
+# Code Splitting
+
+Code Splitting allows you to split your code into various bundles which can then be loaded on demand or in parallel. It can be used to achieve smaller bundles and control resource load prioritization which, if used correctly, can have a major impact on load time.
+
+webpack.config.js
+```js
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+module.exports = {
+  entry: {
+    index: './src/index.js'
+  },
+  plugins: [
+    new HTMLWebpackPlugin({
+      title: 'Code Splitting'
+    })
+  ],
+  output: {
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
+```
+---
+# Code Splitting
+As import() returns a promise, it can be used with async functions.
+
+This requires using Babel with Syntax Dynamic Import Plugin:
+
+index.js
+```js
+async function getComponent() {
+  var element = document.createElement('div');
+  const _ = await import(/* webpackChunkName: "lodash" */ 'lodash');
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  return element;
+}
+getComponent().then(component => {
+  document.body.appendChild(component);
+});
+```
+---
+# Plugins
+Plugins are here to help us split our code in clever ways and optimize things for production.
+
+Standard Modes:
++ development
++ production (default)
+
+config
+```js
+module.exports = {
+  mode: 'production'
+};
+```
+
+```cli
+webpack --mode=production
+```
+---
+# Development
+The webpack-dev-server provides you with a simple web server and gives you live reloading, so you don’t need to manually refresh the page to see changes.
+
+The HotModuleReplacement plugin goes one step further than Live Reloading and swaps out modules at runtime without the refresh. When configured correctly, this saves a huge amount of time during development of single page apps. Where you have a lot of state in the page, you can make incremental changes to components, and only the changed modules are replaced and updated.
+
+---
+# Development
+## HotModuleReplacement plugin
+webpack.dev.js
+```js
+* const webpack = require('webpack')
+  const merge = require('webpack-merge')
+  const common = require('./webpack.common.js')
+
+  module.exports = merge(common, {
+    mode: 'development',
+*   devServer: {
+*     hot: true
+*   },
+*   plugins: [
+*     new webpack.HotModuleReplacementPlugin()
+*   ],
+    ...
+```
+app.js
+```js
+if (module.hot) {
+  module.hot.accept()
+}
+```
+---
+
+# Links
++ https://www.reactboilerplate.com/
++ https://babeljs.io/docs/plugins/syntax-dynamic-import/#installation
++ https://webpack.js.org/guides/code-splitting/
++ https://www.sitepoint.com/beginners-guide-webpack-module-bundling/
++ https://webpack.js.org/concepts/mode/#usage
++ https://medium.com/webpack/webpack-http-2-7083ec3f3ce6
 
 </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
