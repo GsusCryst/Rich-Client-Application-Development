@@ -28,6 +28,7 @@ https://gsuscryst.github.io/Rich-Client-Application-Development/ES6.html
 https://gsuscryst.github.io/Rich-Client-Application-Development/Reactjs.html
 
 3. NPM + webpack
+https://gsuscryst.github.io/Rich-Client-Application-Development/npmWebpack.html
 
 4. SWQ Tooling
 
