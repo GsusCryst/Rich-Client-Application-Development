@@ -22,11 +22,7 @@ class:center, middle
 
 ---
 
-layout: true
-
 # Agenda
-
----
 
 ## 1. npm
 
@@ -49,11 +45,7 @@ layout: true
 
 ---
 
-layout: true
-
 # What is npm?
-
----
 
 ## Node Package Manager
 
@@ -75,7 +67,7 @@ layout: true
 
 ---
 
-- <a href="https://nodejs.org/en/download/">download</a> Node.js for Windows/macOS/Linux
+- <a href="https://nodejs.org/en/download/" target="_blank">download</a> Node.js for Windows/macOS/Linux
 - for Linux, Node can be installed via package manager
 
 ```shell
@@ -213,15 +205,13 @@ $ npm --version
 
 ---
 
-layout: true
+layout: false
 
 # Installing Packages in Global Mode
 
----
-
 - only the npm package is installed globally
-- install <a href='https://www.npmjs.com/package/uglify-js'>UglifyJS</a>(a JavaScript minification tool)
 - use the --global flag or the abbreviated -g
+- install a package globally, example: <a href="https://www.npmjs.com/package/uglify-js" target="_blank">UglifyJS</a>
 
 ```shell
 $ npm install uglify-js --global
@@ -235,11 +225,7 @@ added 3 packages in 1s
 
 ---
 
-layout: true
-
 # Listing Global Packages
-
----
 
 - list the global packages which were installed
 
@@ -318,11 +304,11 @@ $ npm init --y
 - the fields are self-explanatory except for main and scripts
 - the main field is the primary entry point to the program
 - the scripts field lets specify script commands that run in the lifecycle of your package
-- to find out more visit <a href='https://docs.npmjs.com/files/package.json'>package.json docmentation on npm</a> and <a href='https://www.sitepoint.com/guide-to-npm-as-a-build-tool/'>using npm as a build tool</a>
+- to find out more visit <a href="https://docs.npmjs.com/files/package.json" target="_blank">package.json documentation on npm</a> and <a href="https://www.sitepoint.com/guide-to-npm-as-a-build-tool/" target="_blank">using npm as a build tool</a>
 
 ---
 
-- try to install <a href='http://underscorejs.org/'>Underscore</a>
+- install a package, example: <a href="http://underscorejs.org/" target="_blank">Underscore</a>
 
 ```shell
 $ npm install underscore
@@ -354,10 +340,125 @@ layout: true
 
 ---
 
+```json
+...
+"dependencies": {
+*  "underscore": "^1.9.0"
+}
+```
 
+- the caret at the front of the version number indicates that npm will pull the highest version of the package where only the major version matches
+- unless a **package-lock.json** file is present
+- the method of versioning dependencies (major.minor.patch) is known as <a href="https://www.sitepoint.com/semantic-versioning-why-you-should-using/" target="_blank">semantic versioning</a>
+- the new package was saved as a property of the **dependencies** field
+- this is the default of npm and is used for packages that are required to run an application
 
 ---
+
+- it is possible to save a package as **devDependency** by specifying a --save-dev flag
+- **devDependencies** are packages used for development, e.g. running tests or transpiling code
+- add **private: true** to **package.json** to prevent accidental publication of private repositories and to suppress warnings when running **npm install**
+- the main reason to use **package.json** to specify a project's dependencies is protability
+- for example: when someone else's code is cloned, only run **npm i** in the project root
+- npm will resolve and fetch all the packages to run the app
+
+---
+
 layout: false
+
+# Uninstalling Local Packages
+
+- npm is a package manager so it must be able to remove a package
+- example: Underscore is causing a compatibility problem
+
+```shell
+$ npm uninstall underscore
+removed 1 package in 0.107s
+$ npm list
+project@1.0.0 /home/user/project
+└── (empty)
+```
+
+---
+
+# Installing a Specific Version of a Package
+
+- to install a specific version, use the @ sign
+- example: Underscore
+
+```shell
+$ npm install underscore@1.8.2
++ underscore@1.8.2
+added 1 package in 1.574s
+
+$ npm list
+project@1.0.0 /home/user/project
+└── underscore@1.8.2
+```
+
+---
+
+layout: true
+
+# Updating a Package
+
+---
+
+layout: true
+
+# Searching for Packages
+
+---
+
+layout: true
+
+# Re-installing Project Dependencies
+
+---
+
+layout: true
+
+# Managing the Cache
+
+---
+
+layout: true
+
+# Aliases
+
+---
+
+layout: false
+
+# Version Managers
+
+- there are a couple of tools to allow the managing of multiple versions of Node.js on one machine
+- example: n, nvm
+- to learn more visit <a href="https://www.sitepoint.com/quick-tip-multiple-versions-node-nvm/" target="_blank">Installing Multiple Versions of Node.js using nvm</a>
+
+---
+
+# Links
+
+- Node.js: https://nodejs.org/
+
+- npm Tutorial: https://www.sitepoint.com/beginners-guide-node-package-manager/
+
+- npm as build tool: https://www.sitepoint.com/guide-to-npm-as-a-build-tool/
+
+- package.json doc: https://docs.npmjs.com/files/package.json
+
+- n: https://github.com/tj/n
+
+- nvm: https://www.sitepoint.com/quick-tip-multiple-versions-node-nvm/
+
+- semantic versioning: https://www.sitepoint.com/semantic-versioning-why-you-should-using/
+
+- UglifyJS: https://www.npmjs.com/package/uglify-js
+
+- Underscore: http://underscorejs.org/
+
+---
 
 # Agenda
 
@@ -374,8 +475,6 @@ layout: false
 
 ---
 
-layout: false
-
 # What is webpack4?
 
 Webpack has become one of the most important tools for modern web development.
@@ -387,8 +486,6 @@ It can give you more control over the number of HTTP requests your app is making
 Webpack also allows you to easily consume packages from npm.
 
 ---
-
-layout: false
 
 # setup using boilerplate
 
@@ -402,8 +499,6 @@ The fastest way to start a react.js application is to use a boilerplate:
 6. Run "npm run clean" to delete the example app.
 
 ---
-
-layout: false
 
 # Modules
 
@@ -424,6 +519,7 @@ export default people
 import people from "./people"
 ```
 ---
+
 # Loaders
 Loaders let you run preprocessors on files as they’re imported. This allows you to bundle static resources beyond JavaScript.
 
@@ -570,7 +666,9 @@ if (module.hot) {
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
 </script>
 <script>
-         var slideshow = remark.create();
+         var slideshow = remark.create({
+            highlightLines: true
+        });
 </script>
 
 </body>
