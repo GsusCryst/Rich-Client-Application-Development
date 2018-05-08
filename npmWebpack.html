@@ -77,14 +77,21 @@ layout: true
 
 - <a href="https://nodejs.org/en/download/">download</a> Node.js for Windows/macOS/Linux
 - for Linux, Node can be installed via package manager
+
+```shell
+sudo apt-get install nodejs npm
+```
+
 - check for the path and version of Node.js:
 
 ```shell
 $ which node //Windows 'where node'
 /usr/bin/node //Windows 'C:\...\node.exe'
 $ node --version
-v8.11.1
+v6.11.4 //Windows v8.11.1
 ```
+
+---
 
 - to verify the installation use Node's REPL(Read-Eval-Print-Loop):
 
@@ -102,15 +109,13 @@ Node is running
 > .exit
 ```
 
----
-
 - check for the path and version of npm:
 
 ```shell
 $ which npm // Windows 'where npm'
-/usr/bin/npm // Windows 'C:\npm' and 'C:\npm.cmd'
+/usr/bin/npm // Windows 'C:\...\npm' and 'C:\...\npm.cmd'
 $ npm --version
-5.6.0
+3.5.2 //Windows 5.6.0
 ```
 
 ---
@@ -130,12 +135,12 @@ $ npm config list
 ; cli configs
 user-agent = "npm/3.10.10 node/v6.10.3 linux x64"
 
-; userconfig /home/sitepoint/.npmrc
-prefix = "/home/sitepoint/.node_modules_global"
+; userconfig /home/user/.npmrc
+prefix = "/home/user/.node_modules_global"
 
 ; node bin location = /usr/bin/nodejs
-; cwd = /home/sitepoint
-; HOME = /home/sitepoint
+; cwd = /home/user
+; HOME = /home/user
 ; "npm config ls -l" to show all defaults.
 ```
 
@@ -154,9 +159,9 @@ $ npm config get prefix
 - to do that create a new directory in your home folder
 
 ```shell
-$ cd ~ && mkdir .node_modules_global //Windows 'cd .'
+$ cd ~ && mkdir .node_modules_global //Windows only mkdir
 $ npm config set prefix=$HOME/.node_modules_global
-//Windows 'prefix=C:\...\.node_modules_global'
+//Windows 'prefix=%USERPROFILE%\.node_modules_global'
 ```
 
 - the location to which global Node packages are installed has been altered
@@ -166,7 +171,7 @@ $ npm config set prefix=$HOME/.node_modules_global
 $ npm config get prefix
 /home/sitepoint/.node_modules_global //Windows 'C:\...\.node_modules_global'
 $ cat .npmrc //Windows 'type .npmrc'
-prefix=/home/sitepoint/.node_modules_global
+prefix=/home/user/.node_modules_global
 //Windows 'prefix=C:\...\.node_modules_global'
 ```
 
@@ -175,9 +180,9 @@ prefix=/home/sitepoint/.node_modules_global
 ```shell
 $ npm install npm --global
 └─┬ npm@6.0.0
-  ├── abbrev@1.1.0
+  ├── abbrev@1.1.1
 ....
-└── write-file-atomic@2.1.0
+└── write-file-atomic@2.3.0
 ```
 
 ---
@@ -192,20 +197,169 @@ export PATH="$HOME/.node_modules_global/bin:$PATH"
 - for Windows write the following in the command line
 
 ```shell
-setx path "C:\...\.node_modules_global\bin;%PATH%"
+setx path "%USERPROFILE%\.node_modules_global;%PATH%"
 ```
 
 - now **.node_modules_global/bin** will be found first and the correct version of npm will be used
 
 ```shell
 $ which npm //Windows 'where npm'
-/home/sitepoint/.node_modules_global/bin/npm
-//Windows 'C:\...\.node_modules_global\bin\npm'
+/home/user/.node_modules_global/bin/npm
+//Windows 'C:\...\.node_modules_global\npm' 
+//and 'C:\...\.node_modules_global\npm.cmd'
 $ npm --version
 6.0.0
 ```
 
 ---
+
+layout: true
+
+# Installing Packages in Global Mode
+
+---
+
+- only the npm package is installed globally
+- install <a href='https://www.npmjs.com/package/uglify-js'>UglifyJS</a>(a JavaScript minification tool)
+- use the --global flag or the abbreviated -g
+
+```shell
+$ npm install uglify-js --global
+/home/user/.node_modules_global/bin/uglifyjs -> 
+/home/user/.node_modules_global/lib/node_modules/uglify-js/bin/uglifyjs
++ uglify-js@3.3.24
+added 3 packages in 1s
+```
+
+- additional packages are installed, these are dependencies
+
+---
+
+layout: true
+
+# Listing Global Packages
+
+---
+
+- list the global packages which were installed
+
+```shell
+$ npm list --global
+home/user/.node_modules_global/lib
+├─┬ npm@6.0.0
+│ ├── abbrev@1.1.1
+│ ├── ansi-regex@3.0.0
+│ ├── ansicolors@0.3.2
+│ ├── ansistyles@0.1.3
+....................
+└─┬ uglify-js@3.3.24
+  ├── commander@2.15.1
+  └── source-map@0.6.1
+```
+
+- the output is verbose, --depth=0 changes this
+
+```shell
+$ npm list -g --depth=0
+/home/user/.node_modules_global/lib
+├── npm@6.0.0
+└── uglify-js@3.3.24
+```
+
+- any package installed globally will become available from the command line
+
+---
+
+layout: true
+
+# Installing Packages in Local Mode
+
+---
+
+- to install packages locally, create a package.json file
+
+```shell
+$ npm init
+package name: (project)
+version: (1.0.0)
+description: Demo of package.json
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+```
+
+- press Enter to accept the defaults
+- this will create a package.json file at the root of the project
+- for a quicker way use 
+
+```shell
+$ npm init --y
+```
+
+---
+
+```json
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
+
+- the fields are self-explanatory except for main and scripts
+- the main field is the primary entry point to the program
+- the scripts field lets specify script commands that run in the lifecycle of your package
+- to find out more visit <a href='https://docs.npmjs.com/files/package.json'>package.json docmentation on npm</a> and <a href='https://www.sitepoint.com/guide-to-npm-as-a-build-tool/'>using npm as a build tool</a>
+
+---
+
+- try to install <a href='http://underscorejs.org/'>Underscore</a>
+
+```shell
+$ npm install underscore
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN project@1.0.0 No description
+npm WARN project@1.0.0 No repository field.
+
++ underscore@1.9.0
+added 1 package in 0.344s
+```
+
+- note that a lockfile is created
+- a dependencies field has been added to package.json
+
+```json
+{
+  ...
+  "dependencies": {
+    "underscore": "^1.9.0"
+  }
+}
+```
+
+---
+
+layout: true
+
+# Managing Dependencies with package.json
+
+---
+
+
+
+---
+layout: false
+
+# Agenda
 
 ## 2. webpack4
 
