@@ -262,6 +262,8 @@ layout: true
 
 ---
 
+name: installLocal
+
 - to install packages locally, create a package.json file
 
 ```shell
@@ -365,6 +367,7 @@ layout: true
 ---
 
 layout: false
+name: uninstallLocal
 
 # Uninstalling Local Packages
 
@@ -404,15 +407,68 @@ layout: true
 
 ---
 
+- check for outdated packages, example Underscore
+
+```shell
+$ npm outdated
+Package     Current  Wanted  Latest  Location
+underscore    1.8.2   1.9.0   1.9.0  project
+```
+
+- *Current* shows us the installed version
+- *Wanted* tells the latest version of the package that can be upgraded without breaking the code
+- *Latest* shows us the latest version of the package
+
+- **package-lock.json** ensure that the dependencies remain the same on all machines the project is installed on
+- it is automatically generated for any operation where npm modifies **node_modules** folder or **package.json** file
+
+---
+
+- example: Underscore from [earlier](#uninstallLocal)
+
+```shell
+$ npm update underscore
++ underscore@1.9.0
+updated 1 package in 0.236s
+
+$ npm list
+project@1.0.0 /home/sitepoint/project
+└── underscore@1.9.0
+```
+
+- execute **npm update** to update all outdated modules
+
+---
+
 layout: true
 
 # Searching for Packages
 
 ---
 
+- is there a node that does the same as **mkdir**?
+
+```shell
+$ npm search mkdir
+NAME      | DESCRIPTION          | AUTHOR          | DATE       | VERSION
+mkdir     | Directory crea…      | =joehewitt      | 2012-04-17 | 0.0.2
+fs-extra  | fs-extra conta…      | =jprichardson…  | 2018-05-01 | 6.0.0
+mkdirp    | Recursively mkdir,…  | =substack       | 2015-05-14 | 0.5.1
+...
+```
+
+- found <a href="https://www.npmjs.com/package/mkdirp" target="_blank">mkdirp</a>
+- now it can be installed as described [here](#installLocal)
+
+---
+
 layout: true
 
 # Re-installing Project Dependencies
+
+---
+
+
 
 ---
 
