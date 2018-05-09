@@ -416,19 +416,36 @@ layout: true
 
 ---
 
-layout: true
+layout: false
 
 # Managing the Cache
 
 ---
 
-layout: true
-
 # Aliases
 
----
+- there are many ways of running npm commands
+- a brief list of some commonly used npm aliases:
 
-layout: false
+```shell
+$ npm i <package> //install local package
+$ npm i -g <package> //install global package
+$ npm un <package> //uninstall local package
+$ npm up //npm update packages
+$ npm t //run tests
+$ npm ls //list installed modules
+$ npm ll || npm la //print additional package information while listing modules
+```
+
+- also multiple packages can be installed at once
+
+```shell
+$ npm i express moment lodash mongoose body-parser webpack ...
+```
+
+- to learn more commands execute **npm help** or visit <a href="https://www.sitepoint.com/10-npm-tips-and-tricks/" target="_blank">10 Tips and Tricks That Will Make You an npm Ninja</a>
+
+---
 
 # Version Managers
 
@@ -445,6 +462,8 @@ layout: false
 - npm Tutorial: https://www.sitepoint.com/beginners-guide-node-package-manager/
 
 - npm as build tool: https://www.sitepoint.com/guide-to-npm-as-a-build-tool/
+
+- Tips and Tricks for npm: https://www.sitepoint.com/quick-tip-multiple-versions-node-nvm/
 
 - package.json doc: https://docs.npmjs.com/files/package.json
 
