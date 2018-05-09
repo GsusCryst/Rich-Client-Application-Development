@@ -416,9 +416,73 @@ layout: true
 
 ---
 
+- install one more package, example: <a href="https://www.npmjs.com/package/request" target="_blank">request</a>
+
+```shell
+$ npm install request
++ request@2.85.0
+added 54 packages in 13.24s
+```
+
+- check package.json
+
+```json
+"dependencies": {
+    "request": "^2.85.0",
+    "underscore": "^1.9.0"
+},
+```
+
+- the dependencies list gets updated automatically
+- if the package shouldn't be added to package.json just use **--no-save** argument
+
+---
+
+- install dependencies of a cloned project source code to another machine
+- delete **node_modules** and execute **npm install**
+
+```shell
+$ rm -R node-modules
+$ npm list
+project@1.0.0 /home/user/project
+├── UNMET DEPENDENCY request@^2.85.0
+└── UNMET DEPENDENCY underscore@^1.9.0
+
+npm ERR! missing: request@^2.85.0, required by project@1.0.0
+npm ERR! missing: underscore@^1.9.0, required by project@1.0.0
+
+$ npm install
+added 57 packages in 1.595s
+```
+
+- **node_modules** folder gets recreated
+- this way it is possible to share code without bloating the project and source repositories
+
+---
+
 layout: false
 
 # Managing the Cache
+
+- when npm installs a packages it keeps a copy, so there is no need to hit the network again
+- these copies are cached in the **.npm** directory in the home path
+
+```shell
+$ ls ~/.npm
+anonymous-cli-metrics.json  _cacache  _locks  npm  registry.npmjs.org
+```
+
+- this directory will get cluttered with old packages over time, so it's useful to clean it up
+
+```shell
+$ npm cache clean
+```
+
+- also the **node_module** folders can be purged, if multiple node projects are on the system to clean up
+
+```shell
+find . -name "node_modules" -type d -exec rm -rf '{}' +
+```
 
 ---
 
