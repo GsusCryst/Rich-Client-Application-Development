@@ -109,8 +109,13 @@ Die Software ist für Anwender konzipiert die ein Grundverständnis von Markttec
 
 ## 2.3 Graphische Benutzerschnittstelle
 ### GUI-Mockups
+Interaktives Candlestick Chart
 <img src="pictures/mockup_interactive-chart.png" height="100%" width="100%">
+
+Marktstrategy Einstellungen
 <img src="pictures/mockup_market-strategy.png" height="100%" width="100%">
+
+Gewinn/Verlust Übersicht
 <img src="pictures/mockup_profit-loss.png" height="100%" width="100%">
 
 ### Navigations-Zustandsdiagramm
