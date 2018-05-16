@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Jasmine Test</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.6.1/jasmine.min.css">
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.6.1/jasmine.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.6.1/jasmine-html.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.6.1/boot.min.js"></script>
+        <script type="text/javascript">
+            const isPalindrome = (str) => {
+                return str.split("").reverse().join("") === str;
+            };
+            
+            describe("isPalindrome", () => {
+                it("returns true if the string is a palindrome", () => {
+                    expect(isPalindrome("abba")).toEqual(true);
+                });
+                it("returns false if the string isn't a palindrome", () => {
+                    expect(isPalindrome("Bubba")).toEqual(false);
+                });
+            });
+        </script>
+    </body>
+</html>

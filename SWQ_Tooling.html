@@ -30,8 +30,7 @@ class: middle, center
         1.3 How pure Functions work
         1.4 What makes Functional Code easy to test?
         1.5 Testing Functional JavaScript
-        1.6 Testing is addictive
-        1.7 Refactoring a pure Function
+        1.6 Refactoring a pure Function
     2.0 Test NodeJS using Mocha, Chai, SinonJS
         2.1 Literature on Tools
             2.1.1 Mocha
@@ -118,7 +117,6 @@ layout: true
 
 - Jasmine is a robust framework that can be used in a wide variety of circumstances
 - create a HTML document that pulls the testing library locally/from CDN
-
 ```HTML
 <head>
     <meta charset="utf-8">
@@ -135,20 +133,22 @@ layout: true
         2.6.1/boot.min.js"></script>
 </body>
 ```
-
 - brings in the Jasmine library, along with Jasmine HTML boot script and styling
 
 ---
 
 ### 1.5 Testing Functional JavaScript - The first Test
 
-- this can be done in a separate document or by including it inside a ```<script>``` element on the page
+- this can be done in a separate document or by including it inside a **script tag** element on the page
 - use the <a href="https://jasmine.github.io/api/2.6/global.html#describe" target="_blank">describe</a> function defined by the Jasmine library to describe the behaviour for a new function
-- the example function to write will be called ```isPalindrome``` and will return ```true``` if the string passed is the same forward and backwards otherwise ```false```
+- the example function to write will be called **isPalindrome** and will return **true** if the string passed is the same forward and backwards otherwise **false**
 ```js
 describe("isPalindrome", () => {
     it("returns true if the string is palindrome", () => {
         expect(isPalindrome("abba")).toEqual(true);
+    });
+    it("returns false if the string isn't a palindrome", () => {
+        expect(isPalindrome("Bubba")).toEqual(false);
     });
 });
 ```
@@ -158,18 +158,126 @@ describe("isPalindrome", () => {
 
 ### 1.5 Testing Functional JavaScript - The first Testresult
 
-- a working Jasmine report page will show up
+- a working Jasmine report page will show up: <a href="testJasmineFail.html" target="_blank">click</a>
 
-![test](https://github.com/GsusCryst/Rich-Client-Application-Development/blob/master/1stTestresultJasmine.PNG)
-
+- this is the result that was expected because there is no function **isPalindrome**
+- adding the **isPalindrome** function
+```js
+const isPalindrome = (str) => {
+    return str
+            .split("")
+            .reverse()
+            .join("") === str;
+};
+```
+- results in: <a href="testJasmineSuccess.html" target="_blank">click</a>
+- this code is a pure function
 
 ---
 
-### 1.6 Testing is addictive
+### 1.6 Refactoring a pure Function
+
+- at this point it is trivial to add additional functionality, such as handling non-string input, ignoring difference between upper and lower case, etc.
+- add a test for a number (1001): <a href="testJasmineFail2.html" target="_blank">click</a>
+```js
+it("returns true if a number is a palindrome", () => {
+    expect(isPalindrome(1001)).toEqual(true);
+});
+```
+- update the script to handle non-string inputs and coercing them into strings: <a href="testJasmineSuccess2.html" target="_blank">click</a>
+```js
+return str
+    .toString()
+    .split("")
+    .reverse()
+    .join("") === str.toString();
+```
 
 ---
 
-### 1.7 Refactoring a pure Function
+layout: true
+
+## 2.0 Test NodeJS
+
+---
+
+### 2.1.1 Literature of Tools - Mocha
+
+- runs/executes tests
+- install Mocha
+```shell
+> npm install -g mocha
+```
+- create new directory for the application
+```shell
+> mkdir testing-async-code && cd testing-async-code
+> npm init
+> npm install --save mocha
+> mkdir tests
+```
+- add a basic test to see how Mocha works
+
+---
+
+### 2.1.2 Literature of Tools - Chai
+
+---
+
+### 2.1.3 Literature of Tools - SinonJS
+
+---
+
+### 2.2 **Spies**, Stubs, Mocks
+
+---
+
+### 2.2 Spies, **Stubs**, Mocks
+
+---
+
+### 2.2 Spies, Stubs, **Mocks**
+
+---
+
+### 2.3.1 Testing Async Code - Callbacks
+
+---
+
+### 2.3.2 Testing Async Code - Promises
+
+---
+
+layout: true
+
+## 3.0 Snapshot Testing React with Jest
+
+---
+
+### 3.1 What is a Snapshot Test?
+
+---
+
+### 3.2 Introducing Jest
+
+---
+
+### 3.3 Setting Up Snapshot Testing
+
+---
+
+### 3.4 Add a Snapshot Test
+
+---
+
+### 3.5 Failed Snapshot Tests
+
+---
+
+### 3.6 Updating Snapshot Tests
+
+---
+
+### 3.7 Create a New Component with Tests
 
 ---
 
