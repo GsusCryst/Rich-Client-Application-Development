@@ -5,8 +5,13 @@ Titel, Autoren, (Inhaltsverzeichnis)
 # 1 Einführung
 
 ## 1.1 Beschreibung
-    - Projektname
+    - Projektname: Cryptocurrency Algotrade
     - Darstellung der Produktvision in Prosa (5-10 Sätze)
+    AlgoTrade constantly retrieves the trade data of a crypto exchange, computes the candlesticks in real time, derives several indicators and makes hold/buy/sell decisions based on all this data and the user configurated tresholds.
+
+    The trade decisions are displayed on a candlestick chart with a real market data graph. An overview of the profits/losses over a chooseable timeframe will be rendered below the chart.
+
+
 
 ## 1.2 Ziele
     - Anwendungsbereiche, Motivation, Umfang, Marktanforderungen, Alleinstellungsmerkmale
@@ -19,7 +24,7 @@ Titel, Autoren, (Inhaltsverzeichnis)
     - Use-Case Diagramme
     - Strukturierung der Diagramme in funktionale Gruppen
 
-## 2.2 Nicht-funktionale Anforderungen 
+## 2.2 Nicht-funktionale Anforderungen
 
 ### 2.2.1 Rahmenbedingungen
     - Normen, Standards, Protokolle, Hardware, externe Vorgaben
@@ -35,7 +40,7 @@ Titel, Autoren, (Inhaltsverzeichnis)
     - Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
 
 ## 2.4 Anforderungen im Detail
-    - User Stories mit Akzeptanzkritierien 
+    - User Stories mit Akzeptanzkritierien
     - Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
     - Strukturierung der User Stories in funktionale Gruppen
 
@@ -68,7 +73,7 @@ Titel, Autoren, (Inhaltsverzeichnis)
 ## 3.2 Softwarearchitektur
     - Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
 
-## 3.3 Datenmodell 
+## 3.3 Datenmodell
     - Konzeptionelles Analyseklassendiagramm
 
 ## 3.4 Abläufe
@@ -95,7 +100,7 @@ Titel, Autoren, (Inhaltsverzeichnis)
 
 # 5 Anhänge
 
-## 5.1 Glossar 
+## 5.1 Glossar
     - Definitionen, Abkürzungen, Begriffe
 
 ## 5.2 Referenzen
