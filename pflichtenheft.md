@@ -2,44 +2,44 @@
 Cryptocurrency Algotrader, Sasha Koß, Kristoffer Roßbach
 
 
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink=true -->
 
-- 1 Einführung
-  - 1.1 Beschreibung
-    - Projektname: Cryptocurrency Algotrade
-    - Projektbeschreibung:
-  - 1.2 Ziele
-    - Anwendungsbereich
-    - Motivation
-    - Umfang
-    - Marktanforderungen
-    - Zielgruppe
-    - Abgrenzung
-- 2 Anforderungen
-  - 2.1 Funktionale Anforderungen
-  - 2.2 Nicht-funktionale Anforderungen
-    - 2.2.1 Rahmenbedingungen
-    - 2.2.2 Betriebsbedingungen
-    - 2.2.3 Qualitätsmerkmale
-  - 2.3 Graphische Benutzerschnittstelle
-  - 2.4 Anforderungen im Detail
-    - Schablone für User Stories
-    - Beispiel 1
-    - Beispiel 2
-- 3 Technische Beschreibung
-  - 3.1 Systemübersicht
-  - 3.2 Softwarearchitektur
-  - 3.3 Datenmodell
-  - 3.4 Abläufe
-  - 3.5 Entwurf
-- 4 Projektorganisation
-  - 4.1 Annahmen
-  - 4.2 Verantwortlichkeiten
-  - 4.3 Grober Projektplan
-- 5 Anhänge
-  - 5.1 Glossar
-  - 5.2 Referenzen
-  - 5.3 Index
+- [1 Einführung](#1-einf%C3%BChrung)
+  - [1.1 Beschreibung](#11-beschreibung)
+    - [Projektname: Cryptocurrency Algotrade](#projektname-cryptocurrency-algotrade)
+    - [Projektbeschreibung:](#projektbeschreibung)
+  - [1.2 Ziele](#12-ziele)
+    - [Anwendungsbereich](#anwendungsbereich)
+    - [Motivation](#motivation)
+    - [Umfang](#umfang)
+    - [Marktanforderungen](#marktanforderungen)
+    - [Zielgruppe](#zielgruppe)
+    - [Abgrenzung](#abgrenzung)
+- [2 Anforderungen](#2-anforderungen)
+  - [2.1 Funktionale Anforderungen](#21-funktionale-anforderungen)
+  - [2.2 Nicht-funktionale Anforderungen](#22-nicht-funktionale-anforderungen)
+    - [2.2.1 Rahmenbedingungen](#221-rahmenbedingungen)
+    - [2.2.2 Betriebsbedingungen](#222-betriebsbedingungen)
+    - [2.2.3 Qualitätsmerkmale](#223-qualit%C3%A4tsmerkmale)
+  - [2.3 Graphische Benutzerschnittstelle](#23-graphische-benutzerschnittstelle)
+  - [2.4 Anforderungen im Detail](#24-anforderungen-im-detail)
+    - [Schablone für User Stories](#schablone-f%C3%BCr-user-stories)
+    - [Beispiel 1](#beispiel-1)
+    - [Beispiel 2](#beispiel-2)
+- [3 Technische Beschreibung](#3-technische-beschreibung)
+  - [3.1 Systemübersicht](#31-system%C3%BCbersicht)
+  - [3.2 Softwarearchitektur](#32-softwarearchitektur)
+  - [3.3 Datenmodell](#33-datenmodell)
+  - [3.4 Abläufe](#34-abl%C3%A4ufe)
+  - [3.5 Entwurf](#35-entwurf)
+- [4 Projektorganisation](#4-projektorganisation)
+  - [4.1 Annahmen](#41-annahmen)
+  - [4.2 Verantwortlichkeiten](#42-verantwortlichkeiten)
+  - [4.3 Grober Projektplan](#43-grober-projektplan)
+- [5 Anhänge](#5-anh%C3%A4nge)
+  - [5.1 Glossar](#51-glossar)
+  - [5.2 Referenzen](#52-referenzen)
+  - [5.3 Index](#53-index)
 
 <!-- /MarkdownTOC -->
 
