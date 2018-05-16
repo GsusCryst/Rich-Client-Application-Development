@@ -1,6 +1,6 @@
 # Anforderungs- und Entwurfsspezifikation ("Pflichtenheft")
-Cryptocurrency Algotrader, Sasha Koß, Kristoffer Roßbach
-
+Cryptocurrency Algotrader
+Autoren: Sasha Koß, Kristoffer Roßbach
 
 <!-- MarkdownTOC autolink=true -->
 
@@ -22,6 +22,8 @@ Cryptocurrency Algotrader, Sasha Koß, Kristoffer Roßbach
     - [2.2.2 Betriebsbedingungen](#222-betriebsbedingungen)
     - [2.2.3 Qualitätsmerkmale](#223-qualit%C3%A4tsmerkmale)
   - [2.3 Graphische Benutzerschnittstelle](#23-graphische-benutzerschnittstelle)
+    - [GUI-Mockups](#gui-mockups)
+    - [Navigations-Zustandsdiagramm](#navigations-zustandsdiagramm)
   - [2.4 Anforderungen im Detail](#24-anforderungen-im-detail)
     - [Schablone für User Stories](#schablone-f%C3%BCr-user-stories)
     - [Beispiel 1](#beispiel-1)
@@ -43,8 +45,6 @@ Cryptocurrency Algotrader, Sasha Koß, Kristoffer Roßbach
 
 <!-- /MarkdownTOC -->
 
-
-
 # 1 Einführung
 
 ## 1.1 Beschreibung
@@ -57,22 +57,38 @@ Die Indikatoren werden zur Umsetzung der vom Benutzer konfigurierten Marktstrate
 
 Der Benutzer muss ein Konto mit Einlage auf der jeweiligen Börse besitzen, weil die Algotrade Software die Entscheidungen per API-Request durchführt.
 
-
-
+Es kann zusätzlich eine Gewinn/Verlust Übersicht über einen bestimmten Zeitraum eingesehen werden.
 ## 1.2 Ziele
 ### Anwendungsbereich
-Der Algotrader wird
+Der Algotrader wird zuert im privaten Bereich zum Testen von Marktstrategien eingesetzt werden.
 ### Motivation
 Die Blockchain bzw. der Cryptocurrencymarkt befindet sich seit 2015 in einer starken und volatilen Wachstumsphase, deswegen kann ein Einstieg in diesen Markt für risikofreudige Unternehmer lukrativ sein.
 ### Umfang
 Die Software wird im ersten Entwicklungsschritt nur mit der Binance API funktionieren, weil diese kostenlos verwendbar ist und eine vergleichbar gute Performance liefert.
-### Marktanforderungen
-Der Markt ist noch relativ Jung, dementsprechend schlecht sind vergleichbare Produkte am Markt.
 
+Indikatoren:
++ ema auf beliebigen Timeframe
++ MFI
++ RSI
++ CCI
+
+Chart Indikatoren:
++ Ichimoku
++ EMA
++ MFI
++ RSI
++ CCI
+
+### Marktanforderungen
+Der Cryptocurrency-Algobot-Markt ist noch Jung, dementsprechend einfach und Teuer sind die aktuellen Produkte am Markt.
+
+Übersicht: https://themerkle.com/top-6-bitcoin-trading-bots/
 ### Zielgruppe
 Die Software ist für Anwender konzipiert die ein Grundverständnis von Markttechnik besitzen und eine indivudelle Marktstrategie an einer Cryptobörse umsetzen wollen.
 ### Abgrenzung
-Die Software wird keine weiteren
++ beinhaltet keine vorgefertigten Marktstrategien
++ kein BackTesting der Strategien
++ keine direkten Trades über die GUI
 
 # 2 Anforderungen
 
@@ -92,7 +108,12 @@ Die Software wird keine weiteren
     - Externe Qualitätsanforderungen (z.B. Performance, Sicherheit, Zuverlässigkeit, Benutzerfreundlichkeit)
 
 ## 2.3 Graphische Benutzerschnittstelle
-    - GUI-Mockups passend zu User Stories
+### GUI-Mockups
+<img src="pictures/mockup_interactive-chart.png" height="100%" width="100%">
+<img src="pictures/mockup_market-strategy.png" height="100%" width="100%">
+<img src="pictures/mockup_profit-loss.png" height="100%" width="100%">
+
+### Navigations-Zustandsdiagramm
     - Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
 
 ## 2.4 Anforderungen im Detail
