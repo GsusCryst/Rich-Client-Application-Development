@@ -218,7 +218,7 @@ layout: true
 
 ---
 
-- Mocha is a test runner, runs/executes tests
+- <a href="https://mochajs.org/" target="_blank">Mocha</a> is a test runner, runs/executes tests
 - install Mocha
 ```shell
 > npm install -g mocha
@@ -246,7 +246,7 @@ const assert = require("assert");
 ```shell
 > mocha tests/
 ```
-- the tests passed: <a href="" target="_blank">click</a>
+- the tests passed
 - to let the test fail, adjust the file
 ```js
 const assert = require("assert");
@@ -256,7 +256,7 @@ const assert = require("assert");
         });
 });
 ```
-- the tests stop: <a href="" target="_blank">click</a>
+- the tests stop
 
 ---
 
@@ -264,7 +264,7 @@ layout: false
 
 ### 2.1.2 Literature of Tools - Chai
 
-- Chai is a assertion library
+- <a href="http://www.chaijs.com/" target="_blank">Chai</a> is a assertion library
 - install
 ```bash
 > npm i --save-dev chai
@@ -284,7 +284,7 @@ describe("smoke test", function() {
 
 ### 2.1.3 Literature of Tools - SinonJS
 
-- SinonJS provides stand alone test spies, stubs and mocks
+- <a href="http://sinonjs.org/" target="_blank">SinonJs</a> provides stand alone test spies, stubs and mocks
 - install
 ```bash
 > npm i --save-dev sinon
@@ -669,9 +669,61 @@ layout: true
 
 ---
 
+- a snapshor test verifies that a piece of functionality works the same as it did when the snapshot was created
+- it's like taking a picture of an application in a certain state and then being able to automatically verify that nothing has changed
+- Example, list of 3 things:
+```
+A new Hope
+The Empire Strikes Back
+Return of the Jedi
+```
+- a snapshot can manually be taken by copying and pasting the HTML representation into a file
+```HTML
+<ul class="todo-list">
+        <li class="todo-item">A New Hope</li>
+        <li class="todo-item">The Empire Strikes Back</li>
+        <li class="todo-item">Return of the Jedi</li>
+</ul>
+```
+- later it could be verified that the component still works correctly by rendering the same data and comparing it to the rendered HTML
+
+---
+
+- this was essentially what a snapshot test does
+- the first time it runs, it saves a textual snapshot of the component
+- the next time, it compares the rendered component to the snapshot
+- if they differ, the test fails
+- now the snapshot could be updated or the component be fixed to match it
+- the component should already work before the test is written because snapshot testing is not TDD
+- create install create react app and create a project
+```bash
+> npm i -g create-react-app
+> create-react-app snapshot-testing
+```
+
+---
+
 layout: true
 
 ### 3.2 Introducing Jest
+
+---
+
+- <a href="https://facebook.github.io/jest/docs/en/getting-started.html" target="_blank">Jest</a> is a test runner that also comes with expectations (**expect** function), mocks and spies
+- Jest provides everything in one package like Mocha, Sinon and Chai
+- also it provides the snapshot testing, which no other tools currently have
+- it is included in Create React App
+- the example project created by Create React App comes with one test to start with
+```bash
+> npm test
+```
+- this command runs all the test in "watch" mode, this means that after running all tests once, it will watch for changes to files and re-run the tests for the files that changed
+- the result should be somthing like this
+```bash
+PASS src/App.test.js
+  +  renders without crashing (11ms)
+```
+- Jest's built-in watch mode will also re-run tests for files that import files that have changed
 
 ---
 
@@ -681,9 +733,95 @@ layout: true
 
 ---
 
+- example: **App.test.js**
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<App />, div);
+});
+```
+
+- this verfies that the test runner(Jest) is working
+- to add a snapshot:
+    - import at the top
+    
+    ```js
+    import renderer from 'react-test-renderer'; // snapshot renderer
+    ```
+    - install react-test-renderer
+    ```bash
+    > npm i --save-dev react-test-renderer
+    ```
+
+---
+
+- start the test in watch mode again
+- if there is an error an older version of React is in use
+- to work around add this line under the imports of **App.test.js**
+
+```js
+jest.mock('react-dom');
+```
+
+- running the test again should work now
+
+---
+
 layout: true
 
 ### 3.4 Add a Snapshot Test
+
+---
+
+- add this code at the bottom of **App.test.js** for the first snapshot test
+
+```js
+it('renders a snapshot', () => {
+    const tree = renderer.create(<App/>).toJSON(); // pass React element in JSX
+                                                   // form and gets turned 
+                                                   // into JSON
+    expect(tree).toMatchSnapshot(); // if a snapshot already exists it compares
+                                    // if a snapshot doesn't exist it creates one
+});
+```
+
+- the snapshot will be saved/compared with the snapshot in the directory **__snapshots__**
+- it will look for **App.test.js.snap** to compare with **App.test.js**
+- these snapshot files should be checked into source control along with the rest of the code
+
+---
+
+- every call will create a new entry in the snapshot file that contains
+```json
+exports[`test renders a snapshot 1`] = `
+    <div
+        className="App">
+        <div
+            className="App-header">
+            <img
+                alt="logo"
+                className="App-logo"
+                src="test-file-stub" />
+            <h2>
+                Welcome to React
+            </h2>
+        </div>
+        <p
+            className="App-intro">
+            To get started, edit
+            <code>
+                src/App.js
+            </code>
+             and save to reload.
+        </p>
+</div>
+`;
+```
 
 ---
 
@@ -693,9 +831,49 @@ layout: true
 
 ---
 
+- open **src/App.js** and delete this line
+
+```js
+<h2>Welcome to React</h2>
+```
+
+- run the test and the output should be something like(it shows the difference)
+
+```bash
+FAIL src/App.test.js
+ -  renders a snapshot
+    expect(value).toMatchSnapshot()
+    Received value does not match stored snapshot 1.
+    
+    - Snapshot  // the lines with "-" were expected, but missing
+    + Received  // the lines with "+" were not expected
+        [...]   // the other lines are unchanged
+*    -   <h2>
+*    -       Welcome to React
+*    -   </h2>
+        [...]
+        at Object.<anonymous>.it    (src/App.test.js:13:16)
+        at process._tickCallback    (internal/process/next_tick.js:103:7)
+  + renders without crashing (8ms)
+  - renders a snapshot (9ms)
+Snapshot Summary
+  > 1 snapshot test failed in 1 test suite. Inspect your code changes or 
+    press 'u' to update them.
+```
+
+---
+
 layout: true
 
 ### 3.6 Updating Snapshot Tests
+
+---
+
+- example: making the header smaller
+- change **h2** tags to **h3**, the test will fail
+- a great feature of Jest comes in handy:
+    - hitting the **u** key to replace the incorrect snapshot
+- the test will re-run and pass this time
 
 ---
 
@@ -705,19 +883,132 @@ layout: true
 
 ---
 
+- create a new component and use snapshot tests to verify it works
+- it will be a simpe counter component that doesn't allow negative numbers
+- create the file **src/PositiveCounter.js**
+
+```js
+import React, { Component } from 'react';
+export default class PositiveCounter extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { count: 0 };
+    }
+    increment = () => { this.setState({
+            count: this.state.count + 1
+        });
+    }
+    decrement = () => { this.setState({
+            count: Math.max(0, this.state.count - 1)
+        });
+    }
+    render() {
+        return (
+            <span> Value: {this.state.count}
+                <button className="decrement" onClick={this.decrement}>-</button>
+                <button className="increment" onClick={this.increment}>+</button>
+            </span>
+        );
+    }
+}
+```
+
+---
+
+- before writing a snapshot test, verify that the component works as expected manually
+- open **src/App.js** and import the new PositiveCOunter at the top
+```js
+import PositiveCounter from './PositiveCounter';
+```
+- then put it inside the render method
+```js
+class App extends Component {
+        render() { return (
+                <div className="App">
+                    <PositiveCounter/>
+                   ...
+                </div>
+            );
+        }
+}
+```
+- starting the app should show the new counter
+- now "+" and "-" can be clicked and the number shouldn't go below 0
+
+---
+
+- write the snapshot tests, create new file **src/PositiveCounter.test.js**
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import PositiveCounter from './PositiveCounter';
+import renderer from 'react-test-renderer';
+it('should render 0', () => {
+        const tree = renderer.create(<PositiveCounter/>).toJSON();
+        expect(tree).toMatchSnapshot();
+});
+```
+- the test should show "1 snapshot written in 1 test suite" and the test will pass
+- to see what is rendered open **src/__snapshots__/PositiveCounter.test.js.snap**
+
+---
+
+- add a test that increments the counter
+```js
+it('should render 2', () => {
+        const component = renderer.create(<PositiveCounter/>);
+        component.getInstance().increment();
+        component.getInstance().increment();
+        expect(component.toJSON()).toMatchSnapshot();
+});
+```
+- the test will pass and the snapshot file will verify that it rendered "2" for this test
+- notice that the button is not actually clicked, to click the button itself write
+```js
+component.toJSON().children[3].props.onClick()
+```
+- test that the counter can't go negative
+```js
+it('should not go negative', () => {
+        const component = renderer.create(<PositiveCounter/>);
+        component.getInstance().increment();
+        component.getInstance().decrement();
+        component.getInstance().decrement();
+        expect(component.toJSON()).toMatchSnapshot();
+});
+```
+
+---
+
 layout: false
 
 # 4.0 Links
 
-- Testing Functional JavaScript
+- <a href="https://www.sitepoint.com/testing-functional-javascript/" target="_blank">Testing Functional JavaScript</a>
 
-https://www.sitepoint.com/testing-functional-javascript/
-- Test NodeJS using Mocha, Chai, SinonJS
 
-https://scotch.io/tutorials/how-to-test-nodejs-apps-using-mocha-chai-and-sinonjs
-- Snapshot Testing React with Jest
+- <a href="https://scotch.io/tutorials/how-to-test-nodejs-apps-using-mocha-chai-and-sinonjs" target="_blank">Test NodeJS using Mocha, Chai, SinonJS</a>
 
-https://daveceddia.com/snapshot-testing-react-with-jest/
+
+- <a href="https://daveceddia.com/snapshot-testing-react-with-jest/" target="_blank">Snapshot Testing React with Jest</a>
+
+
+
+- <a href="https://jasmine.github.io/" target="_blank">Jasmine</a>
+
+
+- <a href="https://mochajs.org/" target="_blank">Mocha</a>
+
+
+- <a href="http://www.chaijs.com/" target="_blank">Chai</a>
+
+
+- <a href="http://sinonjs.org/" target="_blank">SinonJS</a>
+
+
+- <a href="https://facebook.github.io/jest/docs/en/getting-started.html" target="_blank">Jest</a>
+
+
 
 </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
