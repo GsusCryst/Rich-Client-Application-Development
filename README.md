@@ -4,13 +4,13 @@
 
 Bis 10.05
 
-	NPM + webpack Pr‰sentation
+	NPM + webpack Pr√§sentation
 
-	5-10 S‰tze Anwendungsbeschreibung bzw. Prosa der Projektidee 
+	5-10 S√§tze Anwendungsbeschreibung bzw. Prosa der Projektidee 
 
 Bis 17.05
 
-	SWQ Tooling Pr‰sentation
+	SWQ Tooling Pr√§sentation
 
 	Erste Version des Pflichtenheft
 
@@ -31,6 +31,7 @@ https://gsuscryst.github.io/Rich-Client-Application-Development/Reactjs.html
 https://gsuscryst.github.io/Rich-Client-Application-Development/npmWebpack.html
 
 4. SWQ Tooling
+https://gsuscryst.github.io/Rich-Client-Application-Development/SWQ_Tooling.html
 
 # Projectdescription - AlgoTrade
 
