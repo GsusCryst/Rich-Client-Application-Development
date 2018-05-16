@@ -1,22 +1,48 @@
 # Anforderungs- und Entwurfsspezifikation ("Pflichtenheft")
 
-Titel, Autoren, (Inhaltsverzeichnis)
+Cryptocurrency Algotrader, Sasha Koß, Kristoffer Roßbach
+
+
+
+(Inhaltsverzeichnis)
+# Contents
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
+
+
+
 
 # 1 Einführung
 
 ## 1.1 Beschreibung
-    - Projektname: Cryptocurrency Algotrade
-    - Darstellung der Produktvision in Prosa (5-10 Sätze)
-    AlgoTrade constantly retrieves the trade data of a crypto exchange, computes the candlesticks in real time, derives several indicators and makes hold/buy/sell decisions based on all this data and the user configurated tresholds.
+### Projektname: Cryptocurrency Algotrade
+### Projektbeschreibung:
+Die Algotrade Software holt sich die aktuelle Handelshistorie einer Crypto-Börse und erstellt anhand dieser Daten eine Candlestick-Chart.
+Zeitgleich werden mit den berechneten Candlesticks verschiedene technische Indikatoren ermittelt.
 
-    The trade decisions are displayed on a candlestick chart with a real market data graph. An overview of the profits/losses over a chooseable timeframe will be rendered below the chart.
+Die Indikatoren werden zur Umsetzung der vom Benutzer konfigurierten Marktstrategie verwendet. Der Benutzer kann die Grenzen für jeden Indikator individuell einstellen und eine Marktentscheidung(Buy/Hold/Sell) damit verknüpfen. Die Positionsgröße wird anhand der Depoteinlage ermittelt, der Benutzer kann dazu einen prozentualen Bereich konfigurieren.
+
+Der Benutzer muss ein Konto mit Einlage auf der jeweiligen Börse besitzen, weil die Algotrade Software die Entscheidungen per API-Request durchführt.
 
 
 
 ## 1.2 Ziele
-    - Anwendungsbereiche, Motivation, Umfang, Marktanforderungen, Alleinstellungsmerkmale
-    - Informationen zu Zielbenutzergruppen und deren Merkmale (Bildung, Erfahrung, Sachkenntnis)
-    - Abgrenzung (Was ist das Softwaresystem _nicht_)
+### Anwendungsbereich
+Der Algotrader wird
+### Motivation
+Die Blockchain bzw. der Cryptocurrencymarkt befindet sich seit 2015 in einer starken und volatilen Wachstumsphase, deswegen kann ein Einstieg in diesen Markt für risikofreudige Unternehmer lukrativ sein.
+### Umfang
+Die Software wird im ersten Entwicklungsschritt nur mit der Binance API funktionieren, weil diese kostenlos verwendbar ist und eine vergleichbar gute Performance liefert.
+### Marktanforderungen
+Der Markt ist noch relativ Jung, dementsprechend schlecht sind vergleichbare Produkte am Markt.
+
+### Zielgruppe
+Die Software ist für Anwender konzipiert die ein Grundverständnis von Markttechnik besitzen und eine indivudelle Marktstrategie an einer Cryptobörse umsetzen wollen.
+### Abgrenzung
+Die Software wird keine weiteren
 
 # 2 Anforderungen
 
