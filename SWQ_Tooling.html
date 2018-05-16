@@ -528,7 +528,7 @@ layout: true
 
 ---
 
-- mocks can specify how something should work and user **mock.verify()** to make sure it works
+- mocks can specify how something should work and use **mock.verify()** to make sure it works
 - this results in less and cleaner code
 - the existing tests could
     - mock the **res** object
@@ -561,9 +561,98 @@ layout: true
 
 ---
 
+- JS is inherently asynchronous so testing async code happens frequently
+- create asny code and test it
+- create the file **tests/asyncFunc.test.js**
+
+```js
+const chai = require("chai");
+const expect = chai.expect;
+// This is just an async func that takes in a bool and calls a callback
+// that returns a message depending on the bool value
+function someMadeUpAyncFunc(boolValue, cb) {
+    setTimeout(function() {
+        cb(boolValue ? "You get a sweet :)" : "You get nothing!!")
+    }, 0);
+}
+// Added the `only` tag to have only this set of tests to run
+describe.only("AsyncTest", function()  {
+    it("should return `You get a sweet :)` if `true` is passed in", function() {
+        someMadeUpAyncFunc(true, function(sweetCheck){
+            expect(sweetCheck).to.equal("You get a sweet :)");
+        });
+    });
+    it("should return `You get nothing!!` if `false` is passed in", function() {
+        someMadeUpAyncFunc(false, function(sweetCheck){
+            // Let's fail it on purpose just to see what happens
+            expect(sweetCheck).to.equal("You get a sweet :)");
+        });
+    });
+});
+```
+
+---
+
+- all tests are passing but the last test should fail
+- Mocha is expectin an exception to be thrown but this isn't happening
+- the tests are running synchronously even though the function takes some time
+- the tests finish executing before the function gets the chance to complete
+- the way to tell the tests that something is expected is by adding a key word
+- for example **done**, this alerts Mocha to wait until **done** is called
+
+```js
+[...]
+*it("should return `You get a sweet :)` if `true` is passed in", function(done) {
+    someMadeUpAyncFunc(true, function(sweetCheck){
+        expect(sweetCheck).to.equal("You get a sweet :)");
+*       done();
+    });
+});
+*it("should return `You get nothing!!` if `false` is passed in", function(done) {
+    someMadeUpAyncFunc(false, function(sweetCheck){
+        // Let's fail it on purpose just to see what happens
+        expect(sweetCheck).to.equal("You get a sweet :)");
+*       done();
+    });
+[...]
+```
+
+- now the failing test can be seen
+
+---
+
 layout: true
 
 ### 2.3.2 Testing Async Code - Promises
+
+---
+
+- testing async functions with **promises** is different than using callbacks
+- first install **chai-as-promised** to allow to test promises using Chai
+```bash
+> npm i --save-dev chai-as-promised
+```
+- we change the example to use promises instead of callbacks (**done** not needed)
+
+```js
+const chai = require("chai");
+const expect = chai.expect;
+*chai.use(require("chai-as-promised"));
+function someMadeUpAyncFunc(boolValue, cb) {
+*   return new Promise(function(resolve){
+        setTimeout(function() {
+*           resolve(boolValue ? "You get a sweet :)" : "You get nothing!!")
+        }, 0);
+    })
+}
+[...]
+*       return expect(someMadeUpAyncFunc(true)).to.eventually.equal("You get a sweet :)");
+    });
+    it("should return `You get nothing!!` if `false` is passed in", function() {
+*       return expect(someMadeUpAyncFunc(false)).to.eventually.equal("You get nothing!!");
+    });
+});
+```
 
 ---
 
@@ -629,18 +718,6 @@ https://scotch.io/tutorials/how-to-test-nodejs-apps-using-mocha-chai-and-sinonjs
 - Snapshot Testing React with Jest
 
 https://daveceddia.com/snapshot-testing-react-with-jest/
-
----
-
-layout: true
-
-# Inhalt
-
----
-
-## Inhalt - Subthema
-
----
 
 </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
