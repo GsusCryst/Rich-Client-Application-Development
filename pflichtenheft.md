@@ -79,6 +79,16 @@ Chart Indikatoren:
 + RSI
 + CCI
 
+Marktstrategien:
++ Buy/Hold/Sell Entscheidung nach den Indikatoren
++ Speichern/Laden von Strategien
++ Indikatoren aktivieren/deaktivieren
+
+Gewinn/Verlust Übersicht:
++ Zeitraum wählbar
++ Währungspaar wählbar
++ Strategie wählbar
+
 ### Marktanforderungen
 Der Cryptocurrency-Algobot-Markt ist noch Jung, dementsprechend einfach und Teuer sind die aktuellen Produkte am Markt.
 
@@ -112,14 +122,14 @@ Die Software ist für Anwender konzipiert die ein Grundverständnis von Markttec
 Interaktives Candlestick Chart
 <img src="pictures/mockup_interactive-chart.png" height="100%" width="100%">
 
-Marktstrategy Einstellungen
+Marktstrategie Einstellungen
 <img src="pictures/mockup_market-strategy.png" height="100%" width="100%">
 
 Gewinn/Verlust Übersicht
 <img src="pictures/mockup_profit-loss.png" height="100%" width="100%">
 
 ### Navigations-Zustandsdiagramm
-    - Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
+Die Navigation findet in der ersten MockUp Version über drei Navigationsreiter statt. Sobald eine weitere Hierarchiestufe hinzukommt wird das Navigations-Zustandsdiagramm erstellt.
 
 ## 2.4 Anforderungen im Detail
     - User Stories mit Akzeptanzkritierien
