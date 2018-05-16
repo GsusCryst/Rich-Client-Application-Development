@@ -57,17 +57,17 @@ Die Indikatoren werden zur Umsetzung der vom Benutzer konfigurierten Marktstrate
 
 Der Benutzer muss ein Konto mit Einlage auf der jeweiligen Börse besitzen, weil die Algotrade Software die Entscheidungen per API-Request durchführt.
 
-Es kann zusätzlich eine Gewinn/Verlust Übersicht über einen bestimmten Zeitraum eingesehen werden.
+Es kann zusätzlich eine Gewinn/Verlust-Übersicht über einen bestimmten Zeitraum eingesehen werden.
 ## 1.2 Ziele
 ### Anwendungsbereich
-Der Algotrader wird zuert im privaten Bereich zum Testen von Marktstrategien eingesetzt werden.
+Der Algotrader wird zuerst im privaten Bereich zum Testen von Marktstrategien eingesetzt werden.
 ### Motivation
 Die Blockchain bzw. der Cryptocurrencymarkt befindet sich seit 2015 in einer starken und volatilen Wachstumsphase, deswegen kann ein Einstieg in diesen Markt für risikofreudige Unternehmer lukrativ sein.
 ### Umfang
 Die Software wird im ersten Entwicklungsschritt nur mit der Binance API funktionieren, weil diese kostenlos verwendbar ist und eine vergleichbar gute Performance liefert.
 
 Indikatoren:
-+ ema auf beliebigen Timeframe
++ EMA auf beliebigen Timeframe
 + MFI
 + RSI
 + CCI
@@ -90,11 +90,11 @@ Gewinn/Verlust Übersicht:
 + Strategie wählbar
 
 ### Marktanforderungen
-Der Cryptocurrency-Algobot-Markt ist noch Jung, dementsprechend einfach und Teuer sind die aktuellen Produkte am Markt.
+Der Cryptocurrency-Algobot-Markt ist noch Jung, dementsprechend einfach und teuer sind die aktuellen Produkte am Markt.
 
 Übersicht: https://themerkle.com/top-6-bitcoin-trading-bots/
 ### Zielgruppe
-Die Software ist für Anwender konzipiert die ein Grundverständnis von Markttechnik besitzen und eine indivudelle Marktstrategie an einer Cryptobörse umsetzen wollen.
+Die Software ist für Anwender konzipiert, die ein Grundverständnis von Markttechnik besitzen und eine individuelle Marktstrategie an einer Cryptobörse umsetzen wollen.
 ### Abgrenzung
 + beinhaltet keine vorgefertigten Marktstrategien
 + kein BackTesting der Strategien
