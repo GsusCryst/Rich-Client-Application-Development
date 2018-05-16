@@ -52,9 +52,9 @@ class: middle, center
 
 ---
 
-layout: true
+class: middle, center
 
-## 1.0 Testing Functional JavaScript
+# 1.0 Testing Functional JavaScript
 
 ---
 
@@ -99,7 +99,11 @@ layout: true
 
 ---
 
+layout: true
+
 ### 1.4 What makes Functional Code easy to test?
+
+---
 
 - writing tests for a pure function is trivial because every single input has a consistent output
 - all that has to be done is setting the expectations and run them against the code
@@ -113,7 +117,7 @@ layout: true
 
 ---
 
-### 1.4 What makes Functional Code easy to test? - Jasmine
+#### Jasmine
 
 - Jasmine is a robust framework that can be used in a wide variety of circumstances
 - create a HTML document that pulls the testing library locally/from CDN
@@ -137,26 +141,28 @@ layout: true
 
 ---
 
+layout: true
+
 ### 1.5 Testing Functional JavaScript - The first Test
+
+---
 
 - this can be done in a separate document or by including it inside a **script tag** element on the page
 - use the <a href="https://jasmine.github.io/api/2.6/global.html#describe" target="_blank">describe</a> function defined by the Jasmine library to describe the behaviour for a new function
 - the example function to write will be called **isPalindrome** and will return **true** if the string passed is the same forward and backwards otherwise **false**
 ```js
 describe("isPalindrome", () => {
-    it("returns true if the string is palindrome", () => {
-        expect(isPalindrome("abba")).toEqual(true);
-    });
-    it("returns false if the string isn't a palindrome", () => {
-        expect(isPalindrome("Bubba")).toEqual(false);
-    });
+        it("returns true if the string is palindrome", () => {
+            expect(isPalindrome("abba")).toEqual(true);
+        });
+        it("returns false if the string isn't a palindrome", () => {
+            expect(isPalindrome("Bubba")).toEqual(false);
+        });
 });
 ```
 - add this to a script in the page and load it
 
 ---
-
-### 1.5 Testing Functional JavaScript - The first Testresult
 
 - a working Jasmine report page will show up: <a href="testJasmineFail.html" target="_blank">click</a>
 
@@ -175,35 +181,44 @@ const isPalindrome = (str) => {
 
 ---
 
+layout: true
+
 ### 1.6 Refactoring a pure Function
+
+---
 
 - at this point it is trivial to add additional functionality, such as handling non-string input, ignoring difference between upper and lower case, etc.
 - add a test for a number (1001): <a href="testJasmineFail2.html" target="_blank">click</a>
 ```js
 it("returns true if a number is a palindrome", () => {
-    expect(isPalindrome(1001)).toEqual(true);
+        expect(isPalindrome(1001)).toEqual(true);
 });
 ```
 - update the script to handle non-string inputs and coercing them into strings: <a href="testJasmineSuccess2.html" target="_blank">click</a>
 ```js
 return str
-    .toString()
-    .split("")
-    .reverse()
-    .join("") === str.toString();
+        .toString()
+        .split("")
+        .reverse()
+        .join("") === str.toString();
 ```
+
+---
+
+layout: false
+class: middle, center
+
+# 2.0 Test NodeJS using Mocha, Chai, SinonJS
 
 ---
 
 layout: true
 
-## 2.0 Test NodeJS
+### 2.1.1 Literature of Tools - Mocha
 
 ---
 
-### 2.1.1 Literature of Tools - Mocha
-
-- runs/executes tests
+- Mocha is a test runner, runs/executes tests
 - install Mocha
 ```shell
 > npm install -g mocha
@@ -216,66 +231,213 @@ layout: true
 > mkdir tests
 ```
 - add a basic test to see how Mocha works
+```js
+const assert = require("assert");
+    describe("smoke test", function() {
+        it("checks equality", function() {
+            assert.equal(true, true);
+        });
+});
+```
 
 ---
 
+- to run this run the command **mocha** and pass the directory of the tests
+```shell
+> mocha tests/
+```
+- the tests passed: <a href="" target="_blank">click</a>
+- to let the test fail, adjust the file
+```js
+const assert = require("assert");
+    describe("smoke test", function() {
+        it("checks equality", function() {
+            assert.equal(true, false);
+        });
+});
+```
+- the tests stop: <a href="" target="_blank">click</a>
+
+---
+
+layout: false
+
 ### 2.1.2 Literature of Tools - Chai
+
+- Chai is a assertion library
+- install
+```bash
+> npm i --save-dev chai
+```
+- change the smoke test to
+```js
+const chai = require("chai");
+const expect = chai.expect;
+describe("smoke test", function() {
+        it("checks equality", function() {
+            expect(true).to.be.true;
+        });
+});
+```
 
 ---
 
 ### 2.1.3 Literature of Tools - SinonJS
 
----
-
-### 2.2 **Spies**, Stubs, Mocks
-
----
-
-### 2.2 Spies, **Stubs**, Mocks
-
----
-
-### 2.2 Spies, Stubs, **Mocks**
-
----
-
-### 2.3.1 Testing Async Code - Callbacks
-
----
-
-### 2.3.2 Testing Async Code - Promises
+- SinonJS provides stand alone test spies, stubs and mocks
+- install
+```bash
+> npm i --save-dev sinon
+```
+- Spies:
+    - creates fake functions which can be used to track executions (also for existing functions)
+    - tracks if the function has been executed/how many times its been called etc.
+- Stubs:
+    - enables the replacement of functions
+    - gives more control
+    - can return what ever is needed
+    - have functions work in a way that suites to be able to test multiple scenarios
+- Mocks:
+    - fake methods that have pre-programmed behaviour and expectations
 
 ---
 
 layout: true
 
-## 3.0 Snapshot Testing React with Jest
+### 2.2 **Spies**, Stubs, Mocks
 
 ---
+
+- create a new file in your project folder: /controllers/app.controller.js to use Spies, Stubs and Mocks
+
+
+- example function for the endpoint
+```js
+module.exports = {
+// A func that takes in two parameters `req` and `res` [request, response]
+        getIndexPage: (req, res) => {
+            res.send("Hey");
+        }
+}
+```
+- to test this a function that takes two parameters is required
+
+---
+
+- create a new file inside the tests folder: /tests/controllers/app.controller.tests.js
+```js
+const chai = require("chai");
+const expect = chai.expect;
+// import the getIndexPage function
+const indexPage = require("../../controllers/app.controller.js");
+describe("getIndexPage", function() {
+        it("should return index page", function() {
+            let req = {}
+// res has a send key with a function value because res.send() in function
+            let res = {
+                send: function() {}
+            }
+            indexPage.getIndexPage(req, res)
+        });
+});
+```
+- this doesn't give anything to test or much control over the function
+- use a spy and make some assertions on the spy
+
+---
+
+- making assertions on a spy is possible because the spy gives a dummy function that can be used to track the functions execution
+```js
+[...]
+const expect = chai.expect;
+// import sinon
+*const sinon = require("sinon");
+const indexPage = require("../../controllers/app.controller.js");
+[...]
+        let req = {}
+        let res = {
+ *      send: sinon.spy()
+        }
+        indexPage.getIndexPage(req, res);
+        // let's see what we get on res.send
+ *   console.log(res.send);
+[...]
+```
+- now a test can be run with the **mocha** command
+- a list of all methods that can be used to make assertions for the tests is returned by **res.send**
+
+---
+
+---
+
+layout: true
+
+### 2.2 Spies, **Stubs**, Mocks
+
+---
+
+layout: true
+
+### 2.2 Spies, Stubs, **Mocks**
+
+---
+
+layout: true
+
+### 2.3.1 Testing Async Code - Callbacks
+
+---
+
+layout: true
+
+### 2.3.2 Testing Async Code - Promises
+
+---
+
+layout: false
+class: middle, center
+
+# 3.0 Snapshot Testing React with Jest
+
+---
+
+layout: true
 
 ### 3.1 What is a Snapshot Test?
 
 ---
 
+layout: true
+
 ### 3.2 Introducing Jest
 
 ---
+
+layout: true
 
 ### 3.3 Setting Up Snapshot Testing
 
 ---
 
+layout: true
+
 ### 3.4 Add a Snapshot Test
 
 ---
+
+layout: true
 
 ### 3.5 Failed Snapshot Tests
 
 ---
 
+layout: true
+
 ### 3.6 Updating Snapshot Tests
 
 ---
+
+layout: true
 
 ### 3.7 Create a New Component with Tests
 
