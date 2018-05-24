@@ -7,7 +7,7 @@ Autoren: Sasha Koß, Kristoffer Roßbach
 - [1 Einführung](#1-einf%C3%BChrung)
   - [1.1 Beschreibung](#11-beschreibung)
     - [Projektname: Cryptocurrency Algotrade](#projektname-cryptocurrency-algotrade)
-    - [Projektbeschreibung:](#projektbeschreibung)
+    - [Projektbeschreibung](#projektbeschreibung)
   - [1.2 Ziele](#12-ziele)
     - [Anwendungsbereich](#anwendungsbereich)
     - [Motivation](#motivation)
@@ -49,7 +49,7 @@ Autoren: Sasha Koß, Kristoffer Roßbach
 
 ## 1.1 Beschreibung
 ### Projektname: Cryptocurrency Algotrade
-### Projektbeschreibung:
+### Projektbeschreibung
 Die Algotrade Software holt sich die aktuelle Handelshistorie einer Crypto-Börse und erstellt anhand dieser Daten eine Candlestick-Chart.
 Zeitgleich werden mit den berechneten Candlesticks verschiedene technische Indikatoren ermittelt.
 
@@ -66,18 +66,12 @@ Die Blockchain bzw. der Cryptocurrencymarkt befindet sich seit 2015 in einer sta
 ### Umfang
 Die Software wird im ersten Entwicklungsschritt nur mit der Binance API funktionieren, weil diese kostenlos verwendbar ist und eine vergleichbar gute Performance liefert.
 
-Indikatoren:
-+ EMA auf beliebigen Timeframe
+Indikatoren für Tradeentscheidungen und Charts:
 + MFI
 + RSI
 + CCI
-
-Chart Indikatoren:
-+ Ichimoku
 + EMA
-+ MFI
-+ RSI
-+ CCI
++ Ichimoku Cloud
 
 Marktstrategien:
 + Buy/Hold/Sell Entscheidung nach den Indikatoren
@@ -88,6 +82,9 @@ Gewinn/Verlust Übersicht:
 + Zeitraum wählbar
 + Währungspaar wählbar
 + Strategie wählbar
+
+Push-Benachrichtigung:
++ Bei ausgeführter Order mit Orderdetails
 
 ### Marktanforderungen
 Der Cryptocurrency-Algobot-Markt ist noch Jung, dementsprechend einfach und teuer sind die aktuellen Produkte am Markt.
@@ -109,13 +106,43 @@ Die Software ist für Anwender konzipiert, die ein Grundverständnis von Marktte
 ## 2.2 Nicht-funktionale Anforderungen
 
 ### 2.2.1 Rahmenbedingungen
-    - Normen, Standards, Protokolle, Hardware, externe Vorgaben
+Die Indikatoren und Markttechniken sind wie folgt standardisiert:
+
+1. MFI: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:money_flow_index_mfi
+
+2. RSI: http://stockcharts.com/school/doku.php?st=rsi&id=chart_school:technical_indicators:relative_strength_index_rsi
+
+3. CCI: http://www.stockcharts.com/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci
+
+4. EMA: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_averages
+
+5. Ichimoku Cloud: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:ichimoku_cloud
+
+5. Candlestick Chart: https://en.wikipedia.org/wiki/Candlestick_chart
+
+6. Exchange Position (hold/buy/sell)
++ https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
++ https://www.investopedia.com/terms/h/hold.asp
++ https://www.investopedia.com/terms/p/position.asp
+
+
+Die Börsen geben die Datenstruktur für die Tradehistorie und die Orderdetails vor.
+
+[ToDo? (Protokolle, Hardware)]
 
 ### 2.2.2 Betriebsbedingungen
-    - Vorgaben des Kunden (z.B. Web Browser / Betriebssystem Versionen, Programmiersprache)
+Web Browser: Chrome
+OS: Windows 8.1/10 64Bit
+Programmiersprachen: Node.js, Javascript ES6, SQL
 
 ### 2.2.3 Qualitätsmerkmale
-    - Externe Qualitätsanforderungen (z.B. Performance, Sicherheit, Zuverlässigkeit, Benutzerfreundlichkeit)
++ Performance: Die Software muss in der Lage sein Tradingentscheidungen in kürzester Zeit, nach Eingang der Tradedaten, zu fällen.
+
++ Sicherheit: Die Benutzerdaten müssen besonders Geschützt werden, weil sehr sensitive Daten benötigt werden, wie zum Beispiel der API-Key zum Handeln an der Tradingplatform.
+
++ Zuverlässigkeit: Mit der Software wird an einem Terminmarkt gehandelt, deswegen ist die Zuverlässigkeit von höchster Priorität. Bei einem Absturz des Programms muss gewährleisten sein, dass diese automatisch und in kürzester Zeit neu startet.
+
++ Benutzerfreundlichkeit: Die Benutzeroberfläche mit dem interaktiven Candlestick-Chart muss den üblichen GUI-Standards genügen.
 
 ## 2.3 Graphische Benutzerschnittstelle
 ### GUI-Mockups
@@ -129,7 +156,7 @@ Gewinn/Verlust Übersicht
 <img src="pictures/mockup_profit-loss.png" height="100%" width="100%">
 
 ### Navigations-Zustandsdiagramm
-Die Navigation findet in der ersten MockUp Version über drei Navigationsreiter statt. Sobald eine weitere Hierarchiestufe hinzukommt wird das Navigations-Zustandsdiagramm erstellt.
+Die Navigation findet in der ersten MockUp Version über drei Navigationsreiter statt. Sobald eine weitere Hierarchiestufe hinzukommt wird das Navigations-Zustandsdiagramm ergänzt.
 
 ## 2.4 Anforderungen im Detail
     - User Stories mit Akzeptanzkritierien
