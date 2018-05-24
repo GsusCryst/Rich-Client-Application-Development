@@ -15,9 +15,9 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>240</x>
-      <y>20</y>
+      <y>90</y>
       <w>630</w>
-      <h>720</h>
+      <h>650</h>
     </coordinates>
     <panel_attributes>AlgoTrade
 halign=left</panel_attributes>
@@ -28,10 +28,10 @@ halign=left</panel_attributes>
     <coordinates>
       <x>300</x>
       <y>140</y>
-      <w>140</w>
+      <w>220</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>Chart</panel_attributes>
+    <panel_attributes>Show interactive Chart</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -39,10 +39,10 @@ halign=left</panel_attributes>
     <coordinates>
       <x>300</x>
       <y>340</y>
-      <w>140</w>
+      <w>200</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>Loss/Profit</panel_attributes>
+    <panel_attributes>Show Loss/Profit Graph</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -50,10 +50,10 @@ halign=left</panel_attributes>
     <coordinates>
       <x>300</x>
       <y>580</y>
-      <w>140</w>
+      <w>180</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>Market Strategy</panel_attributes>
+    <panel_attributes>Show Market Strategy</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -92,135 +92,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>530</x>
-      <y>250</y>
-      <w>180</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>Set Start-/Enddate</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>430</x>
-      <y>40</y>
-      <w>120</w>
-      <h>160</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>100.0;20.0;10.0;20.0;10.0;140.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>540</x>
-      <y>100</y>
-      <w>150</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>Set Timeframe</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>540</x>
-      <y>160</y>
-      <w>150</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>Set Indicators</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>430</x>
-      <y>160</y>
-      <w>130</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>430</x>
-      <y>100</y>
-      <w>130</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>110.0;20.0;10.0;20.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>430</x>
-      <y>170</y>
-      <w>120</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>100.0;110.0;10.0;110.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>700</x>
-      <y>100</y>
-      <w>160</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>Kann man das zusammen fassen als "Charteinstellungen ändern" oder extends dahin legen
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>540</x>
-      <y>480</y>
-      <w>150</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>Set Buy/Sell</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>530</x>
-      <y>40</y>
-      <w>170</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>Set Currency Pair</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>430</x>
-      <y>300</y>
-      <w>280</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>190.0;10.0;190.0;80.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>530</x>
-      <y>590</y>
+      <x>610</x>
+      <y>510</y>
       <w>190</w>
       <h>60</h>
     </coordinates>
@@ -230,8 +103,8 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>530</x>
-      <y>670</y>
+      <x>610</x>
+      <y>650</y>
       <w>180</w>
       <h>60</h>
     </coordinates>
@@ -241,37 +114,25 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>430</x>
-      <y>490</y>
-      <w>130</w>
-      <h>150</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>110.0;20.0;10.0;20.0;10.0;130.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>430</x>
-      <y>600</y>
-      <w>120</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>430</x>
-      <y>610</y>
-      <w>120</w>
+      <x>470</x>
+      <y>530</y>
+      <w>160</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>100.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+    <additional_attributes>140.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>610</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>140.0;70.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
