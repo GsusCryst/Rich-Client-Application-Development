@@ -22,4 +22,4 @@ https://gsuscryst.github.io/Rich-Client-Application-Development/npmWebpack.html
 https://gsuscryst.github.io/Rich-Client-Application-Development/SWQ_Tooling.html
 
 5. Pflichtenheft
-https://gsuscryst.github.io/Rich-Client-Application-Development/Pflichtenheft.md
+https://github.com/GsusCryst/Rich-Client-Application-Development/blob/master/pflichtenheft.md
