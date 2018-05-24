@@ -1,0 +1,15 @@
+Use-Case Schablone
+- ID
+- Name
+- Description
+- Actors
+- Status
+- Includes
+- Rationale/Trigger
+- Preconditions
+- Invarianten
+- Postconditions
+- Normal Flow
+- Alternative Flow
+- Hints
+- Use Case History
