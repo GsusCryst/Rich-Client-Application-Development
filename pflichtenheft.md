@@ -102,7 +102,8 @@ Die Software ist für Anwender konzipiert, die ein Grundverständnis von Marktte
 # 2 Anforderungen
 
 ## 2.1 Funktionale Anforderungen
-    - Use-Case Diagramme
+Use-Case Diagramm für AlgoTrade
+<img src="pictures/UseCaseDiagram.jpg" height="100%" width="100%">
     - Strukturierung der Diagramme in funktionale Gruppen
 
 ## 2.2 Nicht-funktionale Anforderungen
