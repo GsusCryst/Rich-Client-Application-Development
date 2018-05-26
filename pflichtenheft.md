@@ -30,6 +30,8 @@ Autoren: Sasha Koß, Kristoffer Roßbach
     - [Beispiel 2](#beispiel-2)
 - [3 Technische Beschreibung](#3-technische-beschreibung)
   - [3.1 Systemübersicht](#31-system%C3%BCbersicht)
+    - [Systemarchitekturdiagramm](#systemarchitekturdiagramm)
+    - [Schnittstellenbeschreibung](#schnittstellenbeschreibung)
   - [3.2 Softwarearchitektur](#32-softwarearchitektur)
   - [3.3 Datenmodell](#33-datenmodell)
   - [3.4 Abläufe](#34-abl%C3%A4ufe)
@@ -185,9 +187,15 @@ Die Navigation findet in der ersten MockUp Version über drei Navigationsreiter 
 # 3 Technische Beschreibung
 
 ## 3.1 Systemübersicht
-    - Systemarchitekturdiagramm ("Box-And-Arrow" Diagramm)
-    - Schnittstellenbeschreibung
-    - Kommunikationsprotokolle, Datenformate
+### Systemarchitekturdiagramm
+<img src="pictures/Systemarchitektur.png" height="100%" width="100%">
+
+### Schnittstellenbeschreibung
+Der Node.js Server holt sich in 10ms Intervalen die aktuelle Tradehistorie von der Binance REST-API im JSON-Format. Anschließend werde diese Daten verarbeitet und in die lokale MongoDB gespeichert.
+
+Die verarbeiteten Daten werden dann der AlgoTrader GUI per Rest-API vom Node.js Server bereit gestellt.
+
+Die Kraken REST-API wird bei einem Tradesignal vom Node.js Server zur Ausführung der entsprechenden Order angewiesen.
 
 ## 3.2 Softwarearchitektur
     - Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
