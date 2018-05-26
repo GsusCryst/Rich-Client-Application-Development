@@ -213,7 +213,8 @@ Die Navigation findet in der ersten MockUp Version über drei Navigationsreiter 
 
 ## 3.1 Systemübersicht
 ### Systemarchitekturdiagramm
-<div style="text-align:center"><img src="pictures/Systemarchitektur.png" height="65%" width="65%"></div>
+
+<div style="text-align:center"><img src="pictures/Systemarchitektur.png" height="100%" width="100%"></div>
 
 ### Schnittstellenbeschreibung
 Der Node.js Server holt sich in 10ms Intervalen die aktuelle Tradehistorie von der Binance REST-API im JSON-Format. Anschließend werde diese Daten verarbeitet und in die lokale MongoDB gespeichert.
