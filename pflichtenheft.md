@@ -43,11 +43,20 @@ Autoren: Sasha Koß, Kristoffer Roßbach
   - [3.5 Entwurf](#35-entwurf)
 - [4 Projektorganisation](#4-projektorganisation)
   - [4.1 Annahmen](#41-annahmen)
+    - [Technologien](#technologien)
+    - [Einschränkungen](#einschr%C3%A4nkungen)
+    - [Interne Qualitätsanforderungen](#interne-qualit%C3%A4tsanforderungen)
   - [4.2 Verantwortlichkeiten](#42-verantwortlichkeiten)
   - [4.3 Grober Projektplan](#43-grober-projektplan)
 - [5 Anhänge](#5-anh%C3%A4nge)
   - [5.1 Glossar](#51-glossar)
+    - [Definitionen](#definitionen)
+    - [Abkürzungen](#abk%C3%BCrzungen)
+    - [Begriffe](#begriffe)
   - [5.2 Referenzen](#52-referenzen)
+    - [Indikatoren](#indikatoren)
+    - [Candlestick Chart](#candlestick-chart)
+    - [Exchange Position \(hold/buy/sell\)](#exchange-position-holdbuysell)
   - [5.3 Index](#53-index)
 
 <!-- /MarkdownTOC -->
@@ -65,11 +74,14 @@ Die Indikatoren werden zur Umsetzung der vom Benutzer konfigurierten Marktstrate
 Der Benutzer muss ein Konto mit Einlage auf der jeweiligen Börse besitzen, weil die Algotrade Software die Entscheidungen per API-Request durchführt.
 
 Es kann zusätzlich eine Gewinn/Verlust-Übersicht über einen bestimmten Zeitraum eingesehen werden.
+
 ## 1.2 Ziele
 ### Anwendungsbereich
 Der Algotrader wird zuerst im privaten Bereich zum Testen von Marktstrategien eingesetzt werden.
+
 ### Motivation
 Die Blockchain bzw. der Cryptocurrencymarkt befindet sich seit 2015 in einer starken und volatilen Wachstumsphase, deswegen kann ein Einstieg in diesen Markt für risikofreudige Unternehmer lukrativ sein.
+
 ### Umfang
 Die Software wird im ersten Entwicklungsschritt nur mit der Binance API funktionieren, weil diese kostenlos verwendbar ist und eine vergleichbar gute Performance liefert.
 
@@ -97,8 +109,10 @@ Push-Benachrichtigung:
 Der Cryptocurrency-Algobot-Markt ist noch Jung, dementsprechend einfach und teuer sind die aktuellen Produkte am Markt.
 
 Übersicht: https://themerkle.com/top-6-bitcoin-trading-bots/
+
 ### Zielgruppe
 Die Software ist für Anwender konzipiert, die ein Grundverständnis von Markttechnik besitzen und eine individuelle Marktstrategie an einer Cryptobörse umsetzen wollen.
+
 ### Abgrenzung
 + beinhaltet keine vorgefertigten Marktstrategien
 + kein BackTesting der Strategien
@@ -133,29 +147,9 @@ Laden der Market Strategy
 ## 2.2 Nicht-funktionale Anforderungen
 
 ### 2.2.1 Rahmenbedingungen
-Die Indikatoren und Markttechniken sind wie folgt standardisiert:
+Die Indikatoren und Markttechniken werden in 5.2 ausführliche referenziert.
 
-1. MFI: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:money_flow_index_mfi
-
-2. RSI: http://stockcharts.com/school/doku.php?st=rsi&id=chart_school:technical_indicators:relative_strength_index_rsi
-
-3. CCI: http://www.stockcharts.com/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci
-
-4. EMA: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_averages
-
-5. Ichimoku Cloud: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:ichimoku_cloud
-
-5. Candlestick Chart: https://en.wikipedia.org/wiki/Candlestick_chart
-
-6. Exchange Position (hold/buy/sell)
-+ https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
-+ https://www.investopedia.com/terms/h/hold.asp
-+ https://www.investopedia.com/terms/p/position.asp
-
-
-Die Börsen geben die Datenstruktur für die Tradehistorie und die Orderdetails vor.
-
-[ToDo? (Protokolle, Hardware)]
+Die Börsen geben die Datenstruktur für die Tradehistorie und die Orderdetails über die REST-API per JSON vor.
 
 ### 2.2.2 Betriebsbedingungen
 Web Browser: Chrome
@@ -240,10 +234,25 @@ Die Kraken REST-API wird bei einem Tradesignal vom Node.js Server zur Ausführun
 # 4 Projektorganisation
 
 ## 4.1 Annahmen
-    - Nicht durch den Kunden definierte spezifische Annahmen, Anforderungen und Abhängigkeiten
-    - Verwendete Technologien (Programmiersprache, Frameworks, etc.)
-    - Einschränkungen, Betriebsbedingungen und Faktoren, die die Entwicklung beeinflussen (Betriebssysteme, Entwicklungsumgebung)
-    - Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
++ Die Crypto-Börsen Binance und Kraken bleiben zu 99% verfügbar
++ Cryptocurrencys bleiben über die Projektlaufzeit in Deutschland legal
+
+### Technologien
++ Node.js mit NPM
++ MongoDB
++ Javascript ES6
++ Verwendete Libs: TA-LIB, Knex.js, dotenv, express, fs-extra, parse-duration, pino, request, request-promise
+
+### Einschränkungen
++ Die Programmgeschwindigkeit wird zum Großteil durch die REST-APIs der Börsen bestimmt.
++ Die Internetverbindung des Servers muss sehr niedrige Pingzeiten zu den Börsen gewährleisten.
++ Das Betriebssystem muss für den 24/7 Betrieb geeignet sein.
+
+### Interne Qualitätsanforderungen
++ Softwarequalität muss den Performance ansprüchen des Projektes entsprechen
++ Quellcodedokumentation auf Englisch
++ Funktionalität des Codes wird vor dem Push geprüft
++ Quellcode vor dem Push mit JS Beautifier formatieren
 
 ## 4.2 Verantwortlichkeiten
 Sasha Koß:
@@ -282,12 +291,40 @@ Kristoffer Roßbach:
 # 5 Anhänge
 
 ## 5.1 Glossar
-    - Definitionen, Abkürzungen, Begriffe
+
+### Definitionen
+
+### Abkürzungen
+MFI - Money Flow Index
+RSI - Relative Strength Index
+CCI - Commodity Channel Index
+
+### Begriffe
+Crypto: Kurzschreibweisen für Cryptocurrency, ein digitales und dezentrales Zahlungsmittel auf Blockchainbasis.
 
 ## 5.2 Referenzen
-    - Handbücher, Gesetze
+
+### Indikatoren
+
+1. MFI: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:money_flow_index_mfi
+
+2. RSI: http://stockcharts.com/school/doku.php?st=rsi&id=chart_school:technical_indicators:relative_strength_index_rsi
+
+3. CCI: http://www.stockcharts.com/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci
+
+4. EMA: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_averages
+
+5. Ichimoku Cloud: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:ichimoku_cloud
+
+### Candlestick Chart
++ https://en.wikipedia.org/wiki/Candlestick_chart
+
+### Exchange Position (hold/buy/sell)
++ https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
++ https://www.investopedia.com/terms/h/hold.asp
++ https://www.investopedia.com/terms/p/position.asp
 
 ## 5.3 Index
-
+Todo?
 
 
