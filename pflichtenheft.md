@@ -246,8 +246,13 @@ Die Kraken REST-API wird bei einem Tradesignal vom Node.js Server zur Ausführun
     - Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
 
 ## 4.2 Verantwortlichkeiten
-    - Zuordnung von Personen zu Softwarebausteinen aus Kapitel 3.1 und 3.2
-    - Rollendefinition und Zuordnung
+Sasha Koß:  
+  Rolle: Projektleitung, Backend 
+  Softwarebausteine: Marktstrategieausführungsschicht; Datenbank; Node.js; REST-API 
+ 
+Kristoffer Roßbach: 
+  Rolle: Frontend 
+  Softwarebausteine: Profit/Loss GUI, Marktstrategie GUI, Chart GUI 
 
 ## 4.3 Grober Projektplan
     - Meilensteine
