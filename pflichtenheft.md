@@ -295,9 +295,10 @@ Kristoffer Roßbach:
 ### Definitionen
 
 ### Abkürzungen
-MFI - Money Flow Index
-RSI - Relative Strength Index
-CCI - Commodity Channel Index
+
++ MFI - Money Flow Index
++ RSI - Relative Strength Index
++ CCI - Commodity Channel Index
 
 ### Begriffe
 Crypto: Kurzschreibweisen für Cryptocurrency, ein digitales und dezentrales Zahlungsmittel auf Blockchainbasis.
