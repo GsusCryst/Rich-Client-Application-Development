@@ -112,23 +112,23 @@ Use-Case Diagramm für AlgoTrade
 
 ### 2.1.1 Use Case 1.0
 Anzeigen des interaktiven Charts
-<img src="pictures/UC1_showInteractiveChart" height="100%" width="100%">
+<img src="pictures/UC1_showInteractiveChart.jpg" height="100%" width="100%">
 
 ### 2.1.2 Use Case 2.0
 Anzeigen des Loss/Profit Graphs
-<img src="pictures/UC2_showLossProfitGraph" height="100%" width="100%">
+<img src="pictures/UC2_showLossProfitGraph.jpg" height="100%" width="100%">
 
 ### 2.1.3 Use Case 3.0
 Anzeigen der Market Strategy
-<img src="pictures/UC3_showMarketStrategy" height="100%" width="100%">
+<img src="pictures/UC3_showMarketStrategy.jpg" height="100%" width="100%">
 
 ### 2.1.4 Use Case 3.1
 Speichern der Market Strategy
-<img src="pictures/UC3.1_saveMarketStrategy" height="100%" width="100%">
+<img src="pictures/UC3.1_saveMarketStrategy.jpg" height="100%" width="100%">
 
 ### 2.1.5 Use Case 3.2
 Laden der Market Strategy
-<img src="pictures/UC3.2_loadMarketStrategy" height="100%" width="100%">
+<img src="pictures/UC3.2_loadMarketStrategy.jpg" height="100%" width="100%">
 
 ## 2.2 Nicht-funktionale Anforderungen
 
