@@ -224,7 +224,7 @@ Die verarbeiteten Daten werden dann der AlgoTrader GUI per Rest-API vom Node.js 
 Die Kraken REST-API wird bei einem Tradesignal vom Node.js Server zur Ausführung der entsprechenden Order angewiesen.
 
 ## 3.2 Softwarearchitektur
-    - Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
+
 <div style="text-align:center"><img src="pictures/Softwarearchitektur.png" height="100%" width="100%"></div>
 
 ## 3.3 Datenmodell
@@ -248,16 +248,30 @@ Die Kraken REST-API wird bei einem Tradesignal vom Node.js Server zur Ausführun
 ## 4.2 Verantwortlichkeiten
 Sasha Koß:
 
-    Rolle: Projektleitung, Backend 
-    Softwarebausteine: Marktstrategieausführungsschicht; Datenbank; Node.js; REST-API 
- 
+    Rolle: Projektleitung, Backend
+    Softwarebausteine: Marktstrategieausführungsschicht; Datenbank; Node.js; REST-API
+
 Kristoffer Roßbach:
 
-    Rolle: Frontend 
-    Softwarebausteine: Profit/Loss GUI, Marktstrategie GUI, Chart GUI 
+    Rolle: Frontend
+    Softwarebausteine: Profit/Loss GUI, Marktstrategie GUI, Chart GUI
 
 ## 4.3 Grober Projektplan
-    - Meilensteine
+
+31.05
++ Abgabe Projektplan / Pflichtenheft
+07.06
++ Backend: Binance API für Marktdaten + Indikatoren Implementiert; Frontend: GUI ohne Funktion umgesetzt
+14.06
++ Backend: Kraken API für Orders Implementiert; Frontend: Funktionale-Anforderungen umgesetzt
+21.06
++ Backend: Profit/Loss Auswertung + Marktstrategien; Frontend: Charts eingebunden
+28.06
++ Puffer
+05.07
++ Letztes Praktika / Nachbesserung / Präsentationsvorbereitung
+12.07
++ Abgabe Projekt / Präsentationsvorbereitung
 
 # 5 Anhänge
 
