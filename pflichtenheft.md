@@ -17,6 +17,11 @@ Autoren: Sasha Koß, Kristoffer Roßbach
     - [Abgrenzung](#abgrenzung)
 - [2 Anforderungen](#2-anforderungen)
   - [2.1 Funktionale Anforderungen](#21-funktionale-anforderungen)
+    - [2.1.1 Use Case 1.0](#211-use-case-10)
+    - [2.1.2 Use Case 2.0](#212-use-case-20)
+    - [2.1.3 Use Case 3.0](#213-use-case-30)
+    - [2.1.4 Use Case 3.1](#214-use-case-31)
+    - [2.1.5 Use Case 3.2](#215-use-case-32)
   - [2.2 Nicht-funktionale Anforderungen](#22-nicht-funktionale-anforderungen)
     - [2.2.1 Rahmenbedingungen](#221-rahmenbedingungen)
     - [2.2.2 Betriebsbedingungen](#222-betriebsbedingungen)
@@ -104,7 +109,26 @@ Die Software ist für Anwender konzipiert, die ein Grundverständnis von Marktte
 ## 2.1 Funktionale Anforderungen
 Use-Case Diagramm für AlgoTrade
 <img src="pictures/UseCaseDiagram.jpg" height="100%" width="100%">
-    - Strukturierung der Diagramme in funktionale Gruppen
+
+### 2.1.1 Use Case 1.0
+Anzeigen des interaktiven Charts
+<img src="pictures/UC1_showInteractiveChart" height="100%" width="100%">
+
+### 2.1.2 Use Case 2.0
+Anzeigen des Loss/Profit Graphs
+<img src="pictures/UC2_showLossProfitGraph" height="100%" width="100%">
+
+### 2.1.3 Use Case 3.0
+Anzeigen der Market Strategy
+<img src="pictures/UC3_showMarketStrategy" height="100%" width="100%">
+
+### 2.1.4 Use Case 3.1
+Speichern der Market Strategy
+<img src="pictures/UC3.1_saveMarketStrategy" height="100%" width="100%">
+
+### 2.1.5 Use Case 3.2
+Laden der Market Strategy
+<img src="pictures/UC3.2_loadMarketStrategy" height="100%" width="100%">
 
 ## 2.2 Nicht-funktionale Anforderungen
 
