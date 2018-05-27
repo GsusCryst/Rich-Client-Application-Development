@@ -32,7 +32,6 @@ Autoren: Sasha Koß, Kristoffer Roßbach
     - [2.2.3 Qualitätsmerkmale](#223-qualit%C3%A4tsmerkmale)
   - [2.3 Graphische Benutzerschnittstelle](#23-graphische-benutzerschnittstelle)
     - [GUI-Mockups](#gui-mockups)
-    - [Navigations-Zustandsdiagramm](#navigations-zustandsdiagramm)
   - [2.4 Anforderungen im Detail](#24-anforderungen-im-detail)
     - [Schablone für User Stories](#schablone-f%C3%BCr-user-stories)
     - [Beispiel 1](#beispiel-1)
@@ -45,7 +44,6 @@ Autoren: Sasha Koß, Kristoffer Roßbach
   - [3.3 Datenmodell](#33-datenmodell)
     - [ER-Diagramm](#er-diagramm)
   - [3.4 Abläufe](#34-abl%C3%A4ufe)
-  - [3.5 Entwurf](#35-entwurf)
 - [4 Projektorganisation](#4-projektorganisation)
   - [4.1 Annahmen](#41-annahmen)
     - [Technologien](#technologien)
@@ -163,7 +161,7 @@ Laden der Market Strategy:
 ## 2.2 Nicht-funktionale Anforderungen
 
 ### 2.2.1 Rahmenbedingungen
-Die Indikatoren und Markttechniken werden in 5.2 ausführliche referenziert.
+Die Indikatoren und Markttechniken werden in 5.2 referenziert.
 
 Die Börsen geben die Datenstruktur für die Tradehistorie und die Orderdetails über die REST-API per JSON vor.
 
@@ -191,9 +189,6 @@ Marktstrategie Einstellungen
 
 Gewinn/Verlust Übersicht
 <img src="pictures/mockup_profit-loss.png" height="100%" width="100%">
-
-### Navigations-Zustandsdiagramm
-Die Navigation findet in der ersten MockUp Version über drei Navigationsreiter statt. Sobald eine weitere Hierarchiestufe hinzukommt wird das Navigations-Zustandsdiagramm ergänzt.
 
 ## 2.4 Anforderungen im Detail
     - User Stories mit Akzeptanzkritierien
@@ -283,9 +278,6 @@ Speichert die API-Keys des Benutzers für die Zugriffe auf Kraken und Binance.
 ## 3.4 Abläufe
     - Aktivitätsdiagramme für relevante Use Cases
     - Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
-
-## 3.5 Entwurf
-Todo?
 
 # 4 Projektorganisation
 
