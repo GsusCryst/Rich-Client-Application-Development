@@ -35,7 +35,6 @@ Autoren: Sasha Koß, Kristoffer Roßbach
   - [2.4 Anforderungen im Detail](#24-anforderungen-im-detail)
     - [Schablone für User Stories](#schablone-f%C3%BCr-user-stories)
     - [Beispiel 1](#beispiel-1)
-    - [Beispiel 2](#beispiel-2)
 - [3 Technische Beschreibung](#3-technische-beschreibung)
   - [3.1 Systemübersicht](#31-system%C3%BCbersicht)
     - [Systemarchitekturdiagramm](#systemarchitekturdiagramm)
@@ -191,8 +190,7 @@ Gewinn/Verlust Übersicht
 <img src="pictures/mockup_profit-loss.png" height="100%" width="100%">
 
 ## 2.4 Anforderungen im Detail
-    - User Stories mit Akzeptanzkritierien
-    - Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
+
     - Strukturierung der User Stories in funktionale Gruppen
 
 ### Schablone für User Stories
@@ -206,13 +204,6 @@ Gewinn/Verlust Übersicht
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
 | Benutzer | bei Fehleingabe die Lösung angezeigt bekommen | ich lernen kann | Lösung wird angezeigt |
-
-### Beispiel 2
-
-| **Name**| **In meiner Rolle als**...|   ...**möchte ich**...   | ..., **so dass**... | **Erfüllt, wenn**... | **Priorität**   |
-|:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
-| Lernen  |Benutzer| bei Fehleingabe die Lösung angezeigt bekommen|ich lernen kann| Lösung wird angezeigt | Muss |
-
 
 # 3 Technische Beschreibung
 
