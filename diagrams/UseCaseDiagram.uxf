@@ -156,7 +156,7 @@ halign=left</panel_attributes>
       <w>230</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>Change Settings interactive Chart</panel_attributes>
+    <panel_attributes>Edit Settings interactive Chart</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -179,7 +179,7 @@ halign=left</panel_attributes>
       <w>210</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>Change Settings Profit/Loss</panel_attributes>
+    <panel_attributes>Edit Settings Profit/Loss</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -190,7 +190,7 @@ halign=left</panel_attributes>
       <w>240</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>Change Settings Market Strategy</panel_attributes>
+    <panel_attributes>Edit Settings Market Strategy</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
