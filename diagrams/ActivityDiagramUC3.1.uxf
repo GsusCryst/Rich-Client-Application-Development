@@ -285,10 +285,10 @@ wurden übernommmen</panel_attributes>
       <x>280</x>
       <y>470</y>
       <w>30</w>
-      <h>420</h>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;400.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
