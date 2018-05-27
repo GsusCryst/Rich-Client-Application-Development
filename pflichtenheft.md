@@ -1,5 +1,6 @@
 # Anforderungs- und Entwurfsspezifikation ("Pflichtenheft")
 Cryptocurrency Algotrader
+
 Autoren: Sasha Koß, Kristoffer Roßbach
 
 <!-- MarkdownTOC autolink=true -->
