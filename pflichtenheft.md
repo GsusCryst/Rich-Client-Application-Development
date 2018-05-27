@@ -58,7 +58,6 @@ Autoren: Sasha Koß, Kristoffer Roßbach
     - [Indikatoren](#indikatoren)
     - [Candlestick Chart](#candlestick-chart)
     - [Exchange Position \(hold/buy/sell\)](#exchange-position-holdbuysell)
-  - [5.3 Index](#53-index)
 
 <!-- /MarkdownTOC -->
 
@@ -225,7 +224,22 @@ Die Kraken REST-API wird bei einem Tradesignal vom Node.js Server zur Ausführun
 ## 3.3 Datenmodell
 
 ### ER-Diagramm
+
 <div style="text-align:center"><img src="pictures/erd.png" height="100%" width="100%"></div>
+
+Es bestehen keine relationalen Verbindungen zwischen den Entitys, weil in diesem Projekt MongoDB zum Einsatz kommt, eine dokumentenbasiert Datenbank.
+
+
+Die Entity binance_trades speichert die Tradehistorie der BinanceAPI, damit bei einem neustart des AlgoTraders genug Zeitreihen vorhanden sind zum berechnen der Indikatoren.
+
+
+Die Tabelle kraken_orders speichert die Orderdetails nach der Ausführung am Markt einer Order bei Kraken.
+
+
+executed_trades speichert die Indikatorenwerte und Marktdetails beim absenden der Order an Kraken.
+
+
+Die candlesticks Tabelle speichert die Werte für das Candlestick-Chart.
 
 ## 3.4 Abläufe
     - Aktivitätsdiagramme für relevante Use Cases
@@ -304,7 +318,7 @@ Kristoffer Roßbach:
 + CCI - Commodity Channel Index
 
 ### Begriffe
-Crypto: Kurzschreibweisen für Cryptocurrency, ein digitales und dezentrales Zahlungsmittel auf Blockchainbasis.
++ Crypto: Kurzschreibweisen für Cryptocurrency, ein digitales und dezentrales Zahlungsmittel auf Blockchainbasis.
 
 ## 5.2 Referenzen
 
@@ -328,7 +342,5 @@ Crypto: Kurzschreibweisen für Cryptocurrency, ein digitales und dezentrales Zah
 + https://www.investopedia.com/terms/h/hold.asp
 + https://www.investopedia.com/terms/p/position.asp
 
-## 5.3 Index
-Todo?
 
 
