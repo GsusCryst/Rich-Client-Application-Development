@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLActor</id>
@@ -6,7 +7,7 @@
       <x>70</x>
       <y>340</y>
       <w>60</w>
-      <h>100</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>User</panel_attributes>
     <additional_attributes/>
@@ -16,7 +17,7 @@
     <coordinates>
       <x>240</x>
       <y>90</y>
-      <w>630</w>
+      <w>670</w>
       <h>650</h>
     </coordinates>
     <panel_attributes>AlgoTrade
@@ -42,7 +43,7 @@ halign=left</panel_attributes>
       <w>200</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>Show Loss/Profit Graph</panel_attributes>
+    <panel_attributes>Show Profit/Loss Graph</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -92,8 +93,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>610</x>
-      <y>510</y>
+      <x>710</x>
+      <y>470</y>
       <w>190</w>
       <h>60</h>
     </coordinates>
@@ -103,7 +104,7 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>610</x>
+      <x>560</x>
       <y>650</y>
       <w>180</w>
       <h>60</h>
@@ -115,24 +116,93 @@ halign=left</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>470</x>
-      <y>530</y>
-      <w>160</w>
-      <h>110</h>
+      <y>610</y>
+      <w>110</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>140.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>90.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>630</x>
+      <y>140</y>
+      <w>230</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Change Settings interactive Chart</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>160</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>630</x>
+      <y>350</y>
+      <w>210</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Change Settings Profit/Loss</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>580</x>
+      <y>570</y>
+      <w>240</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Change Settings Market Strategy</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>360</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>470</x>
-      <y>610</y>
-      <w>160</w>
-      <h>90</h>
+      <y>580</y>
+      <w>130</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>140.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>110.0;20.0;10.0;20.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>490</y>
+      <w>90</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;includes&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0;60.0;10.0</additional_attributes>
   </element>
 </diagram>
