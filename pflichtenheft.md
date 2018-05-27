@@ -59,7 +59,7 @@ Autoren: Sasha Koß, Kristoffer Roßbach
   - [5.2 Referenzen](#52-referenzen)
     - [Indikatoren](#indikatoren)
     - [Candlestick Chart](#candlestick-chart)
-    - [Exchange Position \(hold/buy/sell\)](#exchange-position-holdbuysell)
+    - [Exchange Position / Orders \(hold/buy/sell\)](#exchange-position--orders-holdbuysell)
 
 <!-- /MarkdownTOC -->
 
@@ -82,7 +82,7 @@ Es kann zusätzlich eine Gewinn/Verlust-Übersicht über einen bestimmten Zeitra
 Der Algotrader wird zuerst im privaten Bereich zum Testen von Marktstrategien eingesetzt werden.
 
 ### Motivation
-Die Blockchain bzw. der Cryptocurrencymarkt befindet sich seit 2015 in einer starken und volatilen Wachstumsphase, deswegen kann ein Einstieg in diesen Markt für risikofreudige Unternehmer lukrativ sein.
+Die Blockchain bzw. der Cryptocurrency-Markt befindet sich seit 2015 in einer starken und volatilen Wachstumsphase, deswegen kann ein Einstieg in diesen Markt für risikofreudige Unternehmer lukrativ sein.
 
 ### Umfang
 Die Software wird im ersten Entwicklungsschritt nur mit der Binance API funktionieren, weil diese kostenlos verwendbar ist und eine vergleichbar gute Performance liefert.
@@ -113,7 +113,7 @@ Der Cryptocurrency-Algobot-Markt ist noch Jung, dementsprechend einfach und teue
 Übersicht: https://themerkle.com/top-6-bitcoin-trading-bots/
 
 ### Zielgruppe
-Die Software ist für Anwender konzipiert, die ein Grundverständnis von Markttechnik besitzen und eine individuelle Marktstrategie an einer Cryptobörse umsetzen wollen.
+Die Software ist für Anwender konzipiert, die ein Grundverständnis von Markttechnik besitzen und eine individuelle Marktstrategie an einer Crypto-Börse umsetzen wollen.
 
 ### Abgrenzung
 + beinhaltet keine vorgefertigten Marktstrategien
@@ -161,19 +161,19 @@ Laden der Market Strategy:
 ## 2.2 Nicht-funktionale Anforderungen
 
 ### 2.2.1 Rahmenbedingungen
-Die Indikatoren und Markttechniken werden in 5.2 referenziert.
-
 Die Börsen geben die Datenstruktur für die Tradehistorie und die Orderdetails über die REST-API per JSON vor.
+
+Die Indikatoren und Markttechniken werden in 5.2 referenziert.
 
 ### 2.2.2 Betriebsbedingungen
 Web Browser: Chrome
 OS: Windows 8.1/10 64Bit
-Programmiersprachen: Node.js, Javascript ES6, SQL
+Programmiersprachen: Node.js, Javascript ES6
 
 ### 2.2.3 Qualitätsmerkmale
 + Performance: Die Software muss in der Lage sein Tradingentscheidungen in kürzester Zeit, nach Eingang der Tradedaten, zu fällen.
 
-+ Sicherheit: Die Benutzerdaten müssen besonders Geschützt werden, weil sehr sensitive Daten benötigt werden, wie zum Beispiel der API-Key zum Handeln an der Tradingplatform.
++ Sicherheit: Die Benutzerdaten müssen besonders Geschützt werden, weil sehr sensible Daten benötigt werden, wie zum Beispiel der private API-Key zum Handeln an der Börse.
 
 + Zuverlässigkeit: Mit der Software wird an einem Terminmarkt gehandelt, deswegen ist die Zuverlässigkeit von höchster Priorität. Bei einem Absturz des Programms muss gewährleisten sein, dass diese automatisch und in kürzester Zeit neu startet.
 
@@ -342,6 +342,18 @@ Kristoffer Roßbach:
 
 ### Definitionen
 
++ Polling: Abfrage einer Resource nach Updates innerhalb eines bestimmten Intervals.
+
++ Handelshistorie: Vollständige Transaktionsliste eines Terminmarktes.
+
++ Indikatoren: Technische Indikatoren zur Analyse von Kursverläufen an Börsen
+
++ Marktstrategie: Strategie anhand von Indikatoren wann gekauft und verkauft wird.
+
++ Markttechnik: Technische Analyse eines Kursverlaufes mithilfe von Indikatoren.
+
++ Order: Eine Order ist ein Auftrag an einem Terminmarkt zum Kauf oder Verkauf eines Assets.
+
 ### Abkürzungen
 
 + MFI - Money Flow Index
@@ -350,6 +362,10 @@ Kristoffer Roßbach:
 
 ### Begriffe
 + Crypto: Kurzschreibweisen für Cryptocurrency, ein digitales und dezentrales Zahlungsmittel auf Blockchainbasis.
+
++ Crypto-Börse: Terminmarkt für Cryptocurrencys.
+
++ Algobot: Software die nach technischen Indikatoren Marktstrategien an einem Terminmarkt umsetzt.
 
 ## 5.2 Referenzen
 
@@ -368,7 +384,7 @@ Kristoffer Roßbach:
 ### Candlestick Chart
 + https://en.wikipedia.org/wiki/Candlestick_chart
 
-### Exchange Position (hold/buy/sell)
+### Exchange Position / Orders (hold/buy/sell)
 + https://www.investopedia.com/walkthrough/forex/getting-started/buying-selling.aspx
 + https://www.investopedia.com/terms/h/hold.asp
 + https://www.investopedia.com/terms/p/position.asp
