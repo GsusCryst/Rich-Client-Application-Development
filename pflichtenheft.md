@@ -39,6 +39,7 @@ Autoren: Sasha Koß, Kristoffer Roßbach
     - [Schnittstellenbeschreibung](#schnittstellenbeschreibung)
   - [3.2 Softwarearchitektur](#32-softwarearchitektur)
   - [3.3 Datenmodell](#33-datenmodell)
+    - [ER-Diagramm](#er-diagramm)
   - [3.4 Abläufe](#34-abl%C3%A4ufe)
   - [3.5 Entwurf](#35-entwurf)
 - [4 Projektorganisation](#4-projektorganisation)
@@ -222,7 +223,9 @@ Die Kraken REST-API wird bei einem Tradesignal vom Node.js Server zur Ausführun
 <div style="text-align:center"><img src="pictures/Softwarearchitektur.png" height="100%" width="100%"></div>
 
 ## 3.3 Datenmodell
-    - Konzeptionelles Analyseklassendiagramm
+
+### ER-Diagramm
+<div style="text-align:center"><img src="pictures/erd.png" height="100%" width="100%"></div>
 
 ## 3.4 Abläufe
     - Aktivitätsdiagramme für relevante Use Cases
