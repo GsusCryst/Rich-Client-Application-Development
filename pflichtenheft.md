@@ -236,6 +236,23 @@ Die Kraken REST-API wird bei einem Tradesignal vom Node.js Server zur Ausführun
 
 <div style="text-align:center"><img src="pictures/Softwarearchitektur.png" height="100%" width="100%"></div>
 
+1. Polling Module: Holt die Tradehistorie von der Binance API, speichert diese in der Datenbank und hält diese im Arbeitsspeicher für das Candlestick Module.
+
+2. Candlestick Module: Erstellt aus der Tradehistorie die Candlesticke die zur Berechnung der Indikatoren benötigt werden. Binance bietet Candlesticks über die API an, allerdings ist diese für unsere Anforderungen zu langsam.
+
+3. TA Module: Berechnet die Indikatoren mithilfe der TA-Lib für das Marktstrategie Module
+
+4. Marktstrategie Module: Läd beim Programmstart die Einstellungen für die Marktstrategie aus der Datenbank und triggert bei entsprechenden Indikatorwerten das Order Module.
+
+6. Order Module: Passt zum Start des Programms und nach jeder Order die Ordergröße an. Die Einstellung dazu werden aus der Datenbank geladen.
+Sendet die Order an die Kraken-API und speichert die Rückmeldung in der Datenbank.
+
+7. Datenbank: Die MongoDB verwaltet und speichert die Programmspezifischen Daten für das Backend und Frontend.
+
+8. Node.js REST: Die REST-API ist für die Datenbereitstellung des Frontends zuständig. Die Daten werden als JSON bereitgestellt.
+
+9. Frontend: Das Frontend ermöglicht dem Benutzer die Marktstrategie einzustellen, die ausgeführten Trades in einem Profit/Loss Graph einzusehen und den Marktverlauf in einem Candlestick-Chart zu überwachen.
+
 ## 3.3 Datenmodell
 
 ### ER-Diagramm
