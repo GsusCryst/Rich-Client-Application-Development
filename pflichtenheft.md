@@ -265,21 +265,27 @@ Es bestehen keine relationalen Verbindungen zwischen den Entitys, weil in diesem
 1. binance_trades:
 Die Entity binance_trades speichert die Tradehistorie der BinanceAPI, damit bei einem neustart des AlgoTraders genug Zeitreihen vorhanden sind zum berechnen der Indikatoren.
 
-2. kraken_orders:
+2. market_strategie:
+Speichert die Marktstrategieeinstellungen des Benutzers mit den Triggergrenzen und Ordergröße.
+
+3. candlesticks:
+Die candlesticks Tabelle speichert die Werte für das Frontend Candlestick-Chart.
+
+4. kraken_orders:
 Die Tabelle kraken_orders speichert die Orderdetails nach der Ausführung am Markt einer Order bei Kraken.
 
-3. executed_trades:
+5. executed_trades:
 executed_trades speichert die Indikatorenwerte und Marktdetails beim absenden der Order an Kraken.
 
-4. candlesticks:
-Die candlesticks Tabelle speichert die Werte für das Frontend Candlestick-Chart.
+6. user_settings:
+Speichert die API-Keys des Benutzers für die Zugriffe auf Kraken und Binance.
 
 ## 3.4 Abläufe
     - Aktivitätsdiagramme für relevante Use Cases
     - Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
 
 ## 3.5 Entwurf
-    - Detaillierte UML-Diagramme für relevante Softwarebausteine
+Todo?
 
 # 4 Projektorganisation
 
