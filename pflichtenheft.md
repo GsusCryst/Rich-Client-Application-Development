@@ -229,17 +229,17 @@ Die Kraken REST-API wird bei einem Tradesignal vom Node.js Server zur Ausführun
 
 Es bestehen keine relationalen Verbindungen zwischen den Entitys, weil in diesem Projekt MongoDB zum Einsatz kommt, eine dokumentenbasiert Datenbank.
 
-binance_trades:
+1. binance_trades:
 Die Entity binance_trades speichert die Tradehistorie der BinanceAPI, damit bei einem neustart des AlgoTraders genug Zeitreihen vorhanden sind zum berechnen der Indikatoren.
 
-kraken_orders:
+2. kraken_orders:
 Die Tabelle kraken_orders speichert die Orderdetails nach der Ausführung am Markt einer Order bei Kraken.
 
-executed_trades:
+3. executed_trades:
 executed_trades speichert die Indikatorenwerte und Marktdetails beim absenden der Order an Kraken.
 
-candlesticks:
-Die candlesticks Tabelle speichert die Werte für das Candlestick-Chart.
+4. candlesticks:
+Die candlesticks Tabelle speichert die Werte für das Frontend Candlestick-Chart.
 
 ## 3.4 Abläufe
     - Aktivitätsdiagramme für relevante Use Cases
