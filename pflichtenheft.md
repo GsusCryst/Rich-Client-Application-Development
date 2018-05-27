@@ -43,6 +43,14 @@ Autoren: Sasha Koß, Kristoffer Roßbach
   - [3.3 Datenmodell](#33-datenmodell)
     - [ER-Diagramm](#er-diagramm)
   - [3.4 Abläufe](#34-abl%C3%A4ufe)
+    - [3.4.1 Aktivitätsdiagramm UC 1.0](#341-aktivit%C3%A4tsdiagramm-uc-10)
+    - [3.4.2 Aktivitätsdiagramm UC 1.1](#342-aktivit%C3%A4tsdiagramm-uc-11)
+    - [3.4.3 Aktivitätsdiagramm UC 2.0](#343-aktivit%C3%A4tsdiagramm-uc-20)
+    - [3.4.4 Aktivitätsdiagramm UC 2.1](#344-aktivit%C3%A4tsdiagramm-uc-21)
+    - [3.4.5 Aktivitätsdiagramm UC 3.0](#345-aktivit%C3%A4tsdiagramm-uc-30)
+    - [3.4.6 Aktivitätsdiagramm UC 3.1](#346-aktivit%C3%A4tsdiagramm-uc-31)
+    - [3.4.7 Aktivitätsdiagramm UC 3.1.1](#347-aktivit%C3%A4tsdiagramm-uc-311)
+    - [3.4.8 Aktivitätsdiagramm UC 3.2](#348-aktivit%C3%A4tsdiagramm-uc-32)
 - [4 Projektorganisation](#4-projektorganisation)
   - [4.1 Annahmen](#41-annahmen)
     - [Technologien](#technologien)
@@ -267,7 +275,31 @@ executed_trades speichert die Indikatorenwerte und Marktdetails beim absenden de
 Speichert die API-Keys des Benutzers für die Zugriffe auf Kraken und Binance.
 
 ## 3.4 Abläufe
-    - Aktivitätsdiagramme für relevante Use Cases
+
+### 3.4.1 Aktivitätsdiagramm UC 1.0
+<img src="pictures/ActivityDiagramUC1.0.jpg" height="100%" width="100%">
+
+### 3.4.2 Aktivitätsdiagramm UC 1.1
+<img src="pictures/ActivityDiagramUC2.1.jpg" height="100%" width="100%">
+
+### 3.4.3 Aktivitätsdiagramm UC 2.0
+<img src="pictures/ActivityDiagramUC2.0.jpg" height="100%" width="100%">
+
+### 3.4.4 Aktivitätsdiagramm UC 2.1
+<img src="pictures/ActivityDiagramUC2.1.jpg" height="100%" width="100%">
+
+### 3.4.5 Aktivitätsdiagramm UC 3.0
+<img src="pictures/ActivityDiagramUC3.0.jpg" height="100%" width="100%">
+
+### 3.4.6 Aktivitätsdiagramm UC 3.1
+<img src="pictures/ActivityDiagramUC3.1.jpg" height="100%" width="100%">
+
+### 3.4.7 Aktivitätsdiagramm UC 3.1.1
+<img src="pictures/ActivityDiagramUC3.1.1.jpg" height="100%" width="100%">
+
+### 3.4.8 Aktivitätsdiagramm UC 3.2
+<img src="pictures/ActivityDiagramUC3.2.jpg" height="100%" width="100%">
+
     - Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
 
 # 4 Projektorganisation
