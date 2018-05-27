@@ -1,14 +1,3 @@
-MongoDB
-FrontEnd React.js
-
-Binance API Tradehistorie
-+ 
-Kraken API Order Ausführung
-
-meilensteinplan
-
-
-31.05 17:15 Abgabe Projektplan / Pflichtenheft
-
-12.07 Abgabe Projekt
-Präsentation in Klausurphase
+Ordersize MockUp
+Load Marketstrategy MockUp
+ER Abgleich UseCases und MockUps
