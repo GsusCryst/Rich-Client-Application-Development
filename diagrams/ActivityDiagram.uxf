@@ -74,10 +74,11 @@ und gestartet</panel_attributes>
     <coordinates>
       <x>470</x>
       <y>180</y>
-      <w>130</w>
-      <h>70</h>
+      <w>160</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>Use Case 1.1
+Edit interactive Chart
 symbol=substate</panel_attributes>
     <additional_attributes/>
   </element>
@@ -86,10 +87,11 @@ symbol=substate</panel_attributes>
     <coordinates>
       <x>470</x>
       <y>570</y>
-      <w>130</w>
+      <w>160</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Use Case 2.1
+Edit Profit/Loss Graph
 symbol=substate</panel_attributes>
     <additional_attributes/>
   </element>
@@ -98,46 +100,50 @@ symbol=substate</panel_attributes>
     <coordinates>
       <x>470</x>
       <y>320</y>
-      <w>130</w>
-      <h>70</h>
+      <w>160</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>Use Case 3.1
+Edit Market Strategy
 symbol=substate</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>190</x>
+      <x>160</x>
       <y>180</y>
-      <w>130</w>
+      <w>160</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Use Case 1.0
+View interactive Chart
 symbol=substate</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>190</x>
+      <x>150</x>
       <y>570</y>
-      <w>130</w>
+      <w>170</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Use Case 2.0
+View Profit/Loss Graph
 symbol=substate</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>190</x>
+      <x>150</x>
       <y>380</y>
-      <w>130</w>
+      <w>170</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Use Case 3.0
+View Market Strategy
 symbol=substate</panel_attributes>
     <additional_attributes/>
   </element>
@@ -145,11 +151,12 @@ symbol=substate</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>470</x>
-      <y>430</y>
-      <w>130</w>
-      <h>70</h>
+      <y>420</y>
+      <w>160</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>Use Case 3.2
+Load Market Strategy
 symbol=substate</panel_attributes>
     <additional_attributes/>
   </element>
@@ -370,33 +377,33 @@ exists]</panel_attributes>
     <coordinates>
       <x>70</x>
       <y>210</y>
-      <w>140</w>
+      <w>110</w>
       <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>120.0;10.0;10.0;10.0;10.0;180.0</additional_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0;10.0;180.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>70</x>
       <y>420</y>
-      <w>140</w>
+      <w>100</w>
       <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>120.0;190.0;10.0;190.0;10.0;10.0</additional_attributes>
+    <additional_attributes>80.0;190.0;10.0;190.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>90</x>
       <y>400</y>
-      <w>120</w>
+      <w>80</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLSpecialState</id>
@@ -442,5 +449,28 @@ wird beendet</panel_attributes>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>380</x>
+      <y>90</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>"Chart" Reiter
+ist ausgewählt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>100</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
   </element>
 </diagram>
