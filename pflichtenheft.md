@@ -336,7 +336,7 @@ Sasha Koß:
 Kristoffer Roßbach:
 
     Rolle: Frontend
-    Softwarebausteine: Profit/Loss GUI, Marktstrategie GUI, Chart GUI
+    Softwarebausteine: Profit/Loss GUI; Marktstrategie GUI; Chart GUI
 
 ## 4.3 Grober Projektplan
 
