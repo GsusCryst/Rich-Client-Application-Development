@@ -51,6 +51,7 @@ Autoren: Sasha Koß, Kristoffer Roßbach
     - [3.4.6 Aktivitätsdiagramm UC 3.1](#346-aktivit%C3%A4tsdiagramm-uc-31)
     - [3.4.7 Aktivitätsdiagramm UC 3.1.1](#347-aktivit%C3%A4tsdiagramm-uc-311)
     - [3.4.8 Aktivitätsdiagramm UC 3.2](#348-aktivit%C3%A4tsdiagramm-uc-32)
+    - [3.4.9 Aktivitätsdiagramm für alle Use Cases](#349-aktivit%C3%A4tsdiagramm-f%C3%BCr-alle-use-cases)
 - [4 Projektorganisation](#4-projektorganisation)
   - [4.1 Annahmen](#41-annahmen)
     - [Technologien](#technologien)
@@ -300,7 +301,8 @@ Speichert die API-Keys des Benutzers für die Zugriffe auf Kraken und Binance.
 ### 3.4.8 Aktivitätsdiagramm UC 3.2
 <img src="pictures/ActivityDiagramUC3.2.jpg" height="100%" width="100%">
 
-    - Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
+### 3.4.9 Aktivitätsdiagramm für alle Use Cases
+<img src="pictures/ActivityDiagram.jpg" height="100%" width="100%">
 
 # 4 Projektorganisation
 

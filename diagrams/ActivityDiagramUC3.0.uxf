@@ -4,8 +4,8 @@
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>120</x>
-      <y>60</y>
+      <x>110</x>
+      <y>50</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>120</x>
-      <y>260</y>
+      <x>110</x>
+      <y>250</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -26,8 +26,8 @@
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>290</x>
-      <y>230</y>
+      <x>280</x>
+      <y>220</y>
       <w>150</w>
       <h>70</h>
     </coordinates>
@@ -39,8 +39,8 @@ angezeigt</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>300</x>
-      <y>50</y>
+      <x>290</x>
+      <y>40</y>
       <w>180</w>
       <h>70</h>
     </coordinates>
@@ -52,8 +52,8 @@ und gestartet</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>30</x>
-      <y>140</y>
+      <x>20</x>
+      <y>130</y>
       <w>220</w>
       <h>50</h>
     </coordinates>
@@ -63,8 +63,8 @@ und gestartet</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>120</x>
-      <y>70</y>
+      <x>110</x>
+      <y>60</y>
       <w>30</w>
       <h>90</h>
     </coordinates>
@@ -74,8 +74,8 @@ und gestartet</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>120</x>
-      <y>180</y>
+      <x>110</x>
+      <y>170</y>
       <w>30</w>
       <h>100</h>
     </coordinates>
@@ -85,8 +85,8 @@ und gestartet</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>60</y>
+      <x>120</x>
+      <y>50</y>
       <w>190</w>
       <h>30</h>
     </coordinates>
@@ -96,8 +96,8 @@ und gestartet</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>260</y>
+      <x>120</x>
+      <y>250</y>
       <w>180</w>
       <h>30</h>
     </coordinates>
@@ -107,8 +107,8 @@ und gestartet</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>20</x>
-      <y>20</y>
+      <x>10</x>
+      <y>10</y>
       <w>480</w>
       <h>300</h>
     </coordinates>
