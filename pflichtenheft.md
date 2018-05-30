@@ -131,6 +131,22 @@ Die Software ist für Anwender konzipiert, die ein Grundverständnis von Marktte
 
 ## 2.1 Funktionale Anforderungen
 Use-Case Diagramm für AlgoTrade:
+| **Name** | View interactive Chart |
+| **Nummer** | UC 1.0 |
+| **Autor** | Kristoffer Roßbach |
+| **Version** | 1.0, 27.05.2018, Erstellung |
+| **Kurzbeschreibung** | bla |
+| **Stakeholder** | bla |
+| **Fachverantwortlicher** | Sasha Koß |
+| **Vorbedingungen** | bla |
+| **Nachbedingungen** | bla |
+| **Exception** | bla |
+| **Typischer Ablauf** | 1. bla
+2. bla
+3. bla |
+| **Alternative Abläufe** | 1a. bla
+3a. bla |
+| **Kategorie** | primär |
 <img src="pictures/UseCaseDiagram.jpg" height="100%" width="100%">
 
 ### 2.1.1 Use Case 1.0 - Show interactive Chart
