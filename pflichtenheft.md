@@ -18,11 +18,14 @@ Autoren: Sasha Koß, Kristoffer Roßbach
     - [Abgrenzung](#abgrenzung)
 - [2 Anforderungen](#2-anforderungen)
   - [2.1 Funktionale Anforderungen](#21-funktionale-anforderungen)
-    - [2.1.1 Use Case 1.1 - Edit Settings interactive Chart](#211-use-case-11---edit-settings-interactive-chart)
-    - [2.1.2 Use Case 2.1 - Edit Settings Profit/Loss Graph](#212-use-case-21---edit-settings-profitloss-graph)
-    - [2.1.3 Use Case 3.1 - Edit Settings Market Strategy](#213-use-case-31---edit-settings-market-strategy)
-    - [2.1.4 Use Case 3.1.1 - Save Market Strategy](#214-use-case-311---save-market-strategy)
-    - [2.1.5 Use Case 3.2 - Load Market Strategy](#215-use-case-32---load-market-strategy)
+    - [2.1.1 Use Case 1.0 - Show interactive Chart](#211-use-case-10---show-interactive-chart)
+    - [2.1.2 Use Case 1.1 - Edit Settings interactive Chart](#212-use-case-11---edit-settings-interactive-chart)
+    - [2.1.3 Use Case 2.0 - Show Profit/Loss Graph](#213-use-case-20---show-profitloss-graph)
+    - [2.1.4 Use Case 2.1 - Edit Settings Profit/Loss Graph](#214-use-case-21---edit-settings-profitloss-graph)
+    - [2.1.5 Use Case 3.0 - Show Market Strategy](#215-use-case-30---show-market-strategy)
+    - [2.1.6 Use Case 3.1 - Edit Settings Market Strategy](#216-use-case-31---edit-settings-market-strategy)
+    - [2.1.7 Use Case 3.1.1 - Save Market Strategy](#217-use-case-311---save-market-strategy)
+    - [2.1.8 Use Case 3.2 - Load Market Strategy](#218-use-case-32---load-market-strategy)
   - [2.2 Nicht-funktionale Anforderungen](#22-nicht-funktionale-anforderungen)
     - [2.2.1 Rahmenbedingungen](#221-rahmenbedingungen)
     - [2.2.2 Betriebsbedingungen](#222-betriebsbedingungen)
@@ -39,11 +42,8 @@ Autoren: Sasha Koß, Kristoffer Roßbach
   - [3.3 Datenmodell](#33-datenmodell)
     - [ER-Diagramm](#er-diagramm)
   - [3.4 Abläufe](#34-abl%C3%A4ufe)
-    - [3.4.1 Aktivitätsdiagramm UC 1.0](#341-aktivit%C3%A4tsdiagramm-uc-10)
     - [3.4.2 Aktivitätsdiagramm UC 1.1](#342-aktivit%C3%A4tsdiagramm-uc-11)
-    - [3.4.3 Aktivitätsdiagramm UC 2.0](#343-aktivit%C3%A4tsdiagramm-uc-20)
     - [3.4.4 Aktivitätsdiagramm UC 2.1](#344-aktivit%C3%A4tsdiagramm-uc-21)
-    - [3.4.5 Aktivitätsdiagramm UC 3.0](#345-aktivit%C3%A4tsdiagramm-uc-30)
     - [3.4.6 Aktivitätsdiagramm UC 3.1](#346-aktivit%C3%A4tsdiagramm-uc-31)
     - [3.4.7 Aktivitätsdiagramm UC 3.1.1](#347-aktivit%C3%A4tsdiagramm-uc-311)
     - [3.4.8 Aktivitätsdiagramm UC 3.2](#348-aktivit%C3%A4tsdiagramm-uc-32)
@@ -130,23 +130,35 @@ Die Software ist für Anwender konzipiert, die ein Grundverständnis von Marktte
 Use-Case Diagramm für AlgoTrade:
 <img src="pictures/UseCaseDiagram.jpg" height="100%" width="100%">
 
-### 2.1.1 Use Case 1.1 - Edit Settings interactive Chart
+### 2.1.1 Use Case 1.0 - Show interactive Chart
+Anzeigen des interaktiven Charts:
+<img src="pictures/UseCase1.0.jpg" height="100%" width="100%">
+
+### 2.1.2 Use Case 1.1 - Edit Settings interactive Chart
 Bearbeiten der Einstellungen fürs interaktive Chart.
 <img src="pictures/UseCase1.1.jpg" height="100%" width="100%">
 
-### 2.1.2 Use Case 2.1 - Edit Settings Profit/Loss Graph
+### 2.1.3 Use Case 2.0 - Show Profit/Loss Graph
+Anzeigen des Profit/Loss Graphen:
+<img src="pictures/UseCase2.0.jpg" height="100%" width="100%">
+
+### 2.1.4 Use Case 2.1 - Edit Settings Profit/Loss Graph
 Bearbeiten der Einstellungen des Profit/Loss Graphen:
 <img src="pictures/UseCase2.1.jpg" height="100%" width="100%">
 
-### 2.1.3 Use Case 3.1 - Edit Settings Market Strategy
+### 2.1.5 Use Case 3.0 - Show Market Strategy
+Anzeigen der Market Strategy:
+<img src="pictures/UseCase3.0.jpg" height="100%" width="100%">
+
+### 2.1.6 Use Case 3.1 - Edit Settings Market Strategy
 Bearbeiten der Market Strategy:
 <img src="pictures/UseCase3.1.jpg" height="100%" width="100%">
 
-### 2.1.4 Use Case 3.1.1 - Save Market Strategy
+### 2.1.7 Use Case 3.1.1 - Save Market Strategy
 Speichern der Market Strategy:
 <img src="pictures/UseCase3.1.1.jpg" height="100%" width="100%">
 
-### 2.1.5 Use Case 3.2 - Load Market Strategy
+### 2.1.8 Use Case 3.2 - Load Market Strategy
 Laden der Market Strategy:
 <img src="pictures/UseCase3.2.jpg" height="100%" width="100%">
 
@@ -262,20 +274,11 @@ Speichert die API-Keys des Benutzers für die Zugriffe auf Kraken und Binance.
 
 ## 3.4 Abläufe
 
-### 3.4.1 Aktivitätsdiagramm UC 1.0
-<img src="pictures/ActivityDiagramUC1.0.jpg" height="100%" width="100%">
-
 ### 3.4.2 Aktivitätsdiagramm UC 1.1
 <img src="pictures/ActivityDiagramUC2.1.jpg" height="100%" width="100%">
 
-### 3.4.3 Aktivitätsdiagramm UC 2.0
-<img src="pictures/ActivityDiagramUC2.0.jpg" height="100%" width="100%">
-
 ### 3.4.4 Aktivitätsdiagramm UC 2.1
 <img src="pictures/ActivityDiagramUC2.1.jpg" height="100%" width="100%">
-
-### 3.4.5 Aktivitätsdiagramm UC 3.0
-<img src="pictures/ActivityDiagramUC3.0.jpg" height="100%" width="100%">
 
 ### 3.4.6 Aktivitätsdiagramm UC 3.1
 <img src="pictures/ActivityDiagramUC3.1.jpg" height="100%" width="100%">
