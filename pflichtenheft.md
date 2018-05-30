@@ -203,12 +203,12 @@ Marktstrategie laden
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
-| User | die interaktive Candlestick-Chart betrachten | ich eine Übersicht über die Kursänderungen habe | Betrachtung möglich |
-| User | die Einstellungen für die interaktive Candlestick-Chart individuell anzupassen | ich die Kursänderungen über einen bestimmten Zeitraum für eine bestimmte Cryptocurrency betrachten kann | Einstellungen anpassbar |
-| User | eine individuelle Market Strategy anlegen | ich die meine präferierten Buys und Sells automatisieren kann | Market Strategy kann angelegt werden |
+| User | den interaktiven Candlestick-Chart betrachten | ich eine Übersicht über die Kursänderungen habe | Betrachtung möglich |
+| User | die Einstellungen für das interaktive Candlestick-Chart individuell anpassen können | ich die Kursänderungen über einen bestimmten Zeitraum für eine bestimmte Cryptocurrency betrachten kann | Einstellungen anpassbar |
+| User | eine individuelle Market Strategy anlegen | ich meine präferierten Buys und Sells automatisieren kann | Market Strategy kann angelegt werden |
 | User | verschiedene Market Strategies speichern/laden | ich deren Wirksamkeit testen kann ohne die Einstellungen zu verlieren | Speichern/Laden der Market Strategy möglich |
 | User | die Market Strategies anpassen | ich deren Wirksamkeit verbessern kann | Market Strategy anpassbar |
-| User | meinen Profit und Loss anzeigen lassen | ich Informationen über die Wirksamkeit meiner Market Strategy erhalte | Profit/Loss Graphen anzeigen möglich |
+| User | meinen Profit/Loss anzeigen lassen | ich Informationen über die Wirksamkeit meiner Market Strategy erhalte | Profit/Loss Graphen anzeigen möglich |
 | User | meinen Profit und Loss über einen bestimmten Zeitraum betrachten | ich die Wirksamkeit von meiner angepassten Market Strategy sehen kann | Zeitraum des Profit/Loss Graphen anpassbar |
 
 # 3 Technische Beschreibung

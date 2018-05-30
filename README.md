@@ -2,9 +2,23 @@
 
 ## Termine
 
-31.05
+07.06
+  Backend: Binance API für Marktdaten + Indikatoren Implementiert; Frontend: GUI ohne Funktion umgesetzt
 
-	Pflichtenheft abgeschlossen
+14.06
+  Backend: Kraken API für Orders Implementiert; Frontend: Funktionale-Anforderungen umgesetzt
+
+21.06
+  Backend: Profit/Loss Auswertung + Marktstrategien; Frontend: Charts eingebunden
+
+28.06
+  Puffer
+
+05.07
+  Letztes Praktika / Nachbesserung / Präsentationsvorbereitung
+
+12.07
+  Abgabe Projekt / Präsentationsvorbereitung
 
 
 # Github Pages:
