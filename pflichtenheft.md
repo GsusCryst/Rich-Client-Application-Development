@@ -42,12 +42,12 @@ Autoren: Sasha Koß, Kristoffer Roßbach
   - [3.3 Datenmodell](#33-datenmodell)
     - [ER-Diagramm](#er-diagramm)
   - [3.4 Abläufe](#34-abl%C3%A4ufe)
-    - [3.4.2 Aktivitätsdiagramm UC 1.1](#342-aktivit%C3%A4tsdiagramm-uc-11)
-    - [3.4.4 Aktivitätsdiagramm UC 2.1](#344-aktivit%C3%A4tsdiagramm-uc-21)
-    - [3.4.6 Aktivitätsdiagramm UC 3.1](#346-aktivit%C3%A4tsdiagramm-uc-31)
-    - [3.4.7 Aktivitätsdiagramm UC 3.1.1](#347-aktivit%C3%A4tsdiagramm-uc-311)
-    - [3.4.8 Aktivitätsdiagramm UC 3.2](#348-aktivit%C3%A4tsdiagramm-uc-32)
-    - [3.4.9 Aktivitätsdiagramm für alle Use Cases](#349-aktivit%C3%A4tsdiagramm-f%C3%BCr-alle-use-cases)
+    - [3.4.1 Aktivitätsdiagramm UC 1.1](#341-aktivit%C3%A4tsdiagramm-uc-11)
+    - [3.4.2 Aktivitätsdiagramm UC 2.1](#342-aktivit%C3%A4tsdiagramm-uc-21)
+    - [3.4.3 Aktivitätsdiagramm UC 3.1](#343-aktivit%C3%A4tsdiagramm-uc-31)
+    - [3.4.4 Aktivitätsdiagramm UC 3.1.1](#344-aktivit%C3%A4tsdiagramm-uc-311)
+    - [3.4.5 Aktivitätsdiagramm UC 3.2](#345-aktivit%C3%A4tsdiagramm-uc-32)
+    - [3.4.6 Aktivitätsdiagramm für alle Use Cases](#346-aktivit%C3%A4tsdiagramm-f%C3%BCr-alle-use-cases)
 - [4 Projektorganisation](#4-projektorganisation)
   - [4.1 Annahmen](#41-annahmen)
     - [Technologien](#technologien)
@@ -203,13 +203,13 @@ Marktstrategie laden
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
-| User | die Möglichkeit haben die interaktive Candlestick-Chart zu betrachten | ich eine Übersicht über die Kursänderungen habe | Betrachtung möglich |
-| User | die Möglichkeit haben die Einstellungen für die interaktive Candlestick-Chart individuell anzupassen | ich die Kursänderungen über einen bestimmten Zeitraum für eine bestimmte Cryptocurrency betrachten kann | Einstellungen anpassbar |
-| User | die Möglichkeit haben eine individuelle Market Strategy anzulegen | ich die Buys und Sells automatisieren kann | Market Strategy kann angelegt werden |
-| User | die Möglichkeit haben verschiedene Market Strategies zu speichern/laden | ich deren Wirksamkeit testen kann ohne die Einstellungen zu verlieren | Speichern/Laden der Market Strategy möglich |
-| User | die Möglichkeit haben Market Strategies anpassen zu können | ich deren Wirksamkeit verbessern kann | Market Strategy anpassbar |
-| User | die Möglichkeit haben meinen Profit und Loss anzeigen zu lassen | ich Informationen über die Wirksamkeit meiner Market Strategy erhalte | Profit/Loss Graphen anzeigen möglich |
-| User | die Möglichkeit haben meinen Profit und Loss über einen bestimmten Zeitraum betrachten zukönnen | ich die Wirksamkeit von meiner angepassten Market Strategy sehen kann | Zeitraum des Profit/Loss Graphen anpassbar |
+| User | die interaktive Candlestick-Chart betrachten | ich eine Übersicht über die Kursänderungen habe | Betrachtung möglich |
+| User | die Einstellungen für die interaktive Candlestick-Chart individuell anzupassen | ich die Kursänderungen über einen bestimmten Zeitraum für eine bestimmte Cryptocurrency betrachten kann | Einstellungen anpassbar |
+| User | eine individuelle Market Strategy anlegen | ich die meine präferierten Buys und Sells automatisieren kann | Market Strategy kann angelegt werden |
+| User | verschiedene Market Strategies speichern/laden | ich deren Wirksamkeit testen kann ohne die Einstellungen zu verlieren | Speichern/Laden der Market Strategy möglich |
+| User | die Market Strategies anpassen | ich deren Wirksamkeit verbessern kann | Market Strategy anpassbar |
+| User | meinen Profit und Loss anzeigen lassen | ich Informationen über die Wirksamkeit meiner Market Strategy erhalte | Profit/Loss Graphen anzeigen möglich |
+| User | meinen Profit und Loss über einen bestimmten Zeitraum betrachten | ich die Wirksamkeit von meiner angepassten Market Strategy sehen kann | Zeitraum des Profit/Loss Graphen anpassbar |
 
 # 3 Technische Beschreibung
 
@@ -274,22 +274,22 @@ Speichert die API-Keys des Benutzers für die Zugriffe auf Kraken und Binance.
 
 ## 3.4 Abläufe
 
-### 3.4.2 Aktivitätsdiagramm UC 1.1
+### 3.4.1 Aktivitätsdiagramm UC 1.1
+<img src="pictures/ActivityDiagramUC1.1.jpg" height="100%" width="100%">
+
+### 3.4.2 Aktivitätsdiagramm UC 2.1
 <img src="pictures/ActivityDiagramUC2.1.jpg" height="100%" width="100%">
 
-### 3.4.4 Aktivitätsdiagramm UC 2.1
-<img src="pictures/ActivityDiagramUC2.1.jpg" height="100%" width="100%">
-
-### 3.4.6 Aktivitätsdiagramm UC 3.1
+### 3.4.3 Aktivitätsdiagramm UC 3.1
 <img src="pictures/ActivityDiagramUC3.1.jpg" height="100%" width="100%">
 
-### 3.4.7 Aktivitätsdiagramm UC 3.1.1
+### 3.4.4 Aktivitätsdiagramm UC 3.1.1
 <img src="pictures/ActivityDiagramUC3.1.1.jpg" height="100%" width="100%">
 
-### 3.4.8 Aktivitätsdiagramm UC 3.2
+### 3.4.5 Aktivitätsdiagramm UC 3.2
 <img src="pictures/ActivityDiagramUC3.2.jpg" height="100%" width="100%">
 
-### 3.4.9 Aktivitätsdiagramm für alle Use Cases
+### 3.4.6 Aktivitätsdiagramm für alle Use Cases
 <img src="pictures/ActivityDiagram.jpg" height="100%" width="100%">
 
 # 4 Projektorganisation
