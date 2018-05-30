@@ -206,7 +206,13 @@ Gewinn/Verlust Übersicht
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
-| Wer | Was | Warum | Wann akzeptiert |
+| User | die Möglichkeit haben die interaktive Candlestick-Chart zu betrachten | ich eine Übersicht über die Kursänderungen habe | Betrachtung möglich |
+| User | die Möglichkeit haben die Einstellungen für die interaktive Candlestick-Chart individuell anzupassen | ich die Kursänderungen über einen bestimmten Zeitraum für eine bestimmte Cryptocurrency betrachten kann | Einstellungen anpassbar |
+| User | die Möglichkeit haben eine individuelle Market Strategy anzulegen | ich die Buys und Sells automatisieren kann | Market Strategy kann angelegt werden |
+| User | die Möglichkeit haben verschiedene Market Strategies zu speichern/laden | ich deren Wirksamkeit testen kann ohne die Einstellungen zu verlieren | Speichern/Laden der Market Strategy möglich |
+| User | die Möglichkeit haben Market Strategies anpassen zu können | ich deren Wirksamkeit verbessern kann | Market Strategy anpassbar |
+| User | die Möglichkeit haben meinen Profit und Loss anzeigen zu lassen | ich Informationen über die Wirksamkeit meiner Market Strategy erhalte | Profit/Loss Graphen anzeigen möglich |
+| User | die Möglichkeit haben meinen Profit und Loss über einen bestimmten Zeitraum betrachten zukönnen | ich die Wirksamkeit von meiner angepassten Market Strategy sehen kann | Zeitraum des Profit/Loss Graphen anpassbar |
 
 ### Beispiel 1
 
