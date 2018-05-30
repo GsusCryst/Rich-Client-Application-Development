@@ -237,7 +237,7 @@ Die Kraken REST-API wird bei einem Tradesignal vom Node.js Server zur Ausführun
 
 4. Marktstrategie Module: Läd beim Programmstart die Einstellungen für die Marktstrategie aus der Datenbank und triggert bei entsprechenden Indikatorwerten das Order Module.
 
-6. Order Module: Passt zum Start des Programms und nach jeder Order die Ordergröße an. Die Einstellung dazu werden aus der Datenbank geladen.
+6. Order Module: Passt zum Start des Programms die Ordergröße an, die Einstellung dazu werden aus der Datenbank geladen.
 Sendet die Order an die Kraken-API und speichert die Rückmeldung in der Datenbank.
 
 7. Datenbank: Die MongoDB verwaltet und speichert die Programmspezifischen Daten für das Backend und Frontend.

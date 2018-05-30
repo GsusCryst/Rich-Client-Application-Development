@@ -1,3 +1,0 @@
-Ordersize MockUp
-Load Marketstrategy MockUp
-ER Abgleich UseCases und MockUps
