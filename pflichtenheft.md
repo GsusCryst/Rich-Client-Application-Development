@@ -33,8 +33,7 @@ Autoren: Sasha Koß, Kristoffer Roßbach
   - [2.3 Graphische Benutzerschnittstelle](#23-graphische-benutzerschnittstelle)
     - [GUI-Mockups](#gui-mockups)
   - [2.4 Anforderungen im Detail](#24-anforderungen-im-detail)
-    - [Schablone für User Stories](#schablone-f%C3%BCr-user-stories)
-    - [Beispiel 1](#beispiel-1)
+    - [User](#user)
 - [3 Technische Beschreibung](#3-technische-beschreibung)
   - [3.1 Systemübersicht](#31-system%C3%BCbersicht)
     - [Systemarchitekturdiagramm](#systemarchitekturdiagramm)
@@ -200,9 +199,7 @@ Gewinn/Verlust Übersicht
 
 ## 2.4 Anforderungen im Detail
 
-    - Strukturierung der User Stories in funktionale Gruppen
-
-### Schablone für User Stories
+### User
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
@@ -213,12 +210,6 @@ Gewinn/Verlust Übersicht
 | User | die Möglichkeit haben Market Strategies anpassen zu können | ich deren Wirksamkeit verbessern kann | Market Strategy anpassbar |
 | User | die Möglichkeit haben meinen Profit und Loss anzeigen zu lassen | ich Informationen über die Wirksamkeit meiner Market Strategy erhalte | Profit/Loss Graphen anzeigen möglich |
 | User | die Möglichkeit haben meinen Profit und Loss über einen bestimmten Zeitraum betrachten zukönnen | ich die Wirksamkeit von meiner angepassten Market Strategy sehen kann | Zeitraum des Profit/Loss Graphen anpassbar |
-
-### Beispiel 1
-
-| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
-| :------ | :----- | :------ | :-------- |
-| Benutzer | bei Fehleingabe die Lösung angezeigt bekommen | ich lernen kann | Lösung wird angezeigt |
 
 # 3 Technische Beschreibung
 
