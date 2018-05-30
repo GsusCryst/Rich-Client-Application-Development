@@ -197,6 +197,9 @@ Marktstrategie Einstellungen
 Gewinn/Verlust Übersicht
 <img src="pictures/mockup_profit-loss.png" height="100%" width="100%">
 
+Marktstrategie laden
+<img src="pictures/mockup_load_marketstrategy.png" height="100%" width="100%">
+
 ## 2.4 Anforderungen im Detail
 
 ### User
