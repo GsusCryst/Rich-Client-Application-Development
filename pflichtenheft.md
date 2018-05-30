@@ -329,25 +329,25 @@ Kristoffer Roßbach:
 ## 4.3 Grober Projektplan
 
 31.05
-+ Abgabe Projektplan / Pflichtenheft
+    Abgabe Projektplan / Pflichtenheft
 
 07.06
-+ Backend: Binance API für Marktdaten + Indikatoren Implementiert; Frontend: GUI ohne Funktion umgesetzt
+    Backend: Binance API für Marktdaten + Indikatoren Implementiert; Frontend: GUI ohne Funktion umgesetzt
 
 14.06
-+ Backend: Kraken API für Orders Implementiert; Frontend: Funktionale-Anforderungen umgesetzt
+    Backend: Kraken API für Orders Implementiert; Frontend: Funktionale-Anforderungen umgesetzt
 
 21.06
-+ Backend: Profit/Loss Auswertung + Marktstrategien; Frontend: Charts eingebunden
+    Backend: Profit/Loss Auswertung + Marktstrategien; Frontend: Charts eingebunden
 
 28.06
-+ Puffer
+    Puffer
 
 05.07
-+ Letztes Praktika / Nachbesserung / Präsentationsvorbereitung
+    Letztes Praktika / Nachbesserung / Präsentationsvorbereitung
 
 12.07
-+ Abgabe Projekt / Präsentationsvorbereitung
+    Abgabe Projekt / Präsentationsvorbereitung
 
 # 5 Anhänge
 
