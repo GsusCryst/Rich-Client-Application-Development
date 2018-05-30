@@ -86,10 +86,11 @@ Use Case 3.0
       <x>210</x>
       <y>360</y>
       <w>120</w>
-      <h>50</h>
+      <h>60</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Postcondition&gt;&gt;
-Use Case 3.0
+Market Strategy
+wurde geladen
 </panel_attributes>
     <additional_attributes/>
   </element>
