@@ -301,8 +301,10 @@ Speichert die API-Keys des Benutzers für die Zugriffe auf Kraken und Binance.
 ### Technologien
 + Node.js mit NPM
 + MongoDB
-+ Javascript ES6
-+ Verwendete Libs: TA-LIB, Knex.js, dotenv, express, fs-extra, parse-duration, pino, request, request-promise
++ Javascript ES6 mit React.js
++ Verwendete NPM Libs: TA-LIB, Knex.js, dotenv, express, fs-extra, parse-duration, pino, request, request-promise, pre-push, react-bootstrap-tabs
++ Deployment auf einem Free Heroku Server 
++ Zugriff Frontend <-> Datenbank über WebSocket
 
 ### Einschränkungen
 + Die Programmgeschwindigkeit wird zum Großteil durch die REST-APIs der Börsen bestimmt.
@@ -312,8 +314,10 @@ Speichert die API-Keys des Benutzers für die Zugriffe auf Kraken und Binance.
 ### Interne Qualitätsanforderungen
 + Softwarequalität muss den Performance ansprüchen des Projektes entsprechen
 + Quellcodedokumentation auf Englisch
-+ Funktionalität des Codes wird vor dem Push geprüft
++ Funktionalität des Codes wird mit pre-push vor dem Push automatisch geprüft
 + Quellcode vor dem Push mit JS Beautifier formatieren
++ Getestete Bibliotheken Dokumentieren 
++ Kurze Zeiterfassung führen
 
 ## 4.2 Verantwortlichkeiten
 Sasha Koß:

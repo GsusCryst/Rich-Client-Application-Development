@@ -5,7 +5,7 @@ Pflichtenheft Feedback 07.06.2018:
 
 
 
-Änderung: Code Tagebuch? Verwendete Bibliotheken
+Änderung: Getestete Bibliotheken Dokumentieren und kurze Zeiterfassung führen
 Bonus: Benutzerverwaltung wenn genug Zeit ist
 Änderung: Automatische Tests bei Commit / Push
 Änderung: React JS bei Technologien einfügen
