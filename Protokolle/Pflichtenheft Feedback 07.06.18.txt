@@ -1,0 +1,11 @@
+Pflichtenheft Feedback 07.06.2018:
+1. MongoDB zu Postgre jsonb -> schneller als MongoDB?
+2. WebSocket für Frontend Verbindung zur Datenbank <-> Chart mit Echtzeitupdate
+3. Heroku Server für free deployment https://www.heroku.com/
+
+
+
+Änderung: Code Tagebuch? Verwendete Bibliotheken
+Bonus: Benutzerverwaltung wenn genug Zeit ist
+Änderung: Automatische Tests bei Commit / Push
+Änderung: React JS bei Technologien einfügen
