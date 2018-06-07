@@ -1,0 +1,14 @@
+07.06. 
+Coding: 
+	1h Datenbankverbindung postgres debugged
+	1h postgresql jsonb getestet
+
+Lib-Tests: 
+	keine neuen Libs getestet.
+
+XX.XX
+Coding:
+	
+
+Lib-Tests: 
+	keine neuen Libs getestet.
