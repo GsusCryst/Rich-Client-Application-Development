@@ -1,0 +1,15 @@
+07.06.
+Chart plugin finden:
+        - candlestick-chart
+        - react-stockchart
+        - chart.js
+	- candlestick-volume-chart
+	- vuechart
+        - dojo toolkit
+        - letzendlich doji-chart
+
+Websocket finden:
+	- websockets
+	- simple-websockets
+	- websocket
+	- letzendlich ws
