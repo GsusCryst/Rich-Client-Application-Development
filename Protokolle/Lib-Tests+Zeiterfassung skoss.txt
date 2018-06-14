@@ -1,14 +1,12 @@
 07.06. 
-Coding: 
-	1h Datenbankverbindung postgres debugged
-	1h postgresql jsonb getestet
+	Coding: 
+		1h Datenbankverbindung postgres debugged
+		1h postgresql jsonb getestet
 
-Lib-Tests: 
-	keine neuen Libs getestet.
+13.06:  
+	Coding: 
+		1h Testing Ichimoku + MongoDB
 
-XX.XX
-Coding:
-	
-
-Lib-Tests: 
-	keine neuen Libs getestet.
+	Lib-Tests: 
+		https://www.npmjs.com/package/mongodb
+		https://www.npmjs.com/package/ichimoku
