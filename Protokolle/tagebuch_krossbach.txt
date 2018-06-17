@@ -1,36 +1,29 @@
 07.06.
 
 Chart plugin finden:
-        
 	- candlestick-chart
-        
 	- dojichart (kaum support)       
 	- chart.js
-	
 	- candlestick-volume-chart
-	
 	- vuechart
-        
 	- dojo toolkit
-        
 	- letzendlich react-stockcharts
 
 
-
 Websocket finden:
-	
 	- websockets
-	
 	- simple-websockets
-	
-	- websocket
-	
+	- websocket	
 	- ws favorisiert
 
 
-
 16.06:
+	- ws: connect, disconnect, message, etc.
 	- engine.io; baut auf ws auf
 	- socket.io: baut auf engine.io auf
 	- Performance-Vergleich socket.io/engine.io/ws (https://medium.com/@denizozger/finding-the-right-node-js-websocket-implementation-b63bfca0539)
 	- [!]socket.io ermöglicht Reconnect bei einem Connection Loss
+	- socket.io anschauen
+
+17.06:
+	- https://www.tutorialspoint.com/socket.io/index.htm => mit ExpressJS auf Server[?]
