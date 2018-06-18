@@ -17,7 +17,7 @@ Websocket finden:
 	- ws favorisiert
 
 
-16.06:
+16.06.
 	- ws: connect, disconnect, message, etc.
 	- engine.io; baut auf ws auf
 	- socket.io: baut auf engine.io auf
@@ -25,5 +25,13 @@ Websocket finden:
 	- [!]socket.io ermöglicht Reconnect bei einem Connection Loss
 	- socket.io anschauen
 
-17.06:
+17.06.
 	- https://www.tutorialspoint.com/socket.io/index.htm => mit ExpressJS auf Server[?]
+
+18.06.
+	- svg vs svg+canvas:
+		- http://rrag.github.io/react-stockcharts/documentation.html#/svg_vs_canvas
+		- https://stackoverflow.com/questions/5882716/html5-canvas-vs-svg-vs-div
+		- https://stackoverflow.com/questions/12310024/fast-and-responsive-interactive-charts-graphs-svg-canvas-other
+		- svg+canvas = bessere Performance, aber mehr Aufwand in der Programmierung, schärferes Bild
+		- svg = schwächere Performance, leichte Implementierung
